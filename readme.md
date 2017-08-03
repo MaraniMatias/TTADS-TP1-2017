@@ -8,6 +8,8 @@ Quiero usar
 * [Vue](https://vuejs.org/)
 * [webpack](https://webpack.js.org/)
 * ?[Less](lesscss.org)
+* ?[pugjs](pugjs.org) es para HTML como less para los CSS
+* [semantic-ui](https://semantic-ui.com/)
 
 Ejemplos
 * http://todomvc.com/examples/vue/
