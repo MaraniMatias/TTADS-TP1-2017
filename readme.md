@@ -16,6 +16,7 @@ Ejemplos
 * https://github.com/mrholek/CoreUI-Free-Bootstrap-Admin-Template/tree/master/Vue_Starter
 * https://github.com/sejr/vuefire-quickstart
 * https://github.com/jeneser/douban
+* https://github.com/coligo-io/notes-app-vuejs-vuex
 
 Herramientas
 * [TypeScript](http://www.typescriptlang.org/index.html)_Prefiero escribir JavaScript puro, pero acepto usarlo_
@@ -26,6 +27,8 @@ Herramientas
 * [vue-router](https://github.com/vuejs/vue-router) [Doc ES](https://router.vuejs.org/es/)
 * [http-server](https://www.npmjs.com/package/http-server)
 * [vux](https://github.com/vuejs/vuex)_Centralized State Management for Vue.js._ ¿no bien que es?
+* [vee-validate](https://github.com/baianat/vee-validate)
+* [vue-search-select](https://github.com/moreta/vue-search-select)
 
 # TP 1
 ## 1 - Enunciado
