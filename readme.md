@@ -20,6 +20,7 @@ Ejemplos
 Herramientas
 * [TypeScript](http://www.typescriptlang.org/index.html)_Prefiero escribir JavaScript puro, pero acepto usarlo_
 * [generator-fountain-webapp](https://github.com/fountainjs/generator-fountain-webapp)
+* [vue-search-select](https://github.com/moreta/vue-search-select)
 * [vue-simple-boilerplate](https://github.com/vuejs-templates/simple)
 * [templates](https://github.com/vuejs-templates/webpack-simple)
 * [vue-cli](https://github.com/vuejs/vue-cli)
