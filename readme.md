@@ -19,6 +19,7 @@ Ejemplos
 * https://github.com/mrholek/CoreUI-Free-Bootstrap-Admin-Template/tree/master/Vue_Starter
 * https://github.com/sejr/vuefire-quickstart
 * https://github.com/jeneser/douban
+* https://github.com/coligo-io/notes-app-vuejs-vuex
 
 Herramientas
 * [TypeScript](http://www.typescriptlang.org/index.html)_Prefiero escribir JavaScript puro, pero acepto usarlo_
@@ -26,6 +27,7 @@ Herramientas
 * [vue-cli](https://github.com/vuejs/vue-cli)
 * [vue-search-select](https://github.com/moreta/vue-search-select)
 * [vue-simple-boilerplate](https://github.com/vuejs-templates/simple)
+* [vee-validate](https://github.com/baianat/vee-validate)
 * [http-server](https://www.npmjs.com/package/http-server)
 
 # TP 1
