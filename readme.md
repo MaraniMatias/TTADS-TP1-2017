@@ -11,6 +11,7 @@ Quiero usar
 * [vue](https://vuejs.org/)
   * [vue-router](https://github.com/vuejs/vue-router) [Doc ES](https://router.vuejs.org/es/)
   * [vux](https://github.com/vuejs/vuex)
+  * [vue-resource](https://github.com/pagekit/vue-resource)
 * [webpack](https://webpack.js.org/)
   * [templates](https://github.com/vuejs-templates/webpack-simple)
 * [semantic-ui](https://semantic-ui.com/)
