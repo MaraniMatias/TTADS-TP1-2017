@@ -24,6 +24,7 @@ Ejemplos
 * https://github.com/sejr/vuefire-quickstart
 * https://github.com/jeneser/douban
 * https://github.com/coligo-io/notes-app-vuejs-vuex
+* https://github.com/iamshaunjp/vuejs-playlist
 
 Herramientas
 * [TypeScript](http://www.typescriptlang.org/index.html)_Prefiero escribir JavaScript puro, pero acepto usarlo_
