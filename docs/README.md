@@ -52,6 +52,7 @@ Librerías que usamos.
   * [vue-router](https://github.com/vuejs/vue-router) [Doc ES](https://router.vuejs.org/es/)
   * [vux](https://github.com/vuejs/vuex)
   * [vue-resource](https://github.com/pagekit/vue-resource)
+  * [vuex-rest-api](https://github.com/christianmalek/vuex-rest-api)
 * [webpack](https://webpack.js.org/)
   * [templates](https://github.com/vuejs-templates/webpack-simple)
 * [semantic-ui](https://semantic-ui.com/)
