@@ -1,5 +1,7 @@
-<template>
-  <h1>{{ hello }}</h1>
+<template lang="pug">
+  div
+    h1 {{ hello }}
+    p :D
 </template>
 
 <script>
