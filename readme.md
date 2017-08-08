@@ -1,41 +1,7 @@
 # Trabajo Practico
 
-Trabajo online y documentación [github.io](https://maranimatias.github.io/tp-2017/)
+Documentación y Trabajo online en [github.io](https://maranimatias.github.io/tp-2017/)
 
-## Material adicional.
-* [garkdown](https://guides.github.com/features/mastering-markdown/)
-* [server tmdb](https://github.com/utnfrrottads/tmdb-server) [API](https://www.themoviedb.org/documentation/api/discover) **API Key** _Cuenta -> configuracion -> api -> crear -> developer -> aceptar -> llenar from -> copiar la key_ [api doc](https://developers.themoviedb.org/3/getting-started)
-* [awesome-vue](https://github.com/vuejs/awesome-vue)
-
-Quiero usar
-* [vue](https://vuejs.org/)
-  * [vue-router](https://github.com/vuejs/vue-router) [Doc ES](https://router.vuejs.org/es/)
-  * [vux](https://github.com/vuejs/vuex)
-  * [vue-resource](https://github.com/pagekit/vue-resource)
-* [webpack](https://webpack.js.org/)
-  * [templates](https://github.com/vuejs-templates/webpack-simple)
-* [semantic-ui](https://semantic-ui.com/)
-* [Less](lesscss.org)
-* [pugjs](pugjs.org) es para HTML como less para los CSS
-
-Ejemplos
-* http://todomvc.com/examples/vue/
-* https://github.com/mrholek/CoreUI-Free-Bootstrap-Admin-Template/tree/master/Vue_Starter
-* https://github.com/sejr/vuefire-quickstart
-* https://github.com/jeneser/douban
-* https://github.com/coligo-io/notes-app-vuejs-vuex
-* https://github.com/iamshaunjp/vuejs-playlist
-
-Herramientas
-* [TypeScript](http://www.typescriptlang.org/index.html)_Prefiero escribir JavaScript puro, pero acepto usarlo_
-* [generator-fountain-webapp](https://github.com/fountainjs/generator-fountain-webapp)
-* [vue-cli](https://github.com/vuejs/vue-cli)
-* [vue-search-select](https://github.com/moreta/vue-search-select)
-* [vue-simple-boilerplate](https://github.com/vuejs-templates/simple)
-* [vee-validate](https://github.com/baianat/vee-validate)
-* [http-server](https://www.npmjs.com/package/http-server)
-
-# TP 1
 ## 1 - Enunciado
 ### 1.1 - Desarrollo
 Crear un nuevo frontend para [TMDB](www.themoviedb.org) (The Movie DB) utilizando:
