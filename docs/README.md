@@ -81,3 +81,13 @@ _Por si hay tiempo :D_
 * [Nightwatch](http://nightwatchjs.org/)
 * [jsdoc](https://github.com/jsdoc3/jsdoc) [ejemplo](https://github.com/docstrap/docstrap/tree/master/fixtures)
 
+
+# Reuniones de avance.
+
+# Entregas.
+
+| Tareas completadas | Blockers | Tareas a realizar | acciones correctivas |
+|--------------------|----------|-------------------|----------------------|
+|                    |          |                   |                      |
+
+
