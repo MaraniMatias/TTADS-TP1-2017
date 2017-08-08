@@ -8,42 +8,36 @@ const autoprefixer = require('autoprefixer');
 
 module.exports = {
   module: {
-    loaders: [
-      {
-        test: /\.json$/,
-        loaders: [
-          'json-loader'
-        ]
-      },
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: 'eslint-loader',
-        enforce: 'pre'
-      },
-      {
-        test: /\.(css|less)$/,
-        loaders: [
-          'style-loader',
-          'css-loader',
-          'less-loader',
-          'postcss-loader'
-        ]
-      },
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loaders: [
-          'babel-loader'
-        ]
-      },
-      {
-        test: /\.vue$/,
-        loaders: [
-          'vue-loader'
-        ]
-      }
-    ]
+    loaders: [{
+      test: /\.json$/,
+      loaders: [
+        'json-loader'
+      ]
+    }, {
+      test: /\.js$/,
+      exclude: /node_modules/,
+      loader: 'eslint-loader',
+      enforce: 'pre'
+    }, {
+      test: /\.(css|less)$/,
+      loaders: [
+        'style-loader',
+        'css-loader',
+        'less-loader',
+        'postcss-loader'
+      ]
+    }, {
+      test: /\.js$/,
+      exclude: /node_modules/,
+      loaders: [
+        'babel-loader'
+      ]
+    }, {
+      test: /\.vue$/,
+      loaders: [
+        'vue-loader'
+      ]
+    }]
   },
   plugins: [
     new webpack.optimize.OccurrenceOrderPlugin(),
@@ -66,3 +60,4 @@ module.exports = {
   },
   entry: `./${conf.path.src('index')}`
 };
+

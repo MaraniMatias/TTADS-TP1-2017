@@ -1,7 +1,6 @@
 const gulp = require('gulp');
 const HubRegistry = require('gulp-hub');
 const browserSync = require('browser-sync');
-const jsdoc = require('gulp-jsdoc3');
 
 const conf = require('./conf/gulp.conf');
 
@@ -11,19 +10,11 @@ const hub = new HubRegistry([conf.path.tasks('*.js')]);
 // Tell gulp to use the tasks just loaded
 gulp.registry(hub);
 
-gulp.task('docs', function(cb) {
-  let config = require('./conf/jsdoc.conf.json');
-  gulp.src(['README.md', './src/**/*.vue','./src/**/*.js','./docs/README.md'], {
-      read: false
-    })
-    .pipe(jsdoc(config,cb));
-});
-
-gulp.task('build', gulp.series(gulp.parallel('other', 'webpack:dist')));
+gulp.task('build', gulp.series(gulp.parallel('other','views', 'webpack:dist')));
 gulp.task('test', gulp.series('karma:single-run'));
 gulp.task('test:auto', gulp.series('karma:auto-run'));
-gulp.task('serve', gulp.series('webpack:watch', 'watch', 'browsersync'));
-gulp.task('serve:dist', gulp.series('default', 'browsersync:dist'));
+gulp.task('serve', gulp.series('views','webpack:watch', 'watch', 'browsersync'));
+gulp.task('serve:dist', gulp.series('views','default', 'browsersync:dist'));
 gulp.task('default', gulp.series('clean', 'build'));
 gulp.task('watch', watch);
 

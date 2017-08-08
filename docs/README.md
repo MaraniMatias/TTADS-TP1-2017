@@ -56,7 +56,7 @@ Librerías que usamos.
   * [templates](https://github.com/vuejs-templates/webpack-simple)
 * [semantic-ui](https://semantic-ui.com/)
 * [Less](lesscss.org)
-* [pugjs](pugjs.org) es para HTML como less para los CSS
+* [pugjs](pugjs.org) es para HTML como less para los CSS [HTML2PUG](https://www.beautifyconverter.com/html-to-jade-converter.php)
 
 Ejemplos.
 * https://github.com/coligo-io/notes-app-vuejs-vuex

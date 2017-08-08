@@ -20,3 +20,7 @@ selenium-debug.log
 *swp
 # KDE
 .directory
+
+
+#
+/app/index.html

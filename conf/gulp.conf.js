@@ -16,7 +16,8 @@ const gutil = require('gulp-util');
  */
 exports.paths = {
   src: 'src',
-  dist: 'dist',
+  // como github page va a levantar la app desde ahi, pero  debe ser dist
+  dist: 'docs/online-app',
   tmp: '.tmp',
   e2e: 'e2e',
   tasks: 'gulp_tasks'

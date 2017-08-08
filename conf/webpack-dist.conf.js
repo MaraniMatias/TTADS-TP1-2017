@@ -10,40 +10,34 @@ const autoprefixer = require('autoprefixer');
 
 module.exports = {
   module: {
-    loaders: [
-      {
-        test: /\.json$/,
-        loaders: [
-          'json-loader'
-        ]
-      },
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: 'eslint-loader',
-        enforce: 'pre'
-      },
-      {
-        test: /\.(css|less)$/,
-        loaders: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: 'css-loader?minimize!less-loader!postcss-loader'
-        })
-      },
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loaders: [
-          'babel-loader'
-        ]
-      },
-      {
-        test: /\.vue$/,
-        loaders: [
-          'vue-loader'
-        ]
-      }
-    ]
+    loaders: [{
+      test: /\.json$/,
+      loaders: [
+        'json-loader'
+      ]
+    }, {
+      test: /\.js$/,
+      exclude: /node_modules/,
+      loader: 'eslint-loader',
+      enforce: 'pre'
+    }, {
+      test: /\.(css|less)$/,
+      loaders: ExtractTextPlugin.extract({
+        fallback: 'style-loader',
+        use: 'css-loader?minimize!less-loader!postcss-loader'
+      })
+    }, {
+      test: /\.js$/,
+      exclude: /node_modules/,
+      loaders: [
+        'babel-loader'
+      ]
+    }, {
+      test: /\.vue$/,
+      loaders: [
+        'vue-loader'
+      ]
+    }]
   },
   plugins: [
     new webpack.optimize.OccurrenceOrderPlugin(),
@@ -56,11 +50,19 @@ module.exports = {
       'process.env.NODE_ENV': '"production"'
     }),
     new webpack.optimize.UglifyJsPlugin({
-      output: {comments: false},
-      compress: {unused: true, dead_code: true, warnings: false} // eslint-disable-line camelcase
+      output: {
+        comments: false
+      },
+      compress: {
+        unused: true,
+        dead_code: true,
+        warnings: false
+      } // eslint-disable-line camelcase
     }),
     new ExtractTextPlugin('index-[contenthash].css'),
-    new webpack.optimize.CommonsChunkPlugin({name: 'vendor'}),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor'
+    }),
     new webpack.LoaderOptionsPlugin({
       options: {
         postcss: () => [autoprefixer]
@@ -76,3 +78,4 @@ module.exports = {
     vendor: Object.keys(pkg.dependencies)
   }
 };
+
