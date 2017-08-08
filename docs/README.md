@@ -1,5 +1,24 @@
 # Trabajo Practico para TTADS 2017
 
+Frontend con nuevas tecnología para [The Movie DB](www.themoviedb.org)
+
+``` javascript
+var tp = {
+  año: 2017
+  integrantes : [{
+    nombre : "Marani Matias Ezequiel",
+    legajo : 39710
+  }, {
+    nombre : "",
+    legajo :
+  }, {
+    nombre : "",
+    legajo :
+  }]
+}
+console.log(tp.integrantes);
+```
+
 ## Introducción.
 
 bla bla bla :D
