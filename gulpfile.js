@@ -12,10 +12,11 @@ const hub = new HubRegistry([conf.path.tasks('*.js')]);
 gulp.registry(hub);
 
 gulp.task('docs', function(cb) {
-  gulp.src(['README.md', './src/**/*.js'], {
+  let config = require('./conf/jsdoc.conf.json');
+  gulp.src(['README.md', './src/**/*.vue','./src/**/*.js','./docs/README.md'], {
       read: false
     })
-    .pipe(jsdoc(cb));
+    .pipe(jsdoc(config,cb));
 });
 
 gulp.task('build', gulp.series(gulp.parallel('other', 'webpack:dist')));

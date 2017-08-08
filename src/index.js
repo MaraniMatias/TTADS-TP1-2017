@@ -17,6 +17,9 @@ const router = new VueRouter({
   ]
 });
 
+/*
+* ## Esporta algo
+*/
 export default new Vue({
   el: '#root',
   router,
