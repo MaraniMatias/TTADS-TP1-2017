@@ -3,6 +3,7 @@ node_modules/
 docs/jsdoc/
 dist/
 .tmp/
+old/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
