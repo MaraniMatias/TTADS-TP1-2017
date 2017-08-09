@@ -1,3 +1,6 @@
+/*
+ * Configuracion para test
+ */
 const webpack = require('webpack');
 module.exports = {
   module: {
@@ -26,7 +29,9 @@ module.exports = {
   },
   plugins: [
     new webpack.LoaderOptionsPlugin({
-      options: {},
+      options: {
+        minimize: true
+      },
       debug: true
     })
   ],

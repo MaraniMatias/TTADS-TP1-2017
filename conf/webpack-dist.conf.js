@@ -1,3 +1,6 @@
+/*
+ * Configuracion para release
+ */
 const webpack = require('webpack');
 const conf = require('./gulp.conf');
 const path = require('path');
@@ -74,7 +77,7 @@ module.exports = {
     filename: '[name]-[hash].js'
   },
   entry: {
-    app: `./${conf.path.src('index')}`,
+    entry: `./${conf.path.src('app/index')}`,
     vendor: Object.keys(pkg.dependencies)
   }
 };
