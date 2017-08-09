@@ -1,6 +1,6 @@
 # Trabajo Practico para TTADS 2017
 
-Frontend con nuevas tecnología para [The Movie DB](www.themoviedb.org)
+__Frontend con nuevas tecnología para [The Movie DB](www.themoviedb.org)__
 
 ``` javascript
 var tp = {
@@ -23,7 +23,21 @@ console.log(tp.integrantes);
 
 bla bla bla :D
 
-## Build Setup
+## Planificación.
+
+Acordamos dedicar un mínimo de 5hs semanales.
+
+Planeamos tener la aplicación andado para 27 de Septiembre 2017.
+
+### Reuniones de avance
+
+|Fecha|Tareas completadas desde la última reunión| Blockers |Tareas a realizar hasta la próxima reunión|
+|-----|------------------------------------------|----------|------------------------------------------|
+|09-08| leer documentación sobre las tecnologías, base del proyecto, repositorio git |unir vuex con la base| Lista de películas en portada |
+
+## Documentación.
+
+### Build Setup
 
 ``` bash
 # install dependencies
@@ -39,7 +53,9 @@ npm run build
 npm run build --report
 ```
 
-## Tests
+### Tests
+
+__En desarrollo - No contemplados__
 
 ``` bash
 # run unit tests
@@ -52,7 +68,9 @@ npm run e2e
 npm test
 ```
 
-## Documentación y aplicación online.
+### Entregables Online
+
+Documentación Online. _(Aplicación pendiente)_
 
 ``` bash
 # run build app and JSdoc
