@@ -4,8 +4,8 @@ var webpack = require('webpack');
 module.exports = {
   entry: './src/index.js',
   output: {
-    path: path.resolve(__dirname, './docs'),
-    publicPath: '/online-app/',
+    path: path.resolve(__dirname, './dist'),
+    publicPath: '/dist/',
     filename: 'build.js'
   },
   module: {
@@ -15,13 +15,16 @@ module.exports = {
         'style-loader',
         'css-loader',
         'less-loader'
-//        'postcss-loader'
+        //        'postcss-loader'
       ]
     }, {
       test: /\.json$/,
       loaders: [
         'json-loader'
       ]
+    }, {
+      test: /\.pug$/,
+      loader: 'pug-loader',
     }, {
       test: /\.vue$/,
       loader: 'vue-loader',

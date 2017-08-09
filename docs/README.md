@@ -29,6 +29,11 @@ Acordamos dedicar un mínimo de 5hs semanales.
 
 Planeamos tener la aplicación andado para 27 de Septiembre 2017.
 
+fechas intermedias
+
+El equipo deberá planificar y patuar entregas del trabajo práctico con el equipo docente. Indicando las fechas de entrega el alcance y los criterios de aceptación.
+
+
 ### Reuniones de avance
 
 |Fecha|Tareas completadas desde la última reunión| Blockers |Tareas a realizar hasta la próxima reunión|
