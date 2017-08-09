@@ -2,12 +2,16 @@
   "name": "tp-2017",
   "version": "1.0.0",
   "description": "Trabajo Practico para TTADS 2017",
-  "author": [
-    {
-      "name": "Marani Matias Ezequiel",
-      "email": "maranimatias@gmail.com"
-    }
-  ],
+  "author": [{
+    "nombre": "Arian Valles",
+    "email": "arian.valles@outlook.com"
+  }, {
+    "nombre": "Andrés de la Grana",
+    "email": "andresdlg21@gmail.com"
+  }, {
+    "name": "Marani Matias Ezequiel",
+    "email": "maranimatias@gmail.com"
+  }],
   "private": false,
   "license": "MIT",
   "dependencies": {
@@ -47,3 +51,4 @@
     "npm": ">= 5.3.0"
   }
 }
+

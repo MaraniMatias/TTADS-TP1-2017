@@ -9,11 +9,11 @@ var tp = {
     nombre : "Marani Matias Ezequiel",
     legajo : 39710
   }, {
-    nombre : "",
-    legajo :
+    nombre : "Arian Valles",
+    legajo : 41556
   }, {
-    nombre : "",
-    legajo :
+    nombre : "Andrés de la Grana",
+    legajo : 41034
   }]
 }
 console.log(tp.integrantes);
@@ -25,20 +25,21 @@ bla bla bla :D
 
 ## Planificación.
 
-Acordamos dedicar un mínimo de 5hs semanales.
+Acordamos dedicar un mínimo de 5 hs semanales.
 
 Planeamos tener la aplicación andado para 27 de Septiembre 2017.
 
-fechas intermedias
+Indicando las fechas de entrega el alcance y los criterios de aceptación.
 
-El equipo deberá planificar y patuar entregas del trabajo práctico con el equipo docente. Indicando las fechas de entrega el alcance y los criterios de aceptación.
-
+- Pagina principal - para el 16-08 - listado de las películas con css mínimos.
+-
 
 ### Reuniones de avance
 
 |Fecha|Tareas completadas desde la última reunión| Blockers |Tareas a realizar hasta la próxima reunión|
 |-----|------------------------------------------|----------|------------------------------------------|
-|09-08| leer documentación sobre las tecnologías, base del proyecto, repositorio git |unir vuex con la base| Lista de películas en portada |
+|09-08| leer documentación sobre las tecnologías, base del proyecto, repositorio git || unir vuex con la base| listado de las ultimas películas con css minimos |
+|     |  |   |  |
 
 ## Documentación.
 
@@ -122,14 +123,4 @@ _Por si hay tiempo :D_
 * [Mocha](https://mochajs.org/)
 * [Nightwatch](http://nightwatchjs.org/)
 * [jsdoc](https://github.com/jsdoc3/jsdoc) [ejemplo](https://github.com/docstrap/docstrap/tree/master/fixtures)
-
-
-# Reuniones de avance.
-
-# Entregas.
-
-| Tareas completadas | Blockers | Tareas a realizar | acciones correctivas |
-|--------------------|----------|-------------------|----------------------|
-|                    |          |                   |                      |
-
 
