@@ -1,7 +1,4 @@
 {
-  "presets": [
-    ["latest", {
-      "es2015": { "modules": false }
-    }]
-  ]
+  "presets": ["es2015"],
+  "plugins": ["transform-object-rest-spread"]
 }

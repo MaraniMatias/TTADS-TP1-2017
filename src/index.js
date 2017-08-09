@@ -1,18 +1,18 @@
 /*
  * VueJS y plugin generales.
  */
-import './index.less';
+import './app/index.less';
 import Vue from 'vue';
 import Vuex from 'vuex';
 import VueRouter from 'vue-router';
 Vue.use(Vuex);
 Vue.use(VueRouter);
-import store from './store';
+import store from './app/store';
 /*
  * Componetes
  */
-import AppVuex from './components/vuex.vue';
-import Hello from './components/Hello.vue';
+import AppVuex from './app/components/vuex.vue';
+import Hello from './app/components/Hello.vue';
 /*
  * Jugar con las URL desde el navegador.
  */

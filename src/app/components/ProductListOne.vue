@@ -12,16 +12,17 @@
 </template>
 
 <script>
-import {mapActions, mapGetters} from 'vuex';
+import {mapActions} from 'vuex';
+import {mapGetters} from 'vuex';
 
 export default {
   computed: {
-    saleProducts () {
-      return this.$store.getters.saleProducts
-    },
-    products () {
+    products(){
       return this.$store.state.products;
-    }
+    },
+      ...mapGetters([
+        'saleProducts'
+      ])
   },
   methods: {
     ...mapActions([
@@ -53,3 +54,4 @@ export default {
   color: #E8800C;
 }
 </style>
+
