@@ -4,7 +4,7 @@ __Frontend con nuevas tecnología para [The Movie DB](www.themoviedb.org)__
 
 ``` javascript
 var tp = {
-  año: 2017
+  anio: 2017
   integrantes : [{
     nombre : "Andrés de la Grana",
     legajo : 41034
