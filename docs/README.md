@@ -6,14 +6,14 @@ __Frontend con nuevas tecnología para [The Movie DB](www.themoviedb.org)__
 var tp = {
   año: 2017
   integrantes : [{
-    nombre : "Marani Matias Ezequiel",
-    legajo : 39710
+    nombre : "Andrés de la Grana",
+    legajo : 41034
   }, {
     nombre : "Arian Valles",
     legajo : 41556
   }, {
-    nombre : "Andrés de la Grana",
-    legajo : 41034
+    nombre : "Marani Matias Ezequiel",
+    legajo : 39710
   }]
 }
 console.log(tp.integrantes);
