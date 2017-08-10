@@ -10,30 +10,24 @@ module.exports = {
   },
   module: {
     rules: [{
+      test: /\.pug$/,
+      use: {
+        loader: 'pug-loader',
+        options: {
+          globals: {}
+        }
+      },
+    }, {
       test: /\.(css|less)$/,
-      loaders: [
-        'style-loader',
-        'css-loader',
-        'less-loader'
-        //        'postcss-loader'
-      ]
+      loaders: ['style-loader', 'css-loader', 'less-loader'] // 'postcss-loader'
     }, {
       test: /\.json$/,
-      loaders: [
-        'json-loader'
-      ]
-    }, {
-      test: /\.pug$/,
-      loader: 'pug-loader',
-      options:{
-        globals:{},
-      }
+      loader: 'json-loader'
     }, {
       test: /\.vue$/,
       loader: 'vue-loader',
       options: {
         loaders: {}
-        // other vue-loader options go here
       }
     }, {
       test: /\.js$/,
@@ -53,8 +47,10 @@ module.exports = {
     }
   },
   devServer: {
+    //contentBase: path.join(__dirname, "/"),
+    compress: true,
     historyApiFallback: true,
-    noInfo: true
+    noInfo: false
   },
   performance: {
     hints: false

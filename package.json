@@ -2,20 +2,16 @@
   "name": "tp-2017",
   "version": "1.0.0",
   "description": "Trabajo Practico para TTADS 2017",
-  "author": [
-    {
-      "nombre": "Arian Valles",
-      "email": "arian.valles@outlook.com"
-    },
-    {
-      "nombre": "Andrés de la Grana",
-      "email": "andresdlg21@gmail.com"
-    },
-    {
-      "name": "Marani Matias Ezequiel",
-      "email": "maranimatias@gmail.com"
-    }
-  ],
+  "author": [{
+    "nombre": "Arian Valles",
+    "email": "arian.valles@outlook.com"
+  }, {
+    "nombre": "Andrés de la Grana",
+    "email": "andresdlg21@gmail.com"
+  }, {
+    "name": "Marani Matias Ezequiel",
+    "email": "maranimatias@gmail.com"
+  }],
   "private": false,
   "license": "MIT",
   "dependencies": {
@@ -38,6 +34,7 @@
     "less-loader": "~2.2.3",
     "postcss-loader": "^2.0.6",
     "pug": "~2.0.0-rc.3",
+    "pug-loader": "^2.3.0",
     "semantic-ui-css": "~2.2.12",
     "style-loader": "^0.13.2",
     "vue-loader": "^13.0.4",
@@ -54,3 +51,4 @@
     "npm": ">= 5.3.0"
   }
 }
+
