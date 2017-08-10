@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <P>{{name}}</P>
+      {{name}}
       <product-list-one></product-list-one>
       <product-list-two></product-list-two>
   </div>
