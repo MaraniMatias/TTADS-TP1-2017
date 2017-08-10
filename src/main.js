@@ -3,11 +3,14 @@
  */
 import './index.less';
 import Vue from 'vue';
+import Vuex from 'vuex';
 import VueRouter from 'vue-router';
 import VueResource from 'vue-resource';
 Vue.use(VueRouter);
 Vue.use(VueResource);
-//import store from './store';
+Vue.use(Vuex);
+import store from './store';
+
 /*
  * Componetes
  */
@@ -15,15 +18,18 @@ import addBlog from './components/vue/addBlog.vue';
 import showBlogs from './components/vue/showBlogs.vue';
 import singleBlog from './components/vue/singleBlog.vue';
 import App from './components/vuejs.vue';
-
+import showBlogsVuex from './components/showBlogsVuex.vue';
 /*
  * Jugar con las URL desde el navegador.
  */
 const router = new VueRouter({
-  mode: 'history', // porque???
+  mode: 'history', // navega sin recargar pag y sin #
   routes: [{
     path: '/',
     component: showBlogs
+  }, {
+    path: '/vuex',
+    component: showBlogsVuex
   }, {
     path: '/add',
     component: addBlog
@@ -38,7 +44,7 @@ const router = new VueRouter({
 export default new Vue({
   el: '#root',
   router,
-  //  store,
+  store: new Vuex.Store(store),
   render: h => h(App)
 });
 
