@@ -1,9 +1,8 @@
-<template>
-  <div id="app">
-      {{name}}
-      <product-list-one></product-list-one>
-      <product-list-two></product-list-two>
-  </div>
+<template lang="pug">
+  #app.ui.main.text.container
+    {{name}}
+    productlist-one
+    productlist-two
 </template>
 
 <script>
@@ -11,22 +10,22 @@ import ProductListOne from './components/ProductListOne.vue'
 import ProductListTwo from './components/ProductListTwo.vue'
 
 export default {
-    name: 'app',
-        data() {
+  name: 'app',
+  data() {
     return {
-    name:"asda"
+      name:"asda"
     };
   },
-    components: {
-        'product-list-one': ProductListOne,
-        'product-list-two': ProductListTwo
-    }
+  components: {
+    'productlist-one': ProductListOne,
+      'productlist-two': ProductListTwo
+  }
 }
 </script>
 
 <style>
 body{
-    font-family: Ubuntu;
-    color: #555;
+  font-family: Ubuntu;
+  color: #555;
 }
 </style>
