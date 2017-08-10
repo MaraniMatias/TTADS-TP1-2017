@@ -1,45 +1,62 @@
-export default {
-  strict: true,
-  state: {
-    products: [{
-      name: 'Banana Skin',
-      price: 20
-    }, {
-      name: 'Shiny Star',
-      price: 40
-    }, {
-      name: 'Green Shells',
-      price: 60
-    }, {
-      name: 'Red Shells',
-      price: 80
-    }]
-  },
-  getters: {
-    saleProducts: state => {
-      const saleProducts = state.products.map(product => {
-        return {
-          name: '**' + product.name + '**',
-          price: product.price / 2
-        };
-      });
-      return saleProducts;
-    }
-  },
-  mutations: {
-    reducePrice: (state, payload) => {
-      state.products.forEach(product => {
-        product.price -= payload;
-      });
-    }
-  },
-  actions: {
-    reducePrice: (context, payload) => {
-      setTimeout(() => {
-        // reach out for data
-        context.commit('reducePrice', payload);
-      }, 2000);
-    }
-  }
-};
+import Vuex from 'vuex';
+import Vue from 'vue';
+import {
+  Resource,
+  createStore
+} from 'vuex-rest-api';
+
+Vue.use(Vuex);
+
+const resource = new Resource('https://jsonplaceholder.typicode.com')
+  .addAction({
+    action: 'listPosts',
+    method: 'get',
+    property: "posts",
+    pathFn: () => `/posts`
+  })
+  .addAction({
+    action: 'getPost',
+    method: 'get',
+    property: "posts",
+    pathFn: ({
+      id
+    }) => `/posts/${id}`
+  })
+  .addAction({
+    action: 'updatePost',
+    method: 'put',
+    property: "post",
+    pathFn: ({
+      id
+    }) => `/posts/${id}`
+  })
+  .addAction({
+    action: 'deletePost',
+    method: 'delete',
+    property: "post",
+    pathFn: ({
+      id
+    }) => `/posts/${id}`
+  });
+
+const posts = createStore(resource);
+
+/*
+  listPosts(); => LIST_POSTS_SUCCEEDED | LIST_POSTS_FAILED
+  getPost({id: 5}); => GET_POST_SUCCEEDED | GET_POST_FAILED
+  updatePost({id: 12}, { message: "Edited"}); => UPDATE_POST_SUCCEEDED | UPDATE_POST_FAILED
+  deletePost({id: 3}); => DELETE_POST_SUCCEEDED | DELETE_POST_FAILED
+*/
+
+/*
+listPosts, "GET http://api.com/posts", state.posts,
+getPost, "GET http://api.com/posts/id", state.post,
+createPost, "POST http://api.com/posts", state.posts,
+updatePost, "PUT http://api.com/posts/2", state.posts,
+deletePost, "DELETE http://api.com/posts/2", state.posts
+*/
+
+export default new Vuex.Store({
+  ...posts
+});
 

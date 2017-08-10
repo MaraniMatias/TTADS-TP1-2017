@@ -1,8 +1,5 @@
 {
-  "presets": [
-    ["latest", {
-      "es2015": { "modules": false }
-    }]
-  ],
-  "plugins": ["transform-object-rest-spread"]
+  "presets": ["latest"],
+  "plugins": ["transform-object-rest-spread"],
+  "comments": false
 }

@@ -1,24 +1,21 @@
 <template lang="pug">
-  #app.ui.main.text.container
-    {{name}}
-    productlist-one
-    productlist-two
+#app.ui.main.text.container
+  p {{name}}
+  post-component
 </template>
 
 <script>
-import ProductListOne from './components/ProductListOne.vue'
-import ProductListTwo from './components/ProductListTwo.vue'
+import post from "./components/post.vue"
 
 export default {
   name: 'app',
   data() {
     return {
-      name:"asda"
+      name:"Example vue-rest-api"
     };
   },
   components: {
-    'productlist-one': ProductListOne,
-      'productlist-two': ProductListTwo
+    'post-component':post
   }
 }
 </script>
