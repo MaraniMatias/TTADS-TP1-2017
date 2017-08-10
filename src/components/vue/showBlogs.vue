@@ -1,10 +1,13 @@
 <template>
   <div id="show-blogs">
     <h1>All Blog Articles</h1>
-    <input type="text" v-model="search" placeholder="search blogs" />
-    <div v-for="blog in filteredBlogs" class="single-blog">
+    <div class="ui fluid icon input">
+      <input type="text" v-model="search" placeholder="search blogs" />
+      <i class="search icon"></i>
+    </div>
+    <div v-for="blog in filteredBlogs" class="ui tall stacked segment">
       <router-link v-bind:to="'/blog/' + blog.id"><h2>{{ blog.title }}</h2></router-link>
-      <article>{{ blog.body }}</article>
+      <p>{{ blog.body }}</p>
     </div>
   </div>
 </template>
@@ -19,6 +22,9 @@ export default {
       blogs: [],
       search: ''
     }
+  },
+  created() {
+    console.log('article',new Date());
   },
   created() {
     this.$http.get('http://jsonplaceholder.typicode.com/posts').then(function(data){
