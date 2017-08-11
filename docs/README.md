@@ -94,8 +94,8 @@ Librerías que usamos.
 * [vue](https://vuejs.org/)
   * [vue-router](https://github.com/vuejs/vue-router) [Doc ES](https://router.vuejs.org/es/)
   * [vux](https://github.com/vuejs/vuex)
-  * [vue-resource](https://github.com/pagekit/vue-resource) _para VueJS_
-  * [vuex-rest-api](https://github.com/christianmalek/vuex-rest-api) _para Vuex_
+  * [vue-resource](https://github.com/pagekit/vue-resource) _Promise base HTTP for VueJS object_
+  * [axios](https://github.com/mzabriskie/axios) _Promise based HTTP client_
 * [webpack](https://webpack.js.org/)
   * [templates](https://github.com/vuejs-templates/webpack-simple)
 * [semantic-ui](https://semantic-ui.com/)

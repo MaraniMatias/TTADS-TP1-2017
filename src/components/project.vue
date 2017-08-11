@@ -6,6 +6,7 @@
           Project List
         </div>
         <project-list></project-list>
+        <add-project></add-project>
         </div>
       </div>
     </div>
@@ -14,11 +15,13 @@
 
 <script>
 import projectList from './projectList.vue'
+import addProject from './addProject.vue'
 
 export default {
   name: 'projects',
   components: {
-    projectList
+    projectList,
+    addProject
   },
   mounted: function () {
     this.$store.dispatch('LOAD_PROJECT_LIST')

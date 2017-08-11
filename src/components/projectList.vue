@@ -7,6 +7,7 @@
           <th>Assigned To</th>
           <th>Priority</th>
           <th>Completed</th>
+          <th>toggle</th>
         </tr>
       </thead>
       <tbody>
@@ -15,6 +16,7 @@
           <td>{{item.assignedTo}}</td>
           <td>{{item.priority}}</td>
           <td><i v-if="item.completed" class="fa fa-check"></i></td>
+          <td><complete-toggle :item="item" /></td>
         </tr>
       </tbody>
     </table>
