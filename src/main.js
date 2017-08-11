@@ -18,7 +18,7 @@ import addBlog from './components/vue/addBlog.vue';
 import showBlogs from './components/vue/showBlogs.vue';
 import singleBlog from './components/vue/singleBlog.vue';
 import App from './components/vuejs.vue';
-import showBlogsVuex from './components/showBlogsVuex.vue';
+import proyectos from './components/project.vue';
 /*
  * Jugar con las URL desde el navegador.
  */
@@ -29,7 +29,7 @@ const router = new VueRouter({
     component: showBlogs
   }, {
     path: '/vuex',
-    component: showBlogsVuex
+    component: proyectos
   }, {
     path: '/add',
     component: addBlog
