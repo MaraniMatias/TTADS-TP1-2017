@@ -6,8 +6,8 @@ const parameterKey = "api_key=" + apiKey;
 
 export default {
   /////////////////////////////
-  loadMovieDiscover: function({ commit }) {
-    axios.get(baseURL + '/discover/movie?' + parameterKey).then((response) => {
+  loadMovieDiscover: function({ commit,state },page) {
+    axios.get(baseURL + '/discover/movie?' + parameterKey+'&sort_by=release_date.desc&page='+page).then((response) => {
       commit('set_discover_movie', { discover: response.data });
     }, (err) => {
       console.error(err);

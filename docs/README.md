@@ -104,8 +104,9 @@ Librerías que usamos.
 
 Ejemplos.
 * https://github.com/coligo-io/notes-app-vuejs-vuex
-* https://github.com/iamshaunjp/vuejs-playlist
-* https://github.com/iamshaunjp/vuex-playlist
+* https://github.com/iamshaunjp/vuejs-playlist _(ver ramas)_
+* https://github.com/iamshaunjp/vuex-playlist _(ver ramas)_
+* https://medium.com/wdstack/vue-vuex-getting-started-f78c03d9f65
 
 Herramientas.
 * [generator-fountain-webapp](https://github.com/fountainjs/generator-fountain-webapp)
