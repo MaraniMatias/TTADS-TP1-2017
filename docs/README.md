@@ -93,7 +93,7 @@ Generales.
 Librerías que usamos.
 * [vue](https://vuejs.org/)
   * [vue-router](https://github.com/vuejs/vue-router) [Doc ES](https://router.vuejs.org/es/)
-  * [vux](https://github.com/vuejs/vuex)
+  * [vuex](https://github.com/vuejs/vuex)
   * [vue-resource](https://github.com/pagekit/vue-resource) _Promise base HTTP for VueJS object_
   * [axios](https://github.com/mzabriskie/axios) _Promise based HTTP client_
 * [webpack](https://webpack.js.org/)
