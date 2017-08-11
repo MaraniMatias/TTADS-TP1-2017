@@ -50,7 +50,7 @@ module.exports = {
     //contentBase: path.join(__dirname, "/"),
     compress: true,
     historyApiFallback: false,
-    noInfo: false
+    noInfo: true
   },
   performance: {
     hints: false

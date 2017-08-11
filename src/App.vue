@@ -1,27 +1,25 @@
 <template lang="pug">
 #app.ui.main.text.container
-  p {{name}}
-  post-component
+  app-header
+  router-view
 </template>
 
 <script>
-import post from "./components/post.vue"
+import header from './components/header.vue';
 
 export default {
-  name: 'app',
-  data() {
-    return {
-      name:"Example vue-rest-api"
-    };
-  },
   components: {
-    'post-component':post
-  }
+    'app-header': header
+  },
+  data () {
+    return {}
+  },
+  methods: {}
 }
 </script>
 
 <style>
-body{
+body {
   font-family: Ubuntu;
   color: #555;
 }

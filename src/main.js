@@ -14,11 +14,8 @@ import store from './store';
 /*
  * Componetes
  */
-import addBlog from './components/vue/addBlog.vue';
-import showBlogs from './components/vue/showBlogs.vue';
-import singleBlog from './components/vue/singleBlog.vue';
-import App from './components/vuejs.vue';
-import proyectos from './components/project.vue';
+import App from './App.vue';
+import deiscoverMovie from './components/discover.vue';
 /*
  * Jugar con las URL desde el navegador.
  */
@@ -26,8 +23,8 @@ const router = new VueRouter({
   mode: 'history', // navega sin recargar pag y sin #
   routes: [{
     path: '/',
-    component: showBlogs
-  }, {
+    component: deiscoverMovie
+  }/*, {
     path: '/vuex',
     component: proyectos
   }, {
@@ -36,7 +33,7 @@ const router = new VueRouter({
   }, {
     path: '/blog/:id',
     component: singleBlog
-  }]
+  }*/]
 });
 /*
  * Construye la app apartir del elemento con id root.
