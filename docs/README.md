@@ -4,16 +4,16 @@ __Frontend con nuevas tecnología para [The Movie DB](www.themoviedb.org)__
 
 ``` javascript
 var tp = {
-  año: 2017
+  anio: 2017
   integrantes : [{
-    nombre : "Marani Matias Ezequiel",
-    legajo : 39710
+    nombre : "Andrés de la Grana",
+    legajo : 41034
   }, {
     nombre : "Arian Valles",
     legajo : 41556
   }, {
-    nombre : "Andrés de la Grana",
-    legajo : 41034
+    nombre : "Marani Matias Ezequiel",
+    legajo : 39710
   }]
 }
 console.log(tp.integrantes);
@@ -93,9 +93,9 @@ Generales.
 Librerías que usamos.
 * [vue](https://vuejs.org/)
   * [vue-router](https://github.com/vuejs/vue-router) [Doc ES](https://router.vuejs.org/es/)
-  * [vux](https://github.com/vuejs/vuex)
-  * [vue-resource](https://github.com/pagekit/vue-resource)
-  * [vuex-rest-api](https://github.com/christianmalek/vuex-rest-api)
+  * [vuex](https://github.com/vuejs/vuex)
+  * [vue-resource](https://github.com/pagekit/vue-resource) _Promise base HTTP for VueJS object_
+  * [axios](https://github.com/mzabriskie/axios) _Promise based HTTP client_
 * [webpack](https://webpack.js.org/)
   * [templates](https://github.com/vuejs-templates/webpack-simple)
 * [semantic-ui](https://semantic-ui.com/)
@@ -104,8 +104,9 @@ Librerías que usamos.
 
 Ejemplos.
 * https://github.com/coligo-io/notes-app-vuejs-vuex
-* https://github.com/iamshaunjp/vuejs-playlist
-* https://github.com/iamshaunjp/vuex-playlist
+* https://github.com/iamshaunjp/vuejs-playlist _(ver ramas)_
+* https://github.com/iamshaunjp/vuex-playlist _(ver ramas)_
+* https://medium.com/wdstack/vue-vuex-getting-started-f78c03d9f65
 
 Herramientas.
 * [generator-fountain-webapp](https://github.com/fountainjs/generator-fountain-webapp)

@@ -5,49 +5,35 @@ import './index.less';
 import Vue from 'vue';
 import Vuex from 'vuex';
 import VueRouter from 'vue-router';
-import VueResource from 'vue-resource';
-Vue.use(Vuex);
 Vue.use(VueRouter);
-Vue.use(VueResource);
+Vue.use(Vuex);
 import store from './store';
+
 /*
  * Componetes
  */
-import addBlog from './components/vue/addBlog.vue';
-import showBlogs from './components/vue/showBlogs.vue';
-import singleBlog from './components/vue/singleBlog.vue';
-import vuejs from './components/vuejs.vue';
-
-import AppVuex from './components/vuex.vue';
-import Hello from './components/Hello.vue';
+import App from './App.vue';
+import deiscoverMovie from './components/discover.vue';
 /*
  * Jugar con las URL desde el navegador.
  */
 const router = new VueRouter({
-  mode: 'history', // porque???
+  mode: 'history', // navega sin recargar pag y sin #
   routes: [{
-    path: '/',
-    components: {
-      default: Hello
+      path: '/',
+      component: deiscoverMovie
     }
-  }, {
-    path: '/vuex',
-    components: {
-      default: AppVuex
-    }
-  },  {
-    path: '/vue',
-    component: vuejs
-  },{
-    path: '/blog',
-    component: showBlogs
-  }, {
-    path: '/blog/add',
-    component: addBlog
-  }, {
-    path: '/blog/blog/:id',
-    component: singleBlog
-  }]
+    /*, {
+        path: '/vuex',
+        component: proyectos
+      }, {
+        path: '/add',
+        component: addBlog
+      }, {
+        path: '/blog/:id',
+        component: singleBlog
+      }*/
+  ]
 });
 /*
  * Construye la app apartir del elemento con id root.
@@ -55,6 +41,8 @@ const router = new VueRouter({
 export default new Vue({
   el: '#root',
   router,
+  strict: true, // In strict mode any mutations to Vuex state outside of mutation handlers will throw an Error.
   store: new Vuex.Store(store),
-  render: h => h('router-view')
+  render: h => h(App)
 });
+

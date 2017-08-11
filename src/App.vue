@@ -1,32 +1,27 @@
-<template>
-  <div id="app">
-      {{name}}
-      <product-list-one></product-list-one>
-      <product-list-two></product-list-two>
-  </div>
+<template lang="pug">
+#app
+  app-header
+  .ui.main.container
+    router-view
 </template>
 
 <script>
-import ProductListOne from './components/ProductListOne.vue'
-import ProductListTwo from './components/ProductListTwo.vue'
+import header from './components/header.vue';
 
 export default {
-    name: 'app',
-        data() {
-    return {
-    name:"asda"
-    };
+  components: {
+    'app-header': header
   },
-    components: {
-        'product-list-one': ProductListOne,
-        'product-list-two': ProductListTwo
-    }
+  data () {
+    return {}
+  },
+  methods: {}
 }
 </script>
 
 <style>
-body{
-    font-family: Ubuntu;
-    color: #555;
+body {
+  font-family: Ubuntu;
+  color: #555;
 }
 </style>

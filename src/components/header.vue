@@ -1,10 +1,12 @@
 <template>
-  <nav>
-    <ul>
-      <li><router-link to="/" exact>Blog</router-link></li>
-      <li><router-link to="/add" exact>Add a new blog</router-link></li>
-    </ul>
-  </nav>
+  <div class="ui inverted menu">
+    <a class="item">
+      <router-link to="/" exact>Blog</router-link>
+    </a>
+    <a class="item">
+      <router-link to="/add" exact>Add a new blog</router-link>
+    </a>
+  </div>
 </template>
 
 <script>
@@ -32,7 +34,7 @@ nav{
   padding: 14px 0;
   margin-bottom: 40px;
 }
-.router-link-active{
+.ui.inverted.menu a .router-link-active{
   background: #eee;
   color: #444;
 }
