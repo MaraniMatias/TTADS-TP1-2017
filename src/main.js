@@ -14,26 +14,20 @@ import store from './store';
  */
 import App from './App.vue';
 import deiscoverMovie from './components/discover.vue';
+import movie from './components/movie.vue';
 /*
  * Jugar con las URL desde el navegador.
  */
 const router = new VueRouter({
   mode: 'history', // navega sin recargar pag y sin #
   routes: [{
-      path: '/',
-      component: deiscoverMovie
-    }
-    /*, {
-        path: '/vuex',
-        component: proyectos
-      }, {
-        path: '/add',
-        component: addBlog
-      }, {
-        path: '/blog/:id',
-        component: singleBlog
-      }*/
-  ]
+    path: '/',
+    component: deiscoverMovie
+  }, {
+    name: "movie",
+    path: '/movie/:movieId',
+    component: movie
+  }]
 });
 /*
  * Construye la app apartir del elemento con id root.
