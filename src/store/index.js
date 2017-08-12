@@ -4,11 +4,13 @@ import getters from './getters.js';
 
 export default {
   state: {
-    discover: {}
+    discover: {
+      results: []
+    }
   },
   actions,
   mutations,
-  getters ,
+  getters,
   modules: {}
 };
 

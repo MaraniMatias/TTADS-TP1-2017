@@ -7,12 +7,19 @@ const parameterKey = "api_key=" + apiKey;
 export default {
   /////////////////////////////
   loadMovieDiscover: function({ commit,state },page) {
-    axios.get(baseURL + '/discover/movie?' + parameterKey+'&sort_by=release_date.desc&page='+page).then((response) => {
+    axios.get(baseURL + "/discover/movie?" + parameterKey+"&sort_by=release_date.desc&page="+page).then((response) => {
       commit('set_discover_movie', { discover: response.data });
     }, (err) => {
       console.error(err);
     });
   },
+  gerMovieInfo: function({commit,state},movieId){
+    axios.get(baseURL+"/movie/"+movieId+"?"+parameterKey).then((response)=>{
+
+    },(err)=>{
+      console.error(err);
+    });
+  }
   //////////////////////////////
 /*  TOGGLE_COMPLETED: function({
     commit,

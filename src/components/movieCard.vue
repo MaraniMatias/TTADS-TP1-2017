@@ -30,7 +30,6 @@ export default {
   methods: {
     goMovie: function(){
       this.$router.push( { name: 'movie', params: { movieId: this.movieId }} );
-      console.log("go",this.movieId);
     }
   },
   mounted: function () { }

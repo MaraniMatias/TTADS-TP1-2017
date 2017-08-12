@@ -1,12 +1,15 @@
 <template lang="pug">
 #movie
-  h1 Movie Discover
+  h1 Movie {{movie.title}} ({{movie.release_date}})
   .ui.grid
     .four.wide.column
       .four.wide.column
-        p {{movie}}
-        // components decripcion de la palicuala, y opcion a mas informacion
-        // components de comentarios, y ver como sub dividir en components
+        // components decripcion de la palicuala , ver como sub dividir en components
+        p overview {{movie.overview}}
+        P User score {{movie.vote_average}}
+        p popularity {{movie.popularity}}
+        pre {{movie}}
+        // opcion a más informacion,ver Reviews y el resto de la info que traela API (la ifo adecuada :D).
 </template>
 
 <script>
@@ -16,7 +19,7 @@ export default {
   name: 'movie',
   data(){
     return {
-      id: this.$route.params.id,
+      id: this.$route.params.movieId,
       movie: {}
     }
   },
@@ -25,10 +28,8 @@ export default {
     'getMovie'
   ]),
   mounted: function () {
-  //  this.$store.dispatch('loadMovieDiscover',this.page)
-    console.log(this.id);
-   this.movie = this.$store.getters.getMovie(this.id);
+    this.movie = this.$store.getters.getMovie(this.id);
   },
-  created() {}
+  created() { }
 }
 </script>
