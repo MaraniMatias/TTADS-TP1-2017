@@ -2,7 +2,7 @@ var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
-  entry: './src/main.js',
+  entry: ['./src/main.js'],
   output: {
     path: path.resolve(__dirname, './docs/online-app'),
     publicPath: '/',
@@ -53,9 +53,9 @@ module.exports = {
     noInfo: true
   },
   performance: {
-    hints: false
+    hints: 'warning' //'error'  false
   },
-  devtool: '#eval-source-map'
+  devtool: 'eval-source-map'
 };
 
 if (process.env.NODE_ENV === 'production') {
