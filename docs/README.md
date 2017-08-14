@@ -117,6 +117,7 @@ Otras librerías.
 * [vue-simple-boilerplate](https://github.com/vuejs-templates/simple)
 * [vee-validate](https://github.com/baianat/vee-validate)
 * [http-server](https://www.npmjs.com/package/http-server)
+* [vue-axios](https://github.com/imcvampire/vue-axios)
 
 Test & Documentación del código.
 _Por si hay tiempo :D_
