@@ -124,5 +124,4 @@ _Por si hay tiempo :D_
 * [Karma](https://github.com/karma-runner/karma)
 * [Mocha](https://mochajs.org/)
 * [Nightwatch](http://nightwatchjs.org/)
-* [jsdoc](https://github.com/jsdoc3/jsdoc) [ejemplo](https://github.com/docstrap/docstrap/tree/master/fixtures)
-
+* [phantomjs](http://phantomjs.org/)
