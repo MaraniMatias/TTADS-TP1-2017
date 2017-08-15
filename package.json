@@ -27,6 +27,7 @@
   "devDependencies": {
     "babel-core": "~6.23.1",
     "babel-loader": "~6.3.2",
+    "babel-plugin-istanbul": "^4.1.4",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-preset-latest": "~6.24.1",
     "chai": "^4.1.1",
