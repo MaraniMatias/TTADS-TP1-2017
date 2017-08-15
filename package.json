@@ -63,9 +63,11 @@
     "webpack-dev-server": "~2.7.1"
   },
   "scripts": {
-    "start": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
+    "start": "cross-env NODE_ENV=development npm run webpack-server --open --hot",
     "unit": "cross-env NODE_ENV=testing karma start ./test/unit/karma.conf.js --single-run",
-    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
+    "build": "cross-env NODE_ENV=production npm run webpack --progress --hide-modules",
+    "webpack": "./node_modules/.bin/webpack",
+    "webpack-server": "./node_modules/.bin/webpack-dev-server",
     "test": "npm run unit"
   },
   "engines": {
