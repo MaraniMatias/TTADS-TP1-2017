@@ -9,6 +9,11 @@ module.exports = {
   },
   module: {
     rules: [ {
+      test: /\.js$/,
+      enforce: "pre", // preload the jshint loader
+      exclude: /node_modules/,
+      use: [ { loader: "jshint-loader" } ]
+      }, {
       test: /\.pug$/,
       use: {
         loader: 'pug-loader',
@@ -91,18 +96,5 @@ if ( process.env.NODE_ENV === 'testing' ) {
           NODE_ENV: '"testing"'
         }
       } )
-    /*,
-    // supongo un entorno parecido a producion si es que se puede
-    new webpack.optimize.UglifyJsPlugin({
-      sourceMap: true,
-      compress: {
-        unused: true,
-        dead_code: true,
-        warnings: false
-      }
-    }),
-    new webpack.LoaderOptionsPlugin({
-      minimize: true
-    })*/
   ] );
 }
