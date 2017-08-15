@@ -94,13 +94,27 @@ Librerías que usamos.
 * [vue](https://vuejs.org/)
   * [vue-router](https://github.com/vuejs/vue-router) [Doc ES](https://router.vuejs.org/es/)
   * [vuex](https://github.com/vuejs/vuex)
-  * [vue-resource](https://github.com/pagekit/vue-resource) _Promise base HTTP for VueJS object_
   * [axios](https://github.com/mzabriskie/axios) _Promise based HTTP client_
 * [webpack](https://webpack.js.org/)
   * [templates](https://github.com/vuejs-templates/webpack-simple)
 * [semantic-ui](https://semantic-ui.com/)
 * [Less](lesscss.org)
 * [pugjs](pugjs.org) es para HTML como less para los CSS [HTML2PUG](https://www.beautifyconverter.com/html-to-jade-converter.php)
+
+Test & Herramientas de Código.
+* [jshint](https://github.com/jshint/jshint)
+* [Karma](https://github.com/karma-runner/karma)
+* [Mocha](https://mochajs.org/)
+* [phantomjs](http://phantomjs.org/)
+* [Nightwatch](http://nightwatchjs.org/)
+
+Otras librerías.
+* [vue-resource](https://github.com/pagekit/vue-resource) _Promise base HTTP for VueJS object_
+* [vue-search-select](https://github.com/moreta/vue-search-select)
+* [vue-simple-boilerplate](https://github.com/vuejs-templates/simple)
+* [vee-validate](https://github.com/baianat/vee-validate)
+* [http-server](https://www.npmjs.com/package/http-server)
+* [vue-axios](https://github.com/imcvampire/vue-axios)
 
 Ejemplos.
 * https://github.com/coligo-io/notes-app-vuejs-vuex
@@ -109,19 +123,5 @@ Ejemplos.
 * https://medium.com/wdstack/vue-vuex-getting-started-f78c03d9f65
 
 Herramientas.
-* [generator-fountain-webapp](https://github.com/fountainjs/generator-fountain-webapp)
 * [vue-cli](https://github.com/vuejs/vue-cli)
-
-Otras librerías.
-* [vue-search-select](https://github.com/moreta/vue-search-select)
-* [vue-simple-boilerplate](https://github.com/vuejs-templates/simple)
-* [vee-validate](https://github.com/baianat/vee-validate)
-* [http-server](https://www.npmjs.com/package/http-server)
-* [vue-axios](https://github.com/imcvampire/vue-axios)
-
-Test & Documentación del código.
-_Por si hay tiempo :D_
-* [Karma](https://github.com/karma-runner/karma)
-* [Mocha](https://mochajs.org/)
-* [Nightwatch](http://nightwatchjs.org/)
-* [phantomjs](http://phantomjs.org/)
+* [generator-fountain-webapp](https://github.com/fountainjs/generator-fountain-webapp)
