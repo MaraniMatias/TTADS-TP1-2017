@@ -4,7 +4,7 @@ const baseURL = "https://api.themoviedb.org/3";
 const apiKey = "66ae687f31e3066ab23a1b7128278d17";
 const parameterKey = "?api_key=" + apiKey;
 export default {
-  authenticationGuest: function ( { commit, state } ) {
+  authenticationGuest: function ( { commit } ) {
     return axios.get( baseURL + "/authentication/guest_session/new" + parameterKey )
       .then( ( response ) => {
         commit( 'set_guest_session', response.data );

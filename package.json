@@ -67,9 +67,7 @@
     "unit": "cross-env NODE_ENV=testing karma start ./test/unit/karma.conf.js --single-run",
     "build": "cross-env NODE_ENV=production npm run webpack --progress --hide-modules",
     "webpack": "./node_modules/.bin/webpack",
-    "karma": "./node_modules/.bin/karma",
     "webpack-server": "./node_modules/.bin/webpack-dev-server",
-    "postinstall": "npm isntall -g karma",
     "test": "npm run unit"
   },
   "engines": {

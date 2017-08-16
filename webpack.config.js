@@ -58,7 +58,7 @@ module.exports = {
   },
   performance: {
     hints: 'warning',
-    maxAssetSize: 100000,
+    maxAssetSize: 300000,
     maxEntrypointSize: 3000000
   }
   //,devtool: 'eval-source-map'
