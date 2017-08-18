@@ -32,14 +32,14 @@ Planeamos tener la aplicación andado para 27 de Septiembre 2017.
 Indicando las fechas de entrega el alcance y los criterios de aceptación.
 
 - Pagina principal - para el 16-08 - listado de las películas con css mínimos.
--
+- Definir componentes y acomodar css - para el 12-08 - con sus css
 
 ### Reuniones de avance
 
 |Fecha|Tareas completadas desde la última reunión| Blockers |Tareas a realizar hasta la próxima reunión|
 |-----|------------------------------------------|----------|------------------------------------------|
-|09-08| leer documentación sobre las tecnologías, base del proyecto, repositorio git || unir vuex con la base| listado de las ultimas películas con css minimos |
-|     |  |   |  |
+|09-08| leer documentación sobre las tecnologías, base del proyecto, repositorio git || unir vuex con la base| listado de las ultimas películas con css mínimos |
+|17-08|Todo los integrantes del grupo conocen la base y como trabajar en el proyecto||realizar componentes en movie para mostrar la info de la película.|
 
 ## Documentación.
 
@@ -74,11 +74,11 @@ npm test
 
 ### Entregables Online
 
-Documentación Online. _(Aplicación pendiente)_
+Documentación Online por medio de este readme en github.io
 
 ``` bash
-# run build app and JSdoc
-npm run docs
+# run build app in online-app and using on github page.
+npm run build
 ```
 
 ## Material adicional.
