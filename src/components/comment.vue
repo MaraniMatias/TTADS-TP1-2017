@@ -2,7 +2,7 @@
 .ui.piled.segment
   .comment
     a.avatar
-      img(src='/images/avatar/small/matt.jpg')
+      img(:src="avatar")
     .content
       a.author {{author}}
       .metadata
@@ -21,7 +21,9 @@ export default {
   // Sepuede pasar como objetos https://vuejs.org/v2/guide/components.html#Props
   props: ['content', 'author', 'url'],
   data() {
-    return {}
+    return {
+      avatar: "https://api.adorable.io/avatars/40/"+this.author
+    }
   },
   components: {},
   computed: {},
