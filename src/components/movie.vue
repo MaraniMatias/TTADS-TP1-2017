@@ -1,20 +1,9 @@
 <template lang="pug">
 #movie
-  h1 Movie {{movie.title}} ({{movie.release_date}})
   .ui.grid
     .row
       .column
-        //- components decripcion de la palicuala , ver como sub dividir en components
-        p overview {{movie.overview}}
-        P User score {{movie.vote_average}}
-        p popularity {{movie.popularity}}
-        //- Esto endria que ser el compoente de ranking, el de las estrellas y juntar esta funcionalidad.
-        //- el for es una caracteristica de pug
-        - for(var i = 1; i <= 10; i++){
-          button(@click="setRating("+i+")") #{i}
-        - }
-        //- Esto es solo a modo ilutrativo, de las propiedad del objeto movie
-        pre {{movie}}
+      movieInfo(:movie-data="movie", :poster="movie.poster_path")
     .row
       .column
         reviews(:movie-id="id")
@@ -23,6 +12,7 @@
 
 <script>
 import { mapGetters, mapActions, mapState } from 'vuex'
+import movieInfo from './movieInformation.vue'
 import reviews from './reviews.vue';
 
 export default {
@@ -33,7 +23,7 @@ export default {
       movie: {}
     }
   },
-  components: { reviews },
+  components: {movieInfo, reviews },
   methods: {
     setRating: function ( value ) {
       this.$store.dispatch( 'setMovieRating', { movieId: this.id, value } )
