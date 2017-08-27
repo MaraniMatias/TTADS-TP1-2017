@@ -20,7 +20,7 @@ import movie from './components/movie.vue';
  * Jugar con las URL desde el navegador.
  */
 const router = new VueRouter({
-  mode: 'history', // navega sin recargar pag y sin #
+  //mode: 'history', // navega sin recargar pag y sin #, pero requiere configuracion el backend
   routes: [{
     path: '/',
     component: deiscoverMovie
