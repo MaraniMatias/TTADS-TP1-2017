@@ -1,5 +1,5 @@
 export default {
-  getMovie: ( state ) => movieId => {
+  findMovie: ( state ) => movieId => {
     console.log( "getters", movieId );
     return state.discover.results.find( movie => movie.id === movieId );
   }

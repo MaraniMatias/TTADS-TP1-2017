@@ -21,9 +21,9 @@ export default {
       } );
   },
   gerMovieInfo: function ( { commit, state }, movieId ) {
-    axios.get( baseURL + "/movie/" + movieId + parameterKey )
+    return axios.get( baseURL + "/movie/" + movieId + parameterKey )
       .then( ( response ) => {
-        console.log( response.data );
+        return response.data;
       }, ( err ) => {
         console.error( err );
       } );

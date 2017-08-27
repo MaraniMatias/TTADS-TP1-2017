@@ -33,11 +33,13 @@ export default {
     }
   },
   computed: {
-    ...mapGetters( [ 'getMovie' ] ),
-    ...mapActions( [ 'setMovieRating' ] )
+    ...mapGetters( [ 'findMovie' ] ),
+    ...mapActions( [ 'setMovieRating','gerMovieInfo' ] )
   },
   mounted: function () {
-    this.movie = this.$store.getters.getMovie( this.id );
+    this.movie = this.$store.getters.findMovie( this.id ) || this.$store.dispatch('gerMovieInfo', this.id).then((data)=>{
+      this.movie = data;
+    });
   },
   created() {}
 }
