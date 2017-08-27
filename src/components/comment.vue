@@ -22,6 +22,7 @@ export default {
   props: ['content', 'author', 'url'],
   data() {
     return {
+      key:'',
       avatar: "https://api.adorable.io/avatars/40/"+this.author
     }
   },
