@@ -1,5 +1,5 @@
-<template lang="pug">
-#buscador
+<template>
+  <div id="buscador">
     <div class="ui search" style="text-align:center">
         <div class="ui icon input" style="width:80%">
             <input class="prompt" placeholder="Search..." type="text">
@@ -7,8 +7,7 @@
         </div>
         <div class="results"></div>
     </div>
-  
-
+  </div>
 </template>
 
 <script>
@@ -26,10 +25,7 @@ export default {
 
   }
 }
-</script scoped>
+</script>
 
 <style scoped>
-   
-
 </style>
-

@@ -6,46 +6,37 @@
         img(:src="poster?'https://image.tmdb.org/t/p/w342/'+poster:'http://www.sellingpage.com/images/no_photo_icon.PNG'")
       .content
         .ui.label
-          <i class="calendar icon"></i> {{movieData.release_date}}
-        <br><br>
+          i.calendar.icon
+          | {{movieData.release_date}}
+        br
         h1.ui.dividing.header {{movieData.title}}
-        
-        <div class="ui icon message" style="width:90%">
-          <i class="browser icon"></i>
+        .ui.icon.message(style="width:90%")
+          i.browser.icon
           .content
             .header
               h2 Overview
             p {{movieData.overview}}
-        </div>
 
-        <div class="ui icon message" style="width:90%">
-          <i class="thumbs up icon"></i>
+        .ui.icon.message(style="width:90%")
+          i.thumbs.up.icon
           .content
             .header
               h2 Popularity
-            <div class="ui progress" data-value="70" data-total="100">
-              <div class="bar">
-                <div class="progress"></div>
-              </div>
-            </div>
-
+              .ui.progress(data-value="70" data-total="100")
+                .bar
+                  .progress
             p {{movieData.popularity}}
-        </div>
 
-        <div class="ui icon message" style="width:90%">
-          <i class="star icon"></i>
+        .ui.icon.message(style="width:90%")
+          i.star.icon
           .content
             .header
               h2 Vote average
-            <div class="ui progress" data-value="70" data-total="100">
-              <div class="bar">
-                <div class="progress"></div>
-              </div>
-            </div>
-
+              .ui.progress(data-value="70" data-total="100")
+                .bar
+                  .progress
             p {{movieData.vote_average}}
-        </div>
-        
+
   //- Esto endria que ser el compoente de ranking, el de las estrellas y juntar esta funcionalidad.
   //- el for es una caracteristica de pug
     - for(var i = 1; i <= 10; i++){
@@ -53,7 +44,7 @@
     - }
     //- Esto es solo a modo ilutrativo, de las propiedad del objeto movie
     pre {{movieData}}
-  
+
 
 </template>
 
@@ -72,10 +63,7 @@ export default {
 
   }
 }
-</script scoped>
+</script>
 
 <style scoped>
-   
-
 </style>
-
