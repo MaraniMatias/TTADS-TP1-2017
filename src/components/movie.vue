@@ -3,11 +3,11 @@
   .ui.grid
     .row
       .column
-      movieInfo(:movie-data="movie", :poster="movie.poster_path")
+      movieInfo(:movie="movie")
     .row
       .column
         reviews(:movie-id="id")
-          //- opcion a más informacion,ver Reviews y el resto de la info que traela API (la ifo adecuada :D).
+          //- opcion a más informacion,ver Reviews y el resto de la info que traela API (la info adecuada :D).
 </template>
 
 <script>

@@ -3,19 +3,19 @@
   .ui.very.relaxed.items
     .item
       .image.ui.medium.rounded.image
-        img(:src="poster?'https://image.tmdb.org/t/p/w342/'+poster:'http://www.sellingpage.com/images/no_photo_icon.PNG'")
+        img(:src="getPoster()")
       .content
         .ui.label
           i.calendar.icon
-          | {{movieData.release_date}}
+          | {{movie.release_date}}
         br
-        h1.ui.dividing.header {{movieData.title}}
+        h1.ui.dividing.header {{movie.title}}
         .ui.icon.message(style="width:90%")
           i.browser.icon
           .content
             .header
               h2 Overview
-            p {{movieData.overview}}
+            p {{movie.overview}}
 
         .ui.icon.message(style="width:90%")
           i.thumbs.up.icon
@@ -25,7 +25,7 @@
               .ui.progress(data-value="70" data-total="100")
                 .bar
                   .progress
-            p {{movieData.popularity}}
+            p {{movie.popularity}}
 
         .ui.icon.message(style="width:90%")
           i.star.icon
@@ -35,7 +35,7 @@
               .ui.progress(data-value="70" data-total="100")
                 .bar
                   .progress
-            p {{movieData.vote_average}}
+            p {{movie.vote_average}}
 
   //- Esto endria que ser el compoente de ranking, el de las estrellas y juntar esta funcionalidad.
   //- el for es una caracteristica de pug
@@ -45,7 +45,6 @@
     //- Esto es solo a modo ilutrativo, de las propiedad del objeto movie
     pre {{movieData}}
 
-
 </template>
 
 <script>
@@ -53,15 +52,16 @@ import { mapGetters, mapActions, mapState } from 'vuex'
 
 export default {
   name: 'movieInfo',
-  props: [ 'movie-data', 'poster' ],
+  props: [ 'movie' ],
   data() {
-    return{
-     movie: {}
+    return{}
+  },
+  methods:{
+    getPoster: function(){
+      return  this.movie.poster_path?'https://image.tmdb.org/t/p/w342/'+this.movie.poster_path:'http://www.sellingpage.com/images/no_photo_icon.PNG'
     }
   },
-  components: {
-
-  }
+  components: {}
 }
 </script>
 
