@@ -1,12 +1,7 @@
 <template lang="pug">
-#movie
-  .ui.grid
-    .row
-      .column
-      movieInfo(:movie="movie")
-    .row
-      .column
-        reviews(:movie-id="id")
+#movie.ui.container
+  movieInfo(:movie="movie")
+  reviews(:movie-id="id")
           //- opcion a más informacion,ver Reviews y el resto de la info que traela API (la info adecuada :D).
 </template>
 
