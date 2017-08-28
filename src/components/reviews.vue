@@ -1,7 +1,9 @@
 <template lang="pug">
-.ui.comments
-  h3.ui.dividing.header Reviews
-  comment(v-for="comment in reviews.results" :key="comment.id" :content="comment.content" :author="comment.author" :url="comment.url")
+  div
+    h3.ui.dividing.header Reviews
+    .ui.comments
+      .ui.centered.inline.loader(:class="{ active: !reviews.id}")
+      comment(v-for="comment in reviews.results" :key="comment.id" :content="comment.content" :author="comment.author" :url="comment.url")
 </template>
 
 <script>
