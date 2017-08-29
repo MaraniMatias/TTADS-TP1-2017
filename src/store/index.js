@@ -12,6 +12,9 @@ export default {
     },
     discover: {
       results: []
+    },
+    searchResults: {
+      results: []
     }
   },
   actions,

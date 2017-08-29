@@ -1,13 +1,10 @@
-<template>
-  <div id="buscador">
-    <div class="ui search" style="text-align:center">
-        <div class="ui icon input" style="width:80%">
-            <input class="prompt" placeholder="Search..." type="text">
-            <i class="search icon"></i>
-        </div>
-        <div class="results"></div>
-    </div>
-  </div>
+<template lang="pug">
+#buscador
+  .ui.search(style="text-align:center")
+    .ui.icon.input(style="width:80%")
+      input.prompt(placeholder="Search...", type="text")(@keyup.enter="goSearchResults()")
+      i.search.icon
+    .results
 </template>
 
 <script>
@@ -23,6 +20,11 @@ export default {
   },
   components: {
 
+  },
+  methods: {
+    goSearchResults: function(){
+      this.$router.push( { name: 'searchResults'} );
+    }
   }
 }
 </script>

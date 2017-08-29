@@ -4,6 +4,9 @@ export default {
   },
   set_guest_session : (state, guestSession) => {
     state.usuario.guest_session = guestSession;
+  },
+  set_search_results : (state, searchResults) => {
+    state.searchResults= searchResults;
   }
 };
 

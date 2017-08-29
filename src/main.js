@@ -11,10 +11,11 @@ Vue.use(Vuex);
 import store from './store';
 
 /*
- * Componetes
+ * Componentes
  */
 import App from './App.vue';
-import deiscoverMovie from './components/discover.vue';
+import discoverMovie from './components/discover.vue';
+import searchResults from './components/searchResults.vue';
 import movie from './components/movie.vue';
 /*
  * Jugar con las URL desde el navegador.
@@ -23,11 +24,15 @@ const router = new VueRouter({
   //mode: 'history', // navega sin recargar pag y sin #, pero requiere configuracion el backend
   routes: [{
     path: '/',
-    component: deiscoverMovie
+    component: discoverMovie
   }, {
     name: "movie",
     path: '/movie/:movieId',
     component: movie
+  },{
+    name: "searchResults",
+    path: '/search/',
+    component: searchResults
   }]
 });
 /*
@@ -40,4 +45,3 @@ export default new Vue({
   store: new Vuex.Store(store),
   render: h => h(App)
 });
-
