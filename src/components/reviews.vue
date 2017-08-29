@@ -24,7 +24,8 @@ export default {
     comment
   },
   computed: {},
-  mounted: function () {
+  created() {},
+  mounted() {
     this.$store.dispatch( 'gerReviews', this.movieId )
       .then( data => {
         this.reviews = data;

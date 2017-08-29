@@ -2,7 +2,6 @@
 #movie.ui.container
   movieInfo(:movie="movie")
   reviews(:movie-id="id")
-          //- opcion a más informacion,ver Reviews y el resto de la info que traela API (la info adecuada :D).
 </template>
 
 <script>
@@ -31,7 +30,7 @@ export default {
     ...mapGetters( [ 'findMovie' ] ),
     ...mapActions( [ 'setMovieRating','gerMovieInfo' ] )
   },
-  mounted: function () {
+  mounted() {
     this.movie = this.$store.getters.findMovie( this.id ) || this.$store.dispatch('gerMovieInfo', this.id).then((data)=>{
       this.movie = data;
     });
