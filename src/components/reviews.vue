@@ -12,24 +12,21 @@ import comment from './comment.vue';
 
 export default {
   name: 'reviews',
-  props: [ 'movie-id' ],
+  props: ['movie-id'],
   data() {
     return {
       // {id, page,results: [{id, content, author, url }],total_pages, total_results}
       reviews: {}
     }
   },
-  components: {
-    //'comment-component': comment
-    comment
-  },
+  components: { comment },
   computed: {},
   created() {},
   mounted() {
-    this.$store.dispatch( 'gerReviews', this.movieId )
-      .then( data => {
+    this.$store.dispatch('gerReviews', this.movieId)
+      .then(data => {
         this.reviews = data;
-      } )
+      })
   }
 }
 </script>
