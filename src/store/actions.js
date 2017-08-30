@@ -20,7 +20,7 @@ export default {
         console.error(err);
       });
   },
-  gerMovieInfo: function ({ commit, state }, movieId) {
+  getMovieInfo: function ({ commit, state }, movieId) {
     return axios.get(baseURL + "/movie/" + movieId + parameterKey)
       .then((response) => {
         return response.data;
@@ -28,7 +28,7 @@ export default {
         console.error(err);
       });
   },
-  gerReviews: function ({ commit, state }, movieId) {
+  getReviews: function ({ commit, state }, movieId) {
     return axios.get(baseURL + "/movie/" + movieId + "/reviews" + parameterKey)
       .then((response) => {
         return response.data;
@@ -37,7 +37,6 @@ export default {
       });
   },
   setMovieRating: function ({ commit, state }, obj) {
-    console.log(obj);
     return axios.post(baseURL + "/movie/" + obj.movieId + "/rating" + parameterKey + "&guest_session_id=" + state.usuario.guest_session.guest_session_id, { value: obj.value })
       .then((response) => {
         return response.data;

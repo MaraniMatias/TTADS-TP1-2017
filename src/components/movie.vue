@@ -28,7 +28,7 @@ export default {
   },
   computed: {
     ...mapGetters( [ 'findMovie' ] ),
-    ...mapActions( [ 'setMovieRating','gerMovieInfo' ] )
+    ...mapActions( [ 'setMovieRating','getMovieInfo' ] )
   },
   mounted() {
     this.movie = this.$store.getters.findMovie( this.id ) || this.$store.dispatch('gerMovieInfo', this.id).then((data)=>{

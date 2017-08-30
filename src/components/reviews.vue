@@ -23,7 +23,7 @@ export default {
   computed: {},
   created() {},
   mounted() {
-    this.$store.dispatch('gerReviews', this.movieId)
+    this.$store.dispatch('getReviews', this.movieId)
       .then(data => {
         this.reviews = data;
       })
