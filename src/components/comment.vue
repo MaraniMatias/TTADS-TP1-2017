@@ -9,8 +9,7 @@
         span.date {{key}}
       .text {{content}}
       .actions
-        a(:href="url")
-          i.expand.icon Full-screen
+        a.info.circle.icon(:href="url") More info on the movie db
 </template>
 
 <script>
