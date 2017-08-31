@@ -15,5 +15,6 @@ export default {}
 }
 .ui.inverted.menu .router-link-active {
   background-color: #00b5ad;
+  border-radius: 0px;
 }
 </style>
