@@ -17,23 +17,24 @@ export default {
       movie: {}
     }
   },
-  components: {movieInfo, reviews },
+  components: { movieInfo, reviews },
   methods: {
-    setRating: function ( value ) {
-      this.$store.dispatch( 'setMovieRating', { movieId: this.id, value } )
-        .then( ( data ) => {
-          console.log("setRating",value ,data );
-        } );
+    setRating: function (value) {
+      this.$store.dispatch('setMovieRating', { movieId: this.id, value })
+        .then((data) => {
+          console.log("setRating", value, data);
+        });
     }
   },
   computed: {
-    ...mapGetters( [ 'findMovie' ] ),
-    ...mapActions( [ 'setMovieRating','getMovieInfo' ] )
+    ...mapGetters(['findMovie']),
+    ...mapActions(['setMovieRating', 'getMovieInfo']),
+    getMovie: function () {
+      this.movie = this.$store.getters.findMovie(this.id) || this.$store.dispatch('getMovieInfo', this.id).then((data) => { return this.movie = data; });
+    }
   },
   mounted() {
-    this.movie = this.$store.getters.findMovie( this.id ) || this.$store.dispatch('gerMovieInfo', this.id).then((data)=>{
-      this.movie = data;
-    });
+    this.getMovie;
   },
   created() {}
 }

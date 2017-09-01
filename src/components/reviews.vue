@@ -12,22 +12,24 @@ import comment from './comment.vue';
 
 export default {
   name: 'reviews',
-  props: ['movie-id'],
-  data() {
-    return {
-      // {id, page,results: [{id, content, author, url }],total_pages, total_results}
-      reviews: {}
+    props: ['movie-id'],
+    data() {
+      return {
+        // {id, page,results: [{id, content, author, url }],total_pages, total_results}
+        reviews: {}
+      }
+    },
+    components: { comment },
+    computed: {
+      getReviews: function() {
+        this.$store.dispatch('getReviews', this.movieId)
+          .then(data => { this.reviews = data; })
+      }
+    },
+    created() {},
+    mounted() {
+      this.getReviews;
     }
-  },
-  components: { comment },
-  computed: {},
-  created() {},
-  mounted() {
-    this.$store.dispatch('getReviews', this.movieId)
-      .then(data => {
-        this.reviews = data;
-      })
-  }
 }
 </script>
 

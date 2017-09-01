@@ -13,7 +13,7 @@ import movieCard from './movieCard.vue';
 
 export default {
   name: 'discover',
-  data(){
+  data() {
     return {
       page: 1
     }
@@ -21,11 +21,16 @@ export default {
   components: {
     movieCard
   },
-  computed: mapState([
+  computed: {
+    ...mapState([
     'discover'
   ]),
+    loadMovie: function () {
+      this.$store.dispatch('loadMovieDiscover', this.page)
+    }
+  },
   mounted: function () {
-    this.$store.dispatch('loadMovieDiscover',this.page)
+    this.loadMovie;
   }
 }
 </script>
