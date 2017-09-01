@@ -31,17 +31,26 @@ describe('reviews.vue', () => {
 
   it('has a created component', () => {
     expect(wrapper.name()).to.equal('Reviews');
+    expect(wrapper.vm.movieId).to.equal(propsData.movieId);
+    expect(wrapper.vm.reviews.id).to.equal(undefined);
+  });
+
+  it('contiene titulo', () => {
     expect(wrapper.contains('h3')).to.equal(true);
     expect(wrapper.isVueComponent).to.equal(true);
     expect(wrapper.find('h3')[0].element.innerText).to.equal('Reviews');
-    expect(wrapper.vm.movieId).to.equal(propsData.movieId);
+  });
+
+  it('animacion de carga mietras no alla respuesta de la api', () => {
+    expect(wrapper.find('.ui.centered.inline.loader')[0]).to.be.an('object');
   });
 
   it('calls store action getReviews when component is created', () => {
-    //expect(actions.getReviews.calledOnce).to.be.equal(true);
-    expect(typeof wrapper.vm.reviews).to.equal('object');
+    expect(actions.getReviews.calledOnce).to.be.equal(true);
+    expect(wrapper.vm.reviews).to.be.an('object');
     //expect(wrapper.vm.reviews.id).to.equal(propsData.movieId);
   });
+
 
 });
 
