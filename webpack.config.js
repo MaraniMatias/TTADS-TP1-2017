@@ -1,18 +1,18 @@
-var path = require( 'path' );
-var webpack = require( 'webpack' );
+var path = require('path');
+var webpack = require('webpack');
 module.exports = {
-  entry: [ './src/main.js' ],
+  entry: ['./src/main.js'],
   output: {
-    path: path.resolve( __dirname, './docs/online-app' ),
+    path: path.resolve(__dirname, './docs/online-app'),
     publicPath: '/',
     filename: 'build.js'
   },
   module: {
-    rules: [ {
+    rules: [{
       test: /\.js$/,
       enforce: "pre", // preload the jshint loader
       exclude: /node_modules/,
-      use: [ { loader: "jshint-loader" } ]
+      use: [{ loader: "jshint-loader" }]
       }, {
       test: /\.pug$/,
       use: {
@@ -23,7 +23,7 @@ module.exports = {
       },
     }, {
       test: /\.(css|less)$/,
-      loaders: [ 'style-loader', 'css-loader', 'less-loader' ] // 'postcss-loader'
+      loaders: ['style-loader', 'css-loader', 'less-loader'] // 'postcss-loader'
     }, {
       test: /\.json$/,
       loader: 'json-loader'
@@ -43,7 +43,7 @@ module.exports = {
       options: {
         name: '[name].[ext]?[hash]'
       }
-    } ]
+    }]
   },
   resolve: {
     alias: {
@@ -63,38 +63,39 @@ module.exports = {
   }
   //,devtool: 'eval-source-map'
 };
-if ( process.env.NODE_ENV === 'production' ) {
+if (process.env.NODE_ENV === 'production') {
   module.exports.devtool = 'source-map';
   // http://vue-loader.vuejs.org/en/workflow/production.html
-  module.exports.plugins = ( module.exports.plugins || [] )
-    .concat( [
-    new webpack.DefinePlugin( {
+  module.exports.plugins = (module.exports.plugins || [])
+    .concat([
+    new webpack.DefinePlugin({
         'process.env': {
           NODE_ENV: '"production"'
         }
-      } ),
-    new webpack.optimize.UglifyJsPlugin( {
+      }),
+    new webpack.optimize.UglifyJsPlugin({
         sourceMap: true,
         compress: {
           unused: true,
           dead_code: true,
           warnings: false
         }
-      } ),
-    new webpack.LoaderOptionsPlugin( {
+      }),
+    new webpack.LoaderOptionsPlugin({
         minimize: true
-      } )
-  ] );
+      })
+  ]);
 }
-if ( process.env.NODE_ENV === 'testing' ) {
-  module.exports.devtool = 'inline-source-map';
+if (process.env.NODE_ENV === 'testing') {
+  module.exports.devtool = 'source-map';
   module.exports.performance.hints = false;
-  module.exports.plugins = ( module.exports.plugins || [] )
-    .concat( [
-    new webpack.DefinePlugin( {
+  module.exports.resolve.alias = { 'vue$': 'vue/dist/vue.common.js' };
+  module.exports.plugins = (module.exports.plugins || [])
+    .concat([
+    new webpack.DefinePlugin({
         'process.env': {
           NODE_ENV: '"testing"'
         }
-      } )
-  ] );
+      })
+  ]);
 }
