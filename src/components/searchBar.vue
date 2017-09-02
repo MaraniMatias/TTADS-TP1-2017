@@ -2,7 +2,7 @@
 #buscador
   .ui.search(style="text-align:center")
     .ui.icon.input(style="width:80%")
-      input.prompt(placeholder="Search...", type="text")(@keyup.enter="goSearchResults()")
+      input#words.prompt(placeholder="Search...", type="text")(@keyup.enter="goSearchResults()").
       i.search.icon
     .results
 </template>
@@ -12,7 +12,7 @@ import { mapGetters, mapActions, mapState } from 'vuex'
 
 export default {
   name: 'search',
-  props: [ ],
+  props: [],
   data() {
     return{
      search: {}
@@ -23,11 +23,14 @@ export default {
   },
   methods: {
     goSearchResults: function(){
-      this.$router.push( { name: 'searchResults'} );
+      var capturedWords = document.getElementById("words").value;
+      console.info(document.getElementById("words").value);
+      this.$router.push( { name: 'searchResults', params: { words: capturedWords }} );
     }
   }
 }
 </script>
 
 <style scoped>
+
 </style>

@@ -13,7 +13,7 @@ export default {
   name: 'searchResults',
   data(){
     return { 
-        wordsToSearch: 'dragon',
+        wordsToSearch: this.$route.params.words,
         page: 1
     }
   },
@@ -24,7 +24,7 @@ export default {
     'searchResults'
   ]),
   mounted: function () {
-    this.$store.dispatch('searchMovies', this.wordsToSearch, this.page)
+    this.$store.dispatch('searchMovies', this.wordsToSearch.replace(' ', '+'), this.page)
   }
 }
 </script>
