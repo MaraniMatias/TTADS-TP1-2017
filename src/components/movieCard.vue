@@ -3,7 +3,6 @@
   .image
     img(:src="poster?'https://image.tmdb.org/t/p/w342/'+poster:'http://www.sellingpage.com/images/no_photo_icon.PNG'")
   .content
-    //router-link(:to="'/movie/' + movieId")
     .header {{title}}
     .meta
       a genre: {{genreIds}}
