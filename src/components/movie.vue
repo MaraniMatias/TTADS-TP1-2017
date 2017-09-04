@@ -1,5 +1,5 @@
 <template lang="pug">
-#movie.ui.container
+.ui.container
   movieInfo(:movie="movie")
   reviews(:movie-id="id")
 </template>

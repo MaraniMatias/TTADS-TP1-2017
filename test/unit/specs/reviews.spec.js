@@ -32,7 +32,7 @@ describe('reviews.vue', () => {
   it('has a created component', () => {
     expect(wrapper.name()).to.equal('Reviews');
     expect(wrapper.vm.movieId).to.equal(propsData.movieId);
-    expect(wrapper.vm.reviews.id).to.equal(undefined);
+    expect(wrapper.vm.reviews.id).to.equal(null);
   });
 
   it('contiene titulo', () => {

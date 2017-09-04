@@ -53,18 +53,18 @@ module.exports = {
   devServer: {
     //contentBase: path.join(__dirname, "/"),
     compress: true,
-    historyApiFallback: false,
+    historyApiFallback: !false,
     noInfo: true
   },
   performance: {
     hints: 'warning',
     maxAssetSize: 300000,
     maxEntrypointSize: 3000000
-  }
-  //,devtool: 'eval-source-map'
+  },
+  devtool: '#eval-source-map'
 };
 if (process.env.NODE_ENV === 'production') {
-  module.exports.devtool = 'source-map';
+  module.exports.devtool = '#source-map';
   // http://vue-loader.vuejs.org/en/workflow/production.html
   module.exports.plugins = (module.exports.plugins || [])
     .concat([
@@ -87,7 +87,7 @@ if (process.env.NODE_ENV === 'production') {
   ]);
 }
 if (process.env.NODE_ENV === 'testing') {
-  module.exports.devtool = 'source-map';
+  module.exports.devtool = '#source-map';
   module.exports.performance.hints = false;
   module.exports.resolve.alias = { 'vue$': 'vue/dist/vue.common.js' };
   module.exports.plugins = (module.exports.plugins || [])

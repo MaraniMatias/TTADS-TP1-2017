@@ -16,7 +16,11 @@ export default {
   data() {
     return {
       // {id, page,results: [{id, content, author, url }],total_pages, total_results}
-      reviews: {}
+      reviews: {
+        id:null,
+          page:null,
+          results:[]
+      }
     }
   },
   components: { comment },
