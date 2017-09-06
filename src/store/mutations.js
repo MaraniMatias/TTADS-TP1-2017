@@ -1,18 +1,11 @@
 export default {
-  set_discover_movie: (state, { discover }) => {
+  set_discover_movie: (state, discover) => {
     state.discover = discover;
   },
-  //////////////////////////
-  /*UPDATE_PROJECT: (state, {
-    item
-  }) => {
-    let idx = state.projects.map(p => p.id).indexOf(item.id);
-    state.projects.splice(idx, 1, item);
+  set_guest_session: (state, guestSession) => {
+    state.usuario.guest_session = guestSession;
   },
-  ADD_PROJECT: (state, {
-    project
-  }) => {
-    state.projects.push(project);
-  }*/
+  set_search_results: (state, searchResults) => {
+    state.searchResults = searchResults;
+  }
 };
-

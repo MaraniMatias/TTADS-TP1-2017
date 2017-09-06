@@ -1,8 +1,10 @@
 <template lang="pug">
-#discover.column(is-half)
+#discover.ui.container
   h1 Movie Discover
-  .ui.link.cards
-    movie-card(v-for="(movie, index) in discover.results" :key="movie.id" :star="movie.vote_average" :title="movie.title" :poster="movie.poster_path" :overview="movie.overview" :release-date="movie.release_date" :genre-ids="movie.genre_ids")
+  //.ui.comments
+    .ui.centered.inline.loader(:class="{ active: !discover.total_pages}")
+  .ui.link.cards.three
+    movie-card(v-for="(movie, index) in discover.results" :key="movie.id" :star="movie.vote_average" :title="movie.title" :poster="movie.poster_path" :overview="movie.overview" :release-date="movie.release_date" :genre-ids="movie.genre_ids" :movie-id="movie.id")
 </template>
 
 <script>
@@ -11,19 +13,24 @@ import movieCard from './movieCard.vue';
 
 export default {
   name: 'discover',
-  data(){
+  data() {
     return {
-      page: 3
+      page: 1
     }
   },
   components: {
     movieCard
   },
-  computed: mapState([
+  computed: {
+    ...mapState([
     'discover'
   ]),
+    loadMovie: function () {
+      this.$store.dispatch('loadMovieDiscover', this.page)
+    }
+  },
   mounted: function () {
-    this.$store.dispatch('loadMovieDiscover',this.page)
+    this.loadMovie;
   }
 }
 </script>

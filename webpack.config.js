@@ -1,8 +1,7 @@
 var path = require('path');
 var webpack = require('webpack');
-
 module.exports = {
-  entry: './src/main.js',
+  entry: ['./src/main.js'],
   output: {
     path: path.resolve(__dirname, './docs/online-app'),
     publicPath: '/',
@@ -10,6 +9,11 @@ module.exports = {
   },
   module: {
     rules: [{
+      test: /\.js$/,
+      enforce: "pre", // preload the jshint loader
+      exclude: /node_modules/,
+      use: [{ loader: "jshint-loader" }]
+      }, {
       test: /\.pug$/,
       use: {
         loader: 'pug-loader',
@@ -53,32 +57,45 @@ module.exports = {
     noInfo: true
   },
   performance: {
-    hints: false
-  },
-  devtool: '#eval-source-map'
+    hints: 'warning',
+    maxAssetSize: 300000,
+    maxEntrypointSize: 3000000
+  }
+  //,devtool: 'eval-source-map'
 };
-
 if (process.env.NODE_ENV === 'production') {
   module.exports.devtool = 'source-map';
-  //module.exports.devtool = '#source-map';
   // http://vue-loader.vuejs.org/en/workflow/production.html
-  module.exports.plugins = (module.exports.plugins || []).concat([
+  module.exports.plugins = (module.exports.plugins || [])
+    .concat([
     new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: '"production"'
-      }
-    }),
+        'process.env': {
+          NODE_ENV: '"production"'
+        }
+      }),
     new webpack.optimize.UglifyJsPlugin({
-      sourceMap: true,
-      compress: {
-        unused: true,
-        dead_code: true,
-        warnings: false
-      }
-    }),
+        sourceMap: true,
+        compress: {
+          unused: true,
+          dead_code: true,
+          warnings: false
+        }
+      }),
     new webpack.LoaderOptionsPlugin({
-      minimize: true
-    })
+        minimize: true
+      })
   ]);
 }
-
+if (process.env.NODE_ENV === 'testing') {
+  module.exports.devtool = 'source-map';
+  module.exports.performance.hints = false;
+  module.exports.resolve.alias = { 'vue$': 'vue/dist/vue.common.js' };
+  module.exports.plugins = (module.exports.plugins || [])
+    .concat([
+    new webpack.DefinePlugin({
+        'process.env': {
+          NODE_ENV: '"testing"'
+        }
+      })
+  ]);
+}

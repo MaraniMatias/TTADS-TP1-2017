@@ -19,7 +19,7 @@ test/unit/coverage
 .tmp/
 yarn-debug.log*
 yarn-error.log*
-
+*.map
 
 #
 src/index.html
