@@ -1,8 +1,10 @@
 <template lang="pug">
 #discover.column(is-half)
   h1 Movie Discover
+  hr.ui.divider
   .ui.link.cards
-    movie-card(v-for="(movie, index) in discover.results" :key="movie.id" :star="movie.vote_average" :title="movie.title" :poster="movie.poster_path" :overview="movie.overview" :release-date="movie.release_date" :genre-ids="movie.genre_ids")
+    movie-card(v-for="(movie, index) in discover.results" :movie-id="movie.id" :star="movie.vote_average" :title="movie.title" :poster="movie.poster_path" :overview="movie.overview" :release-date="movie.release_date" :genre-ids="movie.genre_ids")
+  hr.ui.divider
   paginator(:pages="discover.total_pages" :page="discover.page")
 </template>
 
@@ -15,7 +17,7 @@ export default {
   name: 'discover',
   data(){
     return {
-      page: 2
+      page: 1
     }
   },
   components: {
