@@ -1,8 +1,7 @@
 <template lang="pug">
-#discover.ui.container
+.ui.container
+  .ui.centered.inline.loader(:class="{ active: !discover.total_pages}")
   h1 Movie Discover
-  //.ui.comments
-    .ui.centered.inline.loader(:class="{ active: !discover.total_pages}")
   .ui.link.cards.three
     movie-card(v-for="(movie, index) in discover.results" :key="movie.id" :star="movie.vote_average" :title="movie.title" :poster="movie.poster_path" :overview="movie.overview" :release-date="movie.release_date" :genre-ids="movie.genre_ids" :movie-id="movie.id")
 </template>

@@ -21,14 +21,15 @@ export default {
   props: ['content', 'author', 'url'],
   data() {
     return {
-      key:'',
-      avatar: "https://api.adorable.io/avatars/40/"+this.author
+      key: '',
+      // genera anatars :D
+      avatar: "https://api.adorable.io/avatars/40/" + this.author
     }
   },
   components: {},
   computed: {},
   methods: {},
   created() {},
-  mounted: function () { }
+  mounted: function () {}
 }
 </script>
