@@ -22,14 +22,17 @@ import movie from './components/movie.vue';
  */
 const router = new VueRouter({
   //mode: 'history', // navega sin recargar pag y sin #, pero requiere configuracion el backend
-  routes: [{
+  routes: [
+  {
     path: '/',
     component: discoverMovie
-  }, {
+  },
+  {
     name: "movie",
     path: '/movie/:movieId',
     component: movie
-  },{
+  },
+  {
     name: "searchResults",
     path: '/search/',
     component: searchResults
