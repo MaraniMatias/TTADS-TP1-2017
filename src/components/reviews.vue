@@ -4,7 +4,7 @@
     .ui.comments
       .ui.centered.inline.loader(:class="{ active: loading}")
       comment(v-for="comment in reviews.results" :key="comment.id" :content="comment.content" :author="comment.author" :url="comment.url")
-      // this movie has no review
+      p(v-if="msg && !loading") {{msg}}
 </template>
 
 <script>
@@ -17,6 +17,7 @@ export default {
   data() {
     return {
       loading: true,
+      msg:'',
       // {id, page,results: [{id, content, author, url }],total_pages, total_results}
       reviews: { id: null, page: null, results: [] }
     }
@@ -28,7 +29,11 @@ export default {
       this.$store.dispatch('getReviews', this.movieId)
         .then(data => {
           this.loading = false;
-          this.reviews = data;
+          if (data.results.length>0) {
+            this.reviews = data;
+          } else {
+            this.msg = "this movie has no review";
+          }
         });
     }
   },
