@@ -1,19 +1,16 @@
 <template lang="pug">
 #app
   app-header
-  search-bar
   .ui.main.container
     router-view
 </template>
 
 <script>
-import search from './components/searchBar.vue'
 import header from './components/header.vue';
 
 export default {
   components: {
-    'app-header': header,
-    'search-bar': search
+    'app-header': header
   },
   data () {
     return {}

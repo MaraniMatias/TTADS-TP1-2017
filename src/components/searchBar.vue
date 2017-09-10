@@ -1,31 +1,32 @@
 <template lang="pug">
-#buscador
   .ui.search(style="text-align:center")
     .ui.icon.input(style="width:80%")
-      input#words.prompt(placeholder="Search...", type="text")(@keyup.enter="goSearchResults()").
+      input.prompt(placeholder="Search..." type="text" @keyup.enter="goSearchResults()" v-model="words")
       i.search.icon
-    .results
 </template>
 
 <script>
 import { mapGetters, mapActions, mapState } from 'vuex'
 
 export default {
-  name: 'search',
+  name: 'searchBar',
   props: [],
   data() {
-    return{
-     search: {}
+    return {
+      words: ''
     }
   },
-  components: {
-
-  },
+  computed: mapState([
+    'searchResults'
+  ]),
+  components: {},
   methods: {
-    goSearchResults: function(){
-      var capturedWords = document.getElementById("words").value;
-      console.info(document.getElementById("words").value);
-      this.$router.push( { name: 'searchResults', params: { words: capturedWords }} );
+    goSearchResults: function () {
+      if (this.words) {
+        this.$store.dispatch('searchMovies', this.words.replace(' ', '+'), 1);
+      } else {
+        this.$store.dispatch('loadMovieDiscover', this.page);
+      }
     }
   }
 }

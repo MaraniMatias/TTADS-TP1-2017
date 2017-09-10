@@ -1,5 +1,6 @@
 <template lang="pug">
 .ui.container
+  search-bar
   h1 Movie Discover
   .ui.link.cards.three
     .ui.inline.loader(:class="{ active: !discover.total_pages}")
@@ -7,7 +8,8 @@
 </template>
 
 <script>
-import { mapGetters, mapActions, mapState } from 'vuex'
+import { mapGetters, mapActions, mapState } from 'vuex';
+import searchBar from './searchBar.vue';
 import movieCard from './movieCard.vue';
 
 export default {
@@ -18,6 +20,7 @@ export default {
     }
   },
   components: {
+    searchBar,
     movieCard
   },
   computed: {
