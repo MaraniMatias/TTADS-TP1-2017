@@ -99,12 +99,16 @@ Librerías que usamos.
 * [Less](lesscss.org)
 * [pugjs](pugjs.org) es para HTML como less para los CSS [HTML2PUG](https://www.beautifyconverter.com/html-to-jade-converter.php)
 
-Test & Herramientas de Código.
+Herramientas de Código.
 * [jshint](https://github.com/jshint/jshint)
+
+Test
 * [Karma](https://github.com/karma-runner/karma)
 * [Mocha](https://mochajs.org/)
 * [phantomjs](http://phantomjs.org/)
 * [Nightwatch](http://nightwatchjs.org/)
+* [vue-test-utils](https://github.com/vuejs/vue-test-utils/)
+* [Avoriaz](https://github.com/eddyerburgh/avoriaz)
 
 Otras librerías.
 * [vue-resource](https://github.com/pagekit/vue-resource) _Promise base HTTP for VueJS object_
