@@ -102,13 +102,15 @@ Librerías que usamos.
 Herramientas de Código.
 * [jshint](https://github.com/jshint/jshint)
 
-Test
+Test unit
 * [Karma](https://github.com/karma-runner/karma)
 * [Mocha](https://mochajs.org/)
 * [phantomjs](http://phantomjs.org/)
-* [Nightwatch](http://nightwatchjs.org/)
 * [vue-test-utils](https://github.com/vuejs/vue-test-utils/)
 * [Avoriaz](https://github.com/eddyerburgh/avoriaz)
+test e2e
+* [Nightwatch](http://nightwatchjs.org/) [Browser Drivers Setup](http://nightwatchjs.org/gettingstarted#browser-drivers-setup)
+* [selenium](http://docs.seleniumhq.org/download/)
 
 Otras librerías.
 * [vue-resource](https://github.com/pagekit/vue-resource) _Promise base HTTP for VueJS object_

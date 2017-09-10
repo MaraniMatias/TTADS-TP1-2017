@@ -52,6 +52,8 @@
     "less": "~2.7.2",
     "less-loader": "~2.2.3",
     "mocha": "^3.5.0",
+    "nightwatch": "^0.9.16",
+    "peer": "^0.2.8",
     "phantomjs-prebuilt": "^2.1.15",
     "postcss-loader": "^2.0.6",
     "pug": "~2.0.0-rc.3",
@@ -72,10 +74,12 @@
     "build": "cross-env NODE_ENV=production npm run webpack --progress --hide-modules",
     "webpack": "./node_modules/.bin/webpack",
     "webpack-server": "./node_modules/.bin/webpack-dev-server",
+    "nightwatch": "./node_modules/.bin/nightwatch",
+    "e2e": "npm run nightwatch",
     "test": "npm run unit"
   },
   "engines": {
-    "node": ">= 6.11.2",
+    "node": ">= 6.11.3",
     "npm": ">= 5.3.0"
   }
 }
