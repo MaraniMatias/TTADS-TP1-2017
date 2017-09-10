@@ -1,11 +1,13 @@
 <template lang="pug">
 <div>
-.ui.mini.modal
-  i.close.icon
-  .header
-    | ¡Gracias por puntuar!
-.ui.star.rating.massive
-  i.icon(v-for="s in 5" :class="[ s <= star/2 ? 'active' : '' ]" @click="setRating(s*2)")
+.ui.centered.grid
+  .center.aligned.column
+    .ui.mini.modal
+      i.close.icon
+      .header
+        | ¡Gracias por puntuar!
+    .ui.star.rating.massive
+      i.icon(v-for="s in 5" :class="[ s <= star/2 ? 'active' : '' ]" @click="setRating(s*2)")
 </div>
 </template>
 
@@ -39,5 +41,7 @@ export default {
 </script>
 
 <style scoped>
-
+.center.aligned.column{
+  margin-top: 10px;
+}
 </style>
