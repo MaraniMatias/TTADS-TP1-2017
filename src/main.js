@@ -9,31 +9,13 @@ Vue.use(VueRouter);
 Vue.use(Vuex);
 //Vue.config.productionTip = false;
 import store from './store';
-
-/*
- * Componentes
- */
 import App from './App.vue';
-import discoverMovie from './components/discover.vue';
-import searchResults from './components/searchResults.vue';
-import movie from './components/movie.vue';
 /*
  * Jugar con las URL desde el navegador.
  */
 const router = new VueRouter({
-  //mode: 'history', // navega sin recargar pag y sin #, pero requiere configuracion el backend
-  routes: [{
-    path: '/',
-    component: discoverMovie
-  }, {
-    name: "movie",
-    path: '/movie/:movieId',
-    component: movie
-  },{
-    name: "searchResults",
-    path: '/search/',
-    component: searchResults
-  }]
+  //mode: 'history', //navega sin recargar pag y sin #, requiere config. el backend
+  routes: require('./router.js')
 });
 /*
  * Construye la app apartir del elemento con id root.
