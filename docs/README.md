@@ -32,14 +32,14 @@ Planeamos tener la aplicación andado para 27 de Septiembre 2017.
 Indicando las fechas de entrega el alcance y los criterios de aceptación.
 
 - Pagina principal - para el 16-08 - listado de las películas con css mínimos.
--
+- Definir componentes y acomodar css - para el 12-08 - con sus css
 
 ### Reuniones de avance
 
 |Fecha|Tareas completadas desde la última reunión| Blockers |Tareas a realizar hasta la próxima reunión|
 |-----|------------------------------------------|----------|------------------------------------------|
-|09-08| leer documentación sobre las tecnologías, base del proyecto, repositorio git || unir vuex con la base| listado de las ultimas películas con css minimos |
-|     |  |   |  |
+|09-08| leer documentación sobre las tecnologías, base del proyecto, repositorio git || unir vuex con la base| listado de las ultimas películas con css mínimos |
+|17-08|Todo los integrantes del grupo conocen la base y como trabajar en el proyecto||realizar componentes en movie para mostrar la info de la película.|
 
 ## Documentación.
 
@@ -49,38 +49,39 @@ Indicando las fechas de entrega el alcance y los criterios de aceptación.
 # install dependencies
 npm install
 
-# serve with hot reload at localhost:8080
-npm run dev
+# serve with hot reload at localhost:8080 for dev
+npm start
 
 # build for production with minification
 npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
 ```
 
 ### Tests
 
-__En desarrollo - No contemplados__
-
 ``` bash
-# run unit tests
+# global
+npm isntall -g karma
+
+# run unit tests with code coverage
 npm run unit
 
 # run e2e tests
-npm run e2e
+npm start & npm test
 
-# run all tests
+# or en two terminal
+npm start
 npm test
 ```
 
 ### Entregables Online
 
-Documentación Online. _(Aplicación pendiente)_
+Documentación Online por medio de este readme en github.io
+
+[App Online](https://maranimatias.github.io/tp-2017/online-app/)
 
 ``` bash
-# run build app and JSdoc
-npm run docs
+# run build app in online-app and using on github page.
+npm run build
 ```
 
 ## Material adicional.
@@ -94,13 +95,37 @@ Librerías que usamos.
 * [vue](https://vuejs.org/)
   * [vue-router](https://github.com/vuejs/vue-router) [Doc ES](https://router.vuejs.org/es/)
   * [vuex](https://github.com/vuejs/vuex)
-  * [vue-resource](https://github.com/pagekit/vue-resource) _Promise base HTTP for VueJS object_
   * [axios](https://github.com/mzabriskie/axios) _Promise based HTTP client_
 * [webpack](https://webpack.js.org/)
   * [templates](https://github.com/vuejs-templates/webpack-simple)
 * [semantic-ui](https://semantic-ui.com/)
 * [Less](lesscss.org)
 * [pugjs](pugjs.org) es para HTML como less para los CSS [HTML2PUG](https://www.beautifyconverter.com/html-to-jade-converter.php)
+
+Herramientas de Código.
+* [jshint](https://github.com/jshint/jshint)
+
+Test unit
+* [Karma](https://github.com/karma-runner/karma)
+* [Mocha](https://mochajs.org/)
+* [phantomjs](http://phantomjs.org/)
+* [vue-test-utils](https://github.com/vuejs/vue-test-utils/)
+* [Avoriaz](https://github.com/eddyerburgh/avoriaz)
+test e2e
+* [Nightwatch](http://nightwatchjs.org/) [Browser Drivers Setup](http://nightwatchjs.org/gettingstarted#selenium-server-setup)
+* [selenium](http://docs.seleniumhq.org/download/)
+* Descargar Drivers automaticamente, para mantener la idea dejamos los binarios en test/e2e/bin, git no deberia seguir los binarios.
+  * [selenium-server-standalone-jar](https://github.com/adamhooper/selenium-server-standalone-jar)
+  * [node-geckodriver](https://github.com/vladikoff/node-geckodriver)
+  * [node-chromedriver](https://github.com/giggio/node-chromedriver)
+
+Otras librerías.
+* [vue-resource](https://github.com/pagekit/vue-resource) _Promise base HTTP for VueJS object_
+* [vue-search-select](https://github.com/moreta/vue-search-select)
+* [vue-simple-boilerplate](https://github.com/vuejs-templates/simple)
+* [vee-validate](https://github.com/baianat/vee-validate)
+* [http-server](https://www.npmjs.com/package/http-server)
+* [vue-axios](https://github.com/imcvampire/vue-axios)
 
 Ejemplos.
 * https://github.com/coligo-io/notes-app-vuejs-vuex
@@ -109,19 +134,5 @@ Ejemplos.
 * https://medium.com/wdstack/vue-vuex-getting-started-f78c03d9f65
 
 Herramientas.
-* [generator-fountain-webapp](https://github.com/fountainjs/generator-fountain-webapp)
 * [vue-cli](https://github.com/vuejs/vue-cli)
-
-Otras librerías.
-* [vue-search-select](https://github.com/moreta/vue-search-select)
-* [vue-simple-boilerplate](https://github.com/vuejs-templates/simple)
-* [vee-validate](https://github.com/baianat/vee-validate)
-* [http-server](https://www.npmjs.com/package/http-server)
-
-Test & Documentación del código.
-_Por si hay tiempo :D_
-* [Karma](https://github.com/karma-runner/karma)
-* [Mocha](https://mochajs.org/)
-* [Nightwatch](http://nightwatchjs.org/)
-* [jsdoc](https://github.com/jsdoc3/jsdoc) [ejemplo](https://github.com/docstrap/docstrap/tree/master/fixtures)
-
+* [generator-fountain-webapp](https://github.com/fountainjs/generator-fountain-webapp)

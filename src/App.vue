@@ -15,7 +15,14 @@ export default {
   data () {
     return {}
   },
-  methods: {}
+  methods: {},
+  // en la documentacion mapea state en computed
+  // cuando tengamos el login funcionando, llenar el usuario de datos
+  // no se pedia pero si quieren, capas que es la respuesta de tmdb
+  //computed: mapState(['usuario' ]),
+  mounted: function () {
+    this.$store.dispatch('authenticationGuest')
+  }
 }
 </script>
 
