@@ -1,6 +1,8 @@
 <template>
 <div class="ui inverted menu">
   <router-link class="item teal" to="/" exact>Home</router-link>
+  <a class="item teal" href="https://maranimatias.github.io/tp-2017/">Doc</a>
+  <a class="item teal" href="https://github.com/MaraniMatias/tp-2017">Repo Git</a>
 </div>
 </template>
 
