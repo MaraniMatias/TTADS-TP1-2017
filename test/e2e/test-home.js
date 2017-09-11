@@ -16,9 +16,9 @@ module.exports = {
   'Card click': function (browser) {
     browser
       .url("http://localhost:8080")
-      .waitForElementPresent('.card', 2000)
+      .waitForElementPresent('.card',2000)
       .click('.card')// no hace click
-      .waitForElementPresent('h1.ui.dividing.header',2000)
+      .waitForElementPresent('h1.ui.dividing.header',3000)
       .assert.urlContains('/movie/')
       .end();
   }
