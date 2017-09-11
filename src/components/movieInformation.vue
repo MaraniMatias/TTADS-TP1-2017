@@ -1,5 +1,5 @@
 <template lang="pug">
-#portada
+div
   .ui.very.relaxed.items
     .item
       .image.ui.medium.rounded.image
@@ -16,7 +16,6 @@
             .header
               h2 Overview
             p {{movie.overview}}
-
         .ui.icon.message(style="width:90%")
           i.thumbs.up.icon
           .content
@@ -26,7 +25,6 @@
                 .bar
                   .progress
             p {{movie.popularity}}
-
         .ui.icon.message(style="width:90%")
           i.star.icon
           .content
@@ -52,13 +50,13 @@ import { mapGetters, mapActions, mapState } from 'vuex'
 
 export default {
   name: 'movieInfo',
-  props: [ 'movie' ],
+  props: ['movie'],
   data() {
-    return{}
+    return {}
   },
-  methods:{
-    getPoster: function(){
-      return  this.movie.poster_path?'https://image.tmdb.org/t/p/w342/'+this.movie.poster_path:'http://www.sellingpage.com/images/no_photo_icon.PNG'
+  methods: {
+    getPoster: function () {
+      return this.movie.poster_path ? 'https://image.tmdb.org/t/p/w342/' + this.movie.poster_path : 'http://www.sellingpage.com/images/no_photo_icon.PNG'
     }
   },
   components: {}
@@ -66,4 +64,5 @@ export default {
 </script>
 
 <style scoped>
+
 </style>

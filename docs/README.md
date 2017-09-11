@@ -66,15 +66,18 @@ npm isntall -g karma
 npm run unit
 
 # run e2e tests
-npm run e2e
+npm start & npm test
 
-# run all tests
+# or en two terminal
+npm start
 npm test
 ```
 
 ### Entregables Online
 
 Documentación Online por medio de este readme en github.io
+
+[App Online](https://maranimatias.github.io/tp-2017/online-app/)
 
 ``` bash
 # run build app in online-app and using on github page.
@@ -99,12 +102,22 @@ Librerías que usamos.
 * [Less](lesscss.org)
 * [pugjs](pugjs.org) es para HTML como less para los CSS [HTML2PUG](https://www.beautifyconverter.com/html-to-jade-converter.php)
 
-Test & Herramientas de Código.
+Herramientas de Código.
 * [jshint](https://github.com/jshint/jshint)
+
+Test unit
 * [Karma](https://github.com/karma-runner/karma)
 * [Mocha](https://mochajs.org/)
 * [phantomjs](http://phantomjs.org/)
-* [Nightwatch](http://nightwatchjs.org/)
+* [vue-test-utils](https://github.com/vuejs/vue-test-utils/)
+* [Avoriaz](https://github.com/eddyerburgh/avoriaz)
+test e2e
+* [Nightwatch](http://nightwatchjs.org/) [Browser Drivers Setup](http://nightwatchjs.org/gettingstarted#selenium-server-setup)
+* [selenium](http://docs.seleniumhq.org/download/)
+* Descargar Drivers automaticamente, para mantener la idea dejamos los binarios en test/e2e/bin, git no deberia seguir los binarios.
+  * [selenium-server-standalone-jar](https://github.com/adamhooper/selenium-server-standalone-jar)
+  * [node-geckodriver](https://github.com/vladikoff/node-geckodriver)
+  * [node-chromedriver](https://github.com/giggio/node-chromedriver)
 
 Otras librerías.
 * [vue-resource](https://github.com/pagekit/vue-resource) _Promise base HTTP for VueJS object_

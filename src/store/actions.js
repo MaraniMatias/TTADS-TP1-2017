@@ -47,9 +47,7 @@ export default {
   searchMovies: function ({ commit, state }, wordsToSearch, page) {
     axios.get(baseURL + "/search/movie" + parameterKey + "&query=" + wordsToSearch + "&page=" + page)
       .then((response) => {
-        console.info("Prueba");
-        console.info(response.data);
-        commit('set_search_results', response.data);
+        commit('set_discover_movie', response.data);
       }, (err) => {
         console.error(err);
       });

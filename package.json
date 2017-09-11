@@ -52,6 +52,8 @@
     "less": "~2.7.2",
     "less-loader": "~2.2.3",
     "mocha": "^3.5.0",
+    "nightwatch": "^0.9.16",
+    "peer": "^0.2.8",
     "phantomjs-prebuilt": "^2.1.15",
     "postcss-loader": "^2.0.6",
     "pug": "~2.0.0-rc.3",
@@ -62,19 +64,23 @@
     "style-loader": "^0.13.2",
     "vue-loader": "^13.0.4",
     "vue-template-compiler": "^2.4.2",
+    "vue-test-utils": "git+https://github.com/vuejs/vue-test-utils.git",
     "webpack": "^3.5.5",
-    "webpack-dev-server": "~2.7.1"
+    "webpack-dev-server": "~2.7.1",
+    "webpack-nightwatch-plugin": "^1.0.0"
   },
   "scripts": {
-    "start": "cross-env NODE_ENV=development npm run webpack-server --open --hot",
-    "unit": "cross-env NODE_ENV=testing karma start ./test/unit/karma.conf.js --single-run",
     "build": "cross-env NODE_ENV=production npm run webpack --progress --hide-modules",
+    "e2e": "cross-env NODE_ENV=teste2e npm run webpack",
+    "nightwatch": "./node_modules/.bin/nightwatch",
+    "start": "cross-env NODE_ENV=development npm run webpack-server --open --hot",
+    "test": "./node_modules/.bin/nightwatch -e default,chrome",
+    "unit": "cross-env NODE_ENV=testunit karma start ./test/unit/karma.conf.js --single-run",
     "webpack": "./node_modules/.bin/webpack",
-    "webpack-server": "./node_modules/.bin/webpack-dev-server",
-    "test": "npm run unit"
+    "webpack-server": "./node_modules/.bin/webpack-dev-server"
   },
   "engines": {
-    "node": ">= 6.11.2",
+    "node": ">= 6.11.3",
     "npm": ">= 5.3.0"
   }
 }

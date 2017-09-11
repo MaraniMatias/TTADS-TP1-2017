@@ -7,7 +7,8 @@ import Vuex from 'vuex';
 import VueRouter from 'vue-router';
 Vue.use(VueRouter);
 Vue.use(Vuex);
-//Vue.config.productionTip = false;
+
+Vue.config.productionTip = process.env.NODE_ENV !== 'production';
 import store from './store';
 
 /*
@@ -15,13 +16,12 @@ import store from './store';
  */
 import App from './App.vue';
 import discoverMovie from './components/discover.vue';
-import searchResults from './components/searchResults.vue';
 import movie from './components/movie.vue';
 /*
  * Jugar con las URL desde el navegador.
  */
 const router = new VueRouter({
-  //mode: 'history', // navega sin recargar pag y sin #, pero requiere configuracion el backend
+  //mode: 'history', //navega sin recargar pag y sin #, requiere config. el backend
   routes: [{
     path: '/',
     component: discoverMovie
@@ -29,10 +29,6 @@ const router = new VueRouter({
     name: "movie",
     path: '/movie/:movieId',
     component: movie
-  },{
-    name: "searchResults",
-    path: '/search/',
-    component: searchResults
   }]
 });
 /*

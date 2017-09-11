@@ -1,4 +1,3 @@
-//import { mount, beforeEachHooks, afterEachHooks, fakeActions } from 'vue-unit';
 import Vue from 'vue';
 import sinon from 'sinon';
 import Vuex from 'vuex';
@@ -51,7 +50,4 @@ describe('reviews.vue', () => {
     //expect(wrapper.vm.reviews.id).to.equal(propsData.movieId);
   });
 
-
 });
-
-//const $route = { name: 'toto' };

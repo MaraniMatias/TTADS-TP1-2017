@@ -20,18 +20,17 @@ import { mapGetters, mapActions, mapState } from 'vuex'
 export default {
   name: 'movieCard',
   // Sepuede pasar como objetos https://vuejs.org/v2/guide/components.html#Props
-  props: ['star','title','poster','overview','release-date','genre-ids','movie-id'],
-  data(){
+  props: ['star', 'title', 'poster', 'overview', 'release-date', 'genre-ids', 'movie-id'],
+  data() {
     return {}
   },
-  components: { },
+  components: {},
   computed: {},
   methods: {
-    goMovie: function(){
-      this.$router.push( { name: 'movie', params: { movieId: this.movieId }} );
+    goMovie: function () {
+      this.$router.push({ name: 'movie', params: { movieId: this.movieId } });
     }
   },
-  mounted: function () { }
-
+  mounted: function () {}
 }
 </script>
