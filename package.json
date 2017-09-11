@@ -74,7 +74,7 @@
     "e2e": "cross-env NODE_ENV=teste2e npm run webpack",
     "nightwatch": "./node_modules/.bin/nightwatch",
     "start": "cross-env NODE_ENV=development npm run webpack-server --open --hot",
-    "test": "./node_modules/.bin/nightwatch -e default,chrome",
+    "test": "./node_modules/.bin/nightwatch -e chrome",
     "unit": "cross-env NODE_ENV=testunit karma start ./test/unit/karma.conf.js --single-run",
     "webpack": "./node_modules/.bin/webpack",
     "webpack-server": "./node_modules/.bin/webpack-dev-server"
