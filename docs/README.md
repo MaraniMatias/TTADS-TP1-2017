@@ -111,13 +111,16 @@ Test unit
 * [phantomjs](http://phantomjs.org/)
 * [vue-test-utils](https://github.com/vuejs/vue-test-utils/)
 * [Avoriaz](https://github.com/eddyerburgh/avoriaz)
-test e2e
+
+Test e2e
 * [Nightwatch](http://nightwatchjs.org/) [Browser Drivers Setup](http://nightwatchjs.org/gettingstarted#selenium-server-setup)
 * [selenium](http://docs.seleniumhq.org/download/)
-* Descargar Drivers automaticamente, para mantener la idea dejamos los binarios en test/e2e/bin, git no deberia seguir los binarios.
+
+* Descargar Drivers automaticamente.
   * [selenium-server-standalone-jar](https://github.com/adamhooper/selenium-server-standalone-jar)
   * [node-geckodriver](https://github.com/vladikoff/node-geckodriver)
   * [node-chromedriver](https://github.com/giggio/node-chromedriver)
+  Pero para tener una mejor idea de como trabaja, dejamos los binarios en test/e2e/bin, git no deberia seguir los binarios.
 
 Otras librerías.
 * [vue-resource](https://github.com/pagekit/vue-resource) _Promise base HTTP for VueJS object_
