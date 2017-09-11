@@ -71,11 +71,11 @@
   },
   "scripts": {
     "build": "cross-env NODE_ENV=production npm run webpack --progress --hide-modules",
+    "e2e": "./node_modules/.bin/nightwatch -c './test/e2e/nightwatch.conf.js' -e chrome",
     "nightwatch": "./node_modules/.bin/nightwatch",
     "start": "cross-env NODE_ENV=development npm run webpack-server --open --hot",
-    "e2e": "./node_modules/.bin/nightwatch -c './test/e2e/nightwatch.conf.js' -e chrome",
-    "unit": "cross-env NODE_ENV=testunit karma start ./test/unit/karma.conf.js --single-run",
     "test":"npm run unit && npm run e2e",
+    "unit": "cross-env NODE_ENV=testunit karma start ./test/unit/karma.conf.js --single-run",
     "webpack": "./node_modules/.bin/webpack",
     "webpack-server": "./node_modules/.bin/webpack-dev-server"
   },
