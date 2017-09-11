@@ -2,7 +2,7 @@
 .ui.container
   search-bar
   h1 Movie Discover
-  .ui.link.cards.three
+  .ui.link.cards.four.stackable
     .ui.inline.loader(:class="{ active: !discover.total_pages}")
     movie-card(v-for="(movie, index) in discover.results" :key="movie.id" :star="movie.vote_average" :title="movie.title" :poster="movie.poster_path" :overview="movie.overview" :release-date="movie.release_date" :genre-ids="movie.genre_ids" :movie-id="movie.id")
 </template>
