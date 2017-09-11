@@ -1,5 +1,7 @@
-var path = require('path');
-var webpack = require('webpack');
+const path = require('path');
+const webpack = require('webpack');
+const WebpackNightWatchPlugin = require('webpack-nightwatch-plugin');
+
 module.exports = {
   entry: ['./src/main.js'],
   output: {
@@ -86,16 +88,32 @@ if (process.env.NODE_ENV === 'production') {
       })
   ]);
 }
-if (process.env.NODE_ENV === 'testing') {
+if (process.env.NODE_ENV === 'testuint') {
   module.exports.devtool = 'source-map';
   module.exports.performance.hints = false;
   module.exports.resolve.alias = { 'vue$': 'vue/dist/vue.common.js' };
   module.exports.plugins = (module.exports.plugins || [])
     .concat([
-    new webpack.DefinePlugin({
+      new webpack.DefinePlugin({
         'process.env': {
           NODE_ENV: '"testing"'
         }
       })
-  ]);
+    ]);
+}
+if (process.env.NODE_ENV === 'teste2e') {
+  module.exports.devtool = 'source-map';
+  module.exports.performance.hints = false;
+  module.exports.resolve.alias = { 'vue$': 'vue/dist/vue.common.js' };
+  module.exports.plugins = (module.exports.plugins || [])
+    .concat([
+      new webpack.DefinePlugin({
+        'process.env': {
+          NODE_ENV: '"testing"'
+        }
+      }),
+       new WebpackNightWatchPlugin({
+        url: './test/e2e/nightwatch.conf.js'
+      })
+    ]);
 }

@@ -66,9 +66,10 @@ npm isntall -g karma
 npm run unit
 
 # run e2e tests
-npm run e2e
+npm start & npm test
 
-# run all tests
+# or en two terminal
+npm start
 npm test
 ```
 
@@ -109,8 +110,12 @@ Test unit
 * [vue-test-utils](https://github.com/vuejs/vue-test-utils/)
 * [Avoriaz](https://github.com/eddyerburgh/avoriaz)
 test e2e
-* [Nightwatch](http://nightwatchjs.org/) [Browser Drivers Setup](http://nightwatchjs.org/gettingstarted#browser-drivers-setup)
+* [Nightwatch](http://nightwatchjs.org/) [Browser Drivers Setup](http://nightwatchjs.org/gettingstarted#selenium-server-setup)
 * [selenium](http://docs.seleniumhq.org/download/)
+* Descargar Drivers automaticamente, para mantener la idea dejamos los binarios en test/e2e/bin, git no deberia seguir los binarios.
+  * [selenium-server-standalone-jar](https://github.com/adamhooper/selenium-server-standalone-jar)
+  * [node-geckodriver](https://github.com/vladikoff/node-geckodriver)
+  * [node-chromedriver](https://github.com/giggio/node-chromedriver)
 
 Otras librerías.
 * [vue-resource](https://github.com/pagekit/vue-resource) _Promise base HTTP for VueJS object_

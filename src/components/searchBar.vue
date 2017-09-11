@@ -2,7 +2,7 @@
   .ui.search(style="text-align:center")
     .ui.icon.input(style="width:80%")
       input.prompt(placeholder="Search..." type="text" @keyup.enter="goSearchResults()" v-model="words")
-      i.search.icon
+      i(@click="goSearchResults()").search.icon
 </template>
 
 <script>

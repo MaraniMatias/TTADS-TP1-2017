@@ -3,19 +3,21 @@ const BINPATH = './test/e2e/bin/';
 
 module.exports = {
   src_folders: [
-    "test/e2e"
+    "test/e2e/test-home.js"
   ],
   output_folder: "./test/e2e/reports",
   selenium: {
+    //launch_url: "http://localhost:8080",
     log_path: './test/e2e/reports',
     start_process: true,
-    server_path: BINPATH+"selenium-server.jar",
-      silent: false,
+    server_path: BINPATH + "selenium-server.jar",
+    silent: false,
     host: "127.0.0.1",
     port: 4444, // standard selenium port
     cli_args: {
-     "webdriver.chrome.driver" :BINPATH+ "chromedriver",
-    "webdriver.gecko.driver" : BINPATH+"geckodriver"}
+      "webdriver.chrome.driver": BINPATH + "chromedriver",
+      "webdriver.gecko.driver": BINPATH + "geckodriver"
+    }
   },
   test_settings: {
     default: {

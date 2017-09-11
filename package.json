@@ -66,17 +66,18 @@
     "vue-template-compiler": "^2.4.2",
     "vue-test-utils": "git+https://github.com/vuejs/vue-test-utils.git",
     "webpack": "^3.5.5",
-    "webpack-dev-server": "~2.7.1"
+    "webpack-dev-server": "~2.7.1",
+    "webpack-nightwatch-plugin": "^1.0.0"
   },
   "scripts": {
-    "start": "cross-env NODE_ENV=development npm run webpack-server --open --hot",
-    "unit": "cross-env NODE_ENV=testing karma start ./test/unit/karma.conf.js --single-run",
     "build": "cross-env NODE_ENV=production npm run webpack --progress --hide-modules",
-    "webpack": "./node_modules/.bin/webpack",
-    "webpack-server": "./node_modules/.bin/webpack-dev-server",
+    "e2e": "cross-env NODE_ENV=teste2e npm run webpack",
     "nightwatch": "./node_modules/.bin/nightwatch",
-    "e2e": "npm run nightwatch",
-    "test": "npm run unit"
+    "start": "cross-env NODE_ENV=development npm run webpack-server --open --hot",
+    "test": "./node_modules/.bin/nightwatch -e default,chrome",
+    "unit": "cross-env NODE_ENV=testunit karma start ./test/unit/karma.conf.js --single-run",
+    "webpack": "./node_modules/.bin/webpack",
+    "webpack-server": "./node_modules/.bin/webpack-dev-server"
   },
   "engines": {
     "node": ">= 6.11.3",
