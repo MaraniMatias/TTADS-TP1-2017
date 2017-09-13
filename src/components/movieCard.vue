@@ -10,8 +10,8 @@
   .extra.content
     span.right.floated {{releaseDate}}
     span
-      .ui.star.rating.large
-        i.icon(v-for="s in 4" :class="[ s <= star ? 'active' : '' ]")
+      // TODO size
+      //star(:star="star" :id="movieId")
 </template>
 
 <script>
@@ -28,7 +28,8 @@ export default {
   computed: {},
   methods: {
     goMovie: function () {
-      this.$router.push({ name: 'movie', params: { movieId: this.movieId } });
+      //this.$router.push({ name: 'movie', params: { movieId: this.movieId } });
+      this.$router.push( { name: 'movie', params: { movieId: this.movieId, star: this.star }} );
     }
   },
   mounted: function () {}

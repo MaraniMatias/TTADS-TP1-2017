@@ -25,7 +25,8 @@ const router = new VueRouter({
   routes: [{
     path: '/',
     component: discoverMovie
-  }, {
+  },
+  {
     name: "movie",
     path: '/movie/:movieId',
     component: movie

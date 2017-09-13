@@ -14,7 +14,7 @@
 import { mapGetters, mapActions, mapState } from 'vuex';
 import searchBar from './searchBar.vue';
 import movieCard from './movieCard.vue';
-import paginator from './paginator.vue'
+import paginator from './paginator.vue';
 
 export default {
   name: 'discover',

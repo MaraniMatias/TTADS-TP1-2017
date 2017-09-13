@@ -4,6 +4,7 @@ div
     .item
       .image.ui.medium.rounded.image
         img(:src="getPoster()")
+        star(:star="star" :id="movie.id")
       .content
         .ui.label
           i.calendar.icon
@@ -34,23 +35,16 @@ div
                 .bar
                   .progress
             p {{movie.vote_average}}
-
-  //- Esto endria que ser el compoente de ranking, el de las estrellas y juntar esta funcionalidad.
-  //- el for es una caracteristica de pug
-    - for(var i = 1; i <= 10; i++){
-    button(@click="setRating("+i+")") #{i}
-    - }
-    //- Esto es solo a modo ilutrativo, de las propiedad del objeto movie
-    pre {{movieData}}
-
 </template>
 
 <script>
-import { mapGetters, mapActions, mapState } from 'vuex'
+import { mapGetters, mapActions, mapState } from 'vuex';
+import star from './star.vue';
 
 export default {
   name: 'movieInfo',
-  props: ['movie'],
+  //props: ['movie'],
+  props: [ 'movie', 'star'],
   data() {
     return {}
   },
@@ -59,7 +53,9 @@ export default {
       return this.movie.poster_path ? 'https://image.tmdb.org/t/p/w342/' + this.movie.poster_path : 'http://www.sellingpage.com/images/no_photo_icon.PNG'
     }
   },
-  components: {}
+  components: {
+    star
+  }
 }
 </script>
 

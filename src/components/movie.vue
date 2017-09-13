@@ -1,6 +1,8 @@
 <template lang="pug">
 .ui.container
-  movieInfo(:movie="movie")
+  //movieInfo(:movie="movie")
+  //TODO: optener desde movi
+  movieInfo(:movie="movie" :star="star")
   reviews(:movie-id="id")
 </template>
 
@@ -8,16 +10,18 @@
 import { mapGetters, mapActions, mapState } from 'vuex'
 import movieInfo from './movieInformation.vue'
 import reviews from './reviews.vue';
+import star from './star.vue';
 
 export default {
   name: 'movie',
   data() {
     return {
       id: this.$route.params.movieId,
+      star: this.$route.params.star,
       movie: {}
     }
   },
-  components: { movieInfo, reviews },
+  components: { movieInfo, reviews, star },
   methods: {
     setRating: function (value) {
       this.$store.dispatch('setMovieRating', { movieId: this.id, value })
