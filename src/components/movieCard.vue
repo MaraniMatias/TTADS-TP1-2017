@@ -10,8 +10,8 @@
   .extra.content
     span.right.floated {{releaseDate}}
     span
-      .ui.star.rating.large
-        i.icon(v-for="s in 5" :class="[ s <= star/2 ? 'active' : '' ]")
+      // TODO size
+      //star(:star="star" :id="movieId")
 </template>
 
 <script>

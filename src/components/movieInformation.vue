@@ -37,13 +37,6 @@
                 .bar
                   .progress
             p {{movie.vote_average}}
-  //- Esto endria que ser el compoente de ranking, el de las estrellas y juntar esta funcionalidad.
-  //- el for es una caracteristica de pug
-    - for(var i = 1; i <= 10; i++){
-    button(@click="setRating("+i+")") #{i}
-    - }
-    //- Esto es solo a modo ilutrativo, de las propiedad del objeto movie
-    pre {{movieData}}
 </template>
 
 <script>
