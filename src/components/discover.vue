@@ -5,34 +5,33 @@
   .ui.link.cards.four.stackable
     .ui.inline.loader(:class="{ active: !discover.total_pages}")
     movie-card(v-for="(movie, index) in discover.results" :key="movie.id" :star="movie.vote_average" :title="movie.title" :poster="movie.poster_path" :overview="movie.overview" :release-date="movie.release_date" :genre-ids="movie.genre_ids" :movie-id="movie.id")
+  hr.ui.divider
+  paginator(:pages="discover.total_pages" :page="discover.page")
 </template>
 
 <script>
 import { mapGetters, mapActions, mapState } from 'vuex';
 import searchBar from './searchBar.vue';
 import movieCard from './movieCard.vue';
+import paginator from './paginator.vue'
 
 export default {
   name: 'discover',
-  data() {
+  data(){
     return {
       page: 1
     }
   },
   components: {
     searchBar,
-    movieCard
+    movieCard,
+    paginator
   },
-  computed: {
-    ...mapState([
+  computed: mapState([
     'discover'
   ]),
-    loadMovie: function () {
-      this.$store.dispatch('loadMovieDiscover', this.page)
-    }
-  },
   mounted: function () {
-    this.loadMovie;
+    this.$store.dispatch('loadMovieDiscover',this.page)
   }
 }
 </script>
