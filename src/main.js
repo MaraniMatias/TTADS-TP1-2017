@@ -23,13 +23,17 @@ import movie from './components/movie.vue';
 const router = new VueRouter({
   //mode: 'history', //navega sin recargar pag y sin #, requiere config. el backend
   routes: [{
-    path: '/',
-    component: discoverMovie
+      path: '*',
+      redirect: '/'
+    },
+    {
+      path: '/',
+      component: discoverMovie
   },
-  {
-    name: "movie",
-    path: '/movie/:movieId',
-    component: movie
+    {
+      name: "movie",
+      path: '/movie/:movieId',
+      component: movie
   }]
 });
 /*
