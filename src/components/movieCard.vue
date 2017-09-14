@@ -10,6 +10,8 @@
   .extra.content
     span.right.floated {{releaseDate}}
     span
+      .ui.star.rating.large
+        i.icon(:class="'active'")  {{star}}
       // TODO size
       //star(:star="star" :id="movieId")
 </template>
@@ -29,7 +31,7 @@ export default {
   methods: {
     goMovie: function () {
       //this.$router.push({ name: 'movie', params: { movieId: this.movieId } });
-      this.$router.push( { name: 'movie', params: { movieId: this.movieId, star: this.star }} );
+      this.$router.push( { name: 'movie', params: { movieId: this.movieId}} );
     }
   },
   mounted: function () {}
