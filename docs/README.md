@@ -4,7 +4,7 @@ __Frontend con nuevas tecnología para [The Movie DB](www.themoviedb.org)__
 
 ``` javascript
 var tp = {
-  anio: 2017
+  anio: 2017,
   integrantes : [{
     nombre : "Andrés de la Grana",
     legajo : 41034
@@ -28,11 +28,6 @@ bla bla bla :D
 Acordamos dedicar un mínimo de 5 hs semanales.
 
 Planeamos tener la aplicación andado para 27 de Septiembre 2017.
-
-Indicando las fechas de entrega el alcance y los criterios de aceptación.
-
-- Pagina principal - para el 16-08 - listado de las películas con css mínimos.
-- Definir componentes y acomodar css - para el 12-08 - con sus css
 
 ### Reuniones de avance
 
@@ -127,8 +122,8 @@ Otras librerías.
 * [vue-search-select](https://github.com/moreta/vue-search-select)
 * [vue-simple-boilerplate](https://github.com/vuejs-templates/simple)
 * [vee-validate](https://github.com/baianat/vee-validate)
-* [http-server](https://www.npmjs.com/package/http-server)
 * [vue-axios](https://github.com/imcvampire/vue-axios)
+* [http-server](https://www.npmjs.com/package/http-server)
 
 Ejemplos.
 * https://github.com/coligo-io/notes-app-vuejs-vuex
