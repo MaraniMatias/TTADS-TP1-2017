@@ -1,11 +1,10 @@
 <template lang="pug">
 .ui.centered.grid
   .center.aligned.column
-    .ui.dimmer.modals.page(v-if="valueSent" :class="[{'active': valueSent},{'visible':valueSent},{'transition':valueSent}]")
-      .ui.mini.modal(v-if="valueSent" :class="[{'active': valueSent},{'visible':valueSent},{'transition':valueSent}]")
+    .ui.dimmer.modals.page(:class="[{'active': valueSent},{'visible':valueSent},{'transition':valueSent}]")
+      .ui.mini.modal.active.visible(v-if="valueSent")
         i.close.icon(v-on:click="valueSent=false")
-        .header
-          | ¡Gracias por puntuar!
+        .header ¡Gracias por puntuar!
     .ui.star.rating.huge
       i.icon(v-for="s in 10" :class="[ s <= star ? 'active' : '' ]" @click="setRating(s)" )
 </template>
@@ -17,7 +16,6 @@ import {
 } from 'vuex';
 
 export default {
-
   name: 'star',
   props: ['star', 'id'],
   data() {

@@ -1,40 +1,39 @@
 <template lang="pug">
-div
-  .ui.very.relaxed.items
-    .item
-      .image.ui.medium.rounded.image
-        img(:src="getPoster()")
-        star(:star="movie.vote_average" :id="movie.id")
-      .content
-        .ui.label
-          i.calendar.icon
-          | {{movie.release_date}}
-        br
-        h1.ui.dividing.header {{movie.title}}
-        .ui.icon.message(style="width:90%")
-          i.browser.icon
-          .content
-            .header
-              h2 Overview
-            p {{movie.overview}}
-        .ui.icon.message(style="width:90%")
-          i.thumbs.up.icon
-          .content
-            .header
-              h2 Popularity
-              .ui.progress(data-value="70" data-total="100")
-                .bar
-                  .progress
-            p {{movie.popularity}}
-        .ui.icon.message(style="width:90%")
-          i.star.icon
-          .content
-            .header
-              h2 Vote average
-              .ui.progress(data-value="70" data-total="100")
-                .bar
-                  .progress
-            p {{movie.vote_average}}
+.ui.very.relaxed.items
+  .item
+    .image.ui.medium.rounded.image
+      img(:src="getPoster()")
+      star(:star="movie.vote_average" :id="movie.id")
+    .content
+      .ui.label
+        i.calendar.icon
+        | {{movie.release_date}}
+      br
+      h1.ui.dividing.header {{movie.title}}
+      .ui.icon.message(style="width:90%")
+        i.browser.icon
+        .content
+          .header
+            h2 Overview
+          p {{movie.overview}}
+      .ui.icon.message(style="width:90%")
+        i.thumbs.up.icon
+        .content
+          .header
+            h2 Popularity
+            .ui.progress(data-value="70" data-total="100")
+              .bar
+                .progress
+          p {{movie.popularity}}
+      .ui.icon.message(style="width:90%")
+        i.star.icon
+        .content
+          .header
+            h2 Vote average
+            .ui.progress(data-value="70" data-total="100")
+              .bar
+                .progress
+          p {{movie.vote_average}}
 </template>
 
 <script>
@@ -43,8 +42,7 @@ import star from './star.vue';
 
 export default {
   name: 'movieInfo',
-  //props: ['movie'],
-  props: [ 'movie', 'star'],
+  props: ['movie'],
   data() {
     return {}
   },

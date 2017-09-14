@@ -22,19 +22,19 @@ import movie from './components/movie.vue';
  */
 const router = new VueRouter({
   //mode: 'history', //navega sin recargar pag y sin #, requiere config. el backend
-  routes: [{
+  routes: [
+    {
       path: '*',
       redirect: '/'
-    },
-    {
+    }, {
       path: '/',
       component: discoverMovie
-  },
-    {
+  }, {
       name: "movie",
       path: '/movie/:movieId',
       component: movie
-  }]
+    }
+  ]
 });
 /*
  * Construye la app apartir del elemento con id root.
