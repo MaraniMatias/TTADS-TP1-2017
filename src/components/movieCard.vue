@@ -11,7 +11,7 @@
     span.right.floated {{releaseDate}}
     span
       .ui.star.rating.large
-        i.icon(v-for="s in 5" :class="[ s <= star/2 ? 'active' : '' ]")
+        i.icon(:class="'active'")  {{star}}
 </template>
 
 <script>
@@ -28,7 +28,8 @@ export default {
   computed: {},
   methods: {
     goMovie: function(){
-      this.$router.push( { name: 'movie', params: { movieId: this.movieId, star: this.star }} );
+      //this.$router.push( { name: 'movie', params: { movieId: this.movieId, star: this.star }} );
+      this.$router.push( { name: 'movie', params: { movieId: this.movieId }} );
     }
   },
   mounted: function () { }

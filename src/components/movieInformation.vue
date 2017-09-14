@@ -4,7 +4,7 @@
     .item
       .image.ui.medium.rounded.image
         img(:src="getPoster()")
-        star(:star="star" :id="movie.id")
+        star(:star="movie.vote_average" :id="movie.id")
       .content
         .ui.label
           i.calendar.icon
