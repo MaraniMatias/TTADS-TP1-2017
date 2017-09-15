@@ -13,7 +13,7 @@ module.exports = {
       test: /\.js$/,
       enforce: "pre", // preload the jshint loader
       exclude: /node_modules/,
-      use: [{ loader: "jshint-loader" }]
+      loader: "jshint-loader"
     }, {
       test: /\.pug$/,
       use: {
@@ -60,17 +60,21 @@ module.exports = {
     noInfo: true
   },
   performance: {
-    hints: 'warning',
-    maxAssetSize: 300000,
-    maxEntrypointSize: 3000000
+    hints: false
   },
   devtool: '#eval-source-map'
 };
 if (process.env.NODE_ENV === 'production') {
   module.exports.devtool = '#source-map';
+  module.exports.performance = {
+    hints: 'warning',
+    //maxAssetSize: 300000,
+    //maxEntrypointSize: 3000000
+  };
   // http://vue-loader.vuejs.org/en/workflow/production.html
   module.exports.plugins = (module.exports.plugins || [])
     .concat([
+    new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.DefinePlugin({
         'process.env': {
           NODE_ENV: '"production"'
