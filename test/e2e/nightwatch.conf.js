@@ -7,7 +7,6 @@ module.exports = {
   ],
   output_folder: "./test/e2e/reports",
   selenium: {
-    //launch_url: "http://localhost:8080",
     log_path: './test/e2e/reports',
     start_process: true,
     server_path: BINPATH + "selenium-server.jar",

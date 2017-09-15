@@ -2,9 +2,9 @@
  * VueJS y plugin generales.
  */
 import './index.less';
-import Vue from 'vue';
-import Vuex from 'vuex';
-import VueRouter from 'vue-router';
+//import Vue from 'vue';
+//import Vuex from 'vuex';
+//import VueRouter from 'vue-router';
 Vue.use(VueRouter);
 Vue.use(Vuex);
 
@@ -17,19 +17,29 @@ import store from './store';
 import App from './App.vue';
 import discoverMovie from './components/discover.vue';
 import movie from './components/movie.vue';
+import docs from './components/docs.vue';
 /*
  * Jugar con las URL desde el navegador.
  */
 const router = new VueRouter({
   //mode: 'history', //navega sin recargar pag y sin #, requiere config. el backend
-  routes: [{
-    path: '/',
-    component: discoverMovie
+  routes: [
+    {
+      path: '*',
+      redirect: '/'
+    }, {
+      path: '/',
+      component: discoverMovie
   }, {
-    name: "movie",
-    path: '/movie/:movieId',
-    component: movie
-  }]
+      name: "movie",
+      path: '/movie/:movieId',
+      component: movie
+    }, {
+      name: "docs",
+      path: '/docs',
+      component: docs
+    }
+  ]
 });
 /*
  * Construye la app apartir del elemento con id root.

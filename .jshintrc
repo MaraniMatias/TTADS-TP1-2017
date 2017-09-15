@@ -90,10 +90,13 @@
     "app": true,
     "expect": true,
     "inject": true,
-    "vue": true,
     "ipc": true,
     "$": true,
     "apiMultas": true,
-    "angular": true
+    "angular": true,
+    "Vue": true,
+    "Vuex": true,
+    "VueRouter": true,
+    "axios": true
   } // additional predefined global variables
 }

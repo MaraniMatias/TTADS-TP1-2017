@@ -4,7 +4,7 @@ __Frontend con nuevas tecnología para [The Movie DB](www.themoviedb.org)__
 
 ``` javascript
 var tp = {
-  anio: 2017
+  anio: 2017,
   integrantes : [{
     nombre : "Andrés de la Grana",
     legajo : 41034
@@ -28,11 +28,6 @@ bla bla bla :D
 Acordamos dedicar un mínimo de 5 hs semanales.
 
 Planeamos tener la aplicación andado para 27 de Septiembre 2017.
-
-Indicando las fechas de entrega el alcance y los criterios de aceptación.
-
-- Pagina principal - para el 16-08 - listado de las películas con css mínimos.
-- Definir componentes y acomodar css - para el 12-08 - con sus css
 
 ### Reuniones de avance
 
@@ -101,6 +96,7 @@ Librerías que usamos.
 * [semantic-ui](https://semantic-ui.com/)
 * [Less](lesscss.org)
 * [pugjs](pugjs.org) es para HTML como less para los CSS [HTML2PUG](https://www.beautifyconverter.com/html-to-jade-converter.php)
+* [vue-markdown-loader](https://github.com/QingWei-Li/vue-markdown-loader) Renderisa los archivos markdown en HMTL, como los hacer PUG o LESS en los componentes. Usa [markdown-it](https://github.com/markdown-it/markdown-it) para generar el HTML.
 
 Herramientas de Código.
 * [jshint](https://github.com/jshint/jshint)
@@ -111,21 +107,25 @@ Test unit
 * [phantomjs](http://phantomjs.org/)
 * [vue-test-utils](https://github.com/vuejs/vue-test-utils/)
 * [Avoriaz](https://github.com/eddyerburgh/avoriaz)
-test e2e
-* [Nightwatch](http://nightwatchjs.org/) [Browser Drivers Setup](http://nightwatchjs.org/gettingstarted#selenium-server-setup)
+
+Test e2e
+* [Nightwatch](http://nightwatchjs.org/) [Browser Drivers Setup](http://nightwatchjs.org/gettingstarted#selenium-server-setup) [Xpath cheatsheet](http://ricostacruz.com/cheatsheets/xpath.html)
 * [selenium](http://docs.seleniumhq.org/download/)
-* Descargar Drivers automaticamente, para mantener la idea dejamos los binarios en test/e2e/bin, git no deberia seguir los binarios.
-  * [selenium-server-standalone-jar](https://github.com/adamhooper/selenium-server-standalone-jar)
-  * [node-geckodriver](https://github.com/vladikoff/node-geckodriver)
-  * [node-chromedriver](https://github.com/giggio/node-chromedriver)
+
+* Descargar Drivers automaticamente.
+  * [selenium-server-standalone-jar](https://github.com/adamhooper/selenium-seirver-standalone-jar)
+
+  * [node-geckodriver](https://github.com/vladikoff/node-geckodriveOA[1;5Br)
+  * [node-chromedriver](https://github.com/giggio/node-chromedriver
+  Pero para tener una mejor idea de como trabaja, dejamos los binarios en test/e2e/bin, git no deberia seguir los binarios, otra opción es en Linux agregar los path para los binarios `profile`
 
 Otras librerías.
 * [vue-resource](https://github.com/pagekit/vue-resource) _Promise base HTTP for VueJS object_
 * [vue-search-select](https://github.com/moreta/vue-search-select)
 * [vue-simple-boilerplate](https://github.com/vuejs-templates/simple)
 * [vee-validate](https://github.com/baianat/vee-validate)
-* [http-server](https://www.npmjs.com/package/http-server)
 * [vue-axios](https://github.com/imcvampire/vue-axios)
+* [http-server](https://www.npmjs.com/package/http-server)
 
 Ejemplos.
 * https://github.com/coligo-io/notes-app-vuejs-vuex

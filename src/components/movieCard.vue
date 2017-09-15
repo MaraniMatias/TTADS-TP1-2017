@@ -4,14 +4,14 @@
     img(:src="poster?'https://image.tmdb.org/t/p/w342/'+poster:'http://www.sellingpage.com/images/no_photo_icon.PNG'")
   .content
     .header {{title}}
+    //XXX Si dejamos los generos tendiramos que buscar su valor
     .meta
       a genre: {{genreIds}}
     .description {{overview}}
   .extra.content
     span.right.floated {{releaseDate}}
-    span
-      .ui.star.rating.large
-        i.icon(v-for="s in 4" :class="[ s <= star ? 'active' : '' ]")
+    span {{star}}
+      i.star.icon.yellow
 </template>
 
 <script>
