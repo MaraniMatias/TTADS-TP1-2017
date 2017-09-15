@@ -1,8 +1,8 @@
 # Trabajo Practico
 
-[Trabajo Online](https://maranimatias.github.io/tp-2017/online-app/)
+[Trabajo Online](https://maranimatias.github.io/tp-2017)
 
-Documentación en [github.io](https://maranimatias.github.io/tp-2017/)
+Documentación en [github.io](https://maranimatias.github.io/tp-2017/#/docs)
 
 ## 1 - Enunciado
 ### 1.1 - Desarrollo
