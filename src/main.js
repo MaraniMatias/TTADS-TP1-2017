@@ -17,6 +17,7 @@ import store from './store';
 import App from './App.vue';
 import discoverMovie from './components/discover.vue';
 import movie from './components/movie.vue';
+import docs from './components/docs.vue';
 /*
  * Jugar con las URL desde el navegador.
  */
@@ -33,6 +34,10 @@ const router = new VueRouter({
       name: "movie",
       path: '/movie/:movieId',
       component: movie
+    }, {
+      name: "docs",
+      path: '/docs',
+      component: docs
     }
   ]
 });

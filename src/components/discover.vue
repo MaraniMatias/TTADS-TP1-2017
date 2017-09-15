@@ -18,7 +18,7 @@ import paginator from './paginator.vue';
 
 export default {
   name: 'discover',
-  data(){
+  data() {
     return {
       page: 1
     }
@@ -32,7 +32,7 @@ export default {
     'discover'
   ]),
   mounted: function () {
-    this.$store.dispatch('loadMovieDiscover',this.page)
+    this.$store.dispatch('loadMovieDiscover', this.page)
   }
 }
 </script>

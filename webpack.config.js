@@ -1,11 +1,10 @@
 const path = require('path');
 const webpack = require('webpack');
-const WebpackNightWatchPlugin = require('webpack-nightwatch-plugin');
 
 module.exports = {
   entry: ['./src/main.js'],
   output: {
-    path: path.resolve(__dirname, './docs/online-app'),
+    path: path.resolve(__dirname, './docs'),
     publicPath: '/',
     filename: 'build.js'
   },
@@ -15,14 +14,16 @@ module.exports = {
       enforce: "pre", // preload the jshint loader
       exclude: /node_modules/,
       use: [{ loader: "jshint-loader" }]
-      }, {
+    }, {
       test: /\.pug$/,
       use: {
         loader: 'pug-loader',
-        options: {
-          globals: {}
-        }
-      },
+        options: { globals: {} }
+      }
+    }, {
+      test: /\.md$/,
+      loader: 'vue-markdown-loader',
+      options: { use: [] }
     }, {
       test: /\.(css|less)$/,
       loaders: ['style-loader', 'css-loader', 'less-loader'] // 'postcss-loader'

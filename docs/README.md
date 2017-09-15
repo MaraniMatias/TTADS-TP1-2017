@@ -96,6 +96,7 @@ Librerías que usamos.
 * [semantic-ui](https://semantic-ui.com/)
 * [Less](lesscss.org)
 * [pugjs](pugjs.org) es para HTML como less para los CSS [HTML2PUG](https://www.beautifyconverter.com/html-to-jade-converter.php)
+* [vue-markdown-loader](https://github.com/QingWei-Li/vue-markdown-loader) Renderisa los archivos markdown en HMTL, como los hacer PUG o LESS en los componentes. Usa [markdown-it](https://github.com/markdown-it/markdown-it) para generar el HTML.
 
 Herramientas de Código.
 * [jshint](https://github.com/jshint/jshint)
@@ -112,10 +113,11 @@ Test e2e
 * [selenium](http://docs.seleniumhq.org/download/)
 
 * Descargar Drivers automaticamente.
-  * [selenium-server-standalone-jar](https://github.com/adamhooper/selenium-server-standalone-jar)
-  * [node-geckodriver](https://github.com/vladikoff/node-geckodriver)
-  * [node-chromedriver](https://github.com/giggio/node-chromedriver)
-  Pero para tener una mejor idea de como trabaja, dejamos los binarios en test/e2e/bin, git no deberia seguir los binarios.
+  * [selenium-server-standalone-jar](https://github.com/adamhooper/selenium-seirver-standalone-jar)
+
+  * [node-geckodriver](https://github.com/vladikoff/node-geckodriveOA[1;5Br)
+  * [node-chromedriver](https://github.com/giggio/node-chromedriver
+  Pero para tener una mejor idea de como trabaja, dejamos los binarios en test/e2e/bin, git no deberia seguir los binarios, otra opción es en Linux agregar los path para los binarios `profile`
 
 Otras librerías.
 * [vue-resource](https://github.com/pagekit/vue-resource) _Promise base HTTP for VueJS object_
