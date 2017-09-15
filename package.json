@@ -56,6 +56,7 @@
     "markdown-it": "^8.4.0",
     "mocha": "^3.5.3",
     "nightwatch": "^0.9.16",
+    "nightwatch-html-reporter": "^2.0.2",
     "peer": "^0.2.8",
     "phantomjs-prebuilt": "^2.1.15",
     "postcss-loader": "^2.0.6",
@@ -75,7 +76,7 @@
   },
   "scripts": {
     "build": "cross-env NODE_ENV=production npm run webpack --progress --hide-modules",
-    "e2e": "./node_modules/.bin/nightwatch -c './test/e2e/nightwatch.conf.js' -e chrome",
+    "e2e": "./node_modules/.bin/nightwatch -c './test/e2e/nightwatch.conf.js' --reporter './test/e2e/html-reporter.js' -e chrome",
     "nightwatch": "./node_modules/.bin/nightwatch",
     "start": "cross-env NODE_ENV=development npm run webpack-server --open --hot",
     "test": "npm run unit && npm run e2e",
