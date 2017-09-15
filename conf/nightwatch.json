@@ -1,0 +1,51 @@
+{
+  "src_folders": [
+    "./test/e2e/"
+  ],
+  "output_folder": "./test/e2e/reports",
+  "selenium": {
+    "log_path": "./test/e2e/reports",
+    "start_process": true,
+    "server_path":"./conf/webdriver/selenium-server.jar",
+    "silent": false,
+    "host": "127.0.0.1",
+    "port": 4444, 
+    "cli_args": {
+      "webdriver.chrome.driver": "./conf/webdriver/chromedriver",
+      "webdriver.gecko.driver": "./conf/webdriver/geckodriver"
+    }
+  },
+  "test_settings": {
+    "default": {
+      "launch_url": "127.0.0.1:8080",
+      "selenium_port": 4444,
+      "selenium_host": "localhost",
+      "silent": true,
+      "sync_test_names": true,
+      "screenshots": {
+        "enabled": false,
+        "path": ""
+      },
+      "desiredCapabilities": {},
+      "globals": {
+        "waitForConditionTimeout": 6000,
+        "asyncHookTimeout": 6000
+      }
+},
+    "firefox": {
+      "desiredCapabilities": {
+        "browserName": "firefox",
+        "javascriptEnabled": true,
+        "acceptSslCerts": true,
+        "marionette": true
+      }
+    },
+    "chrome": {
+      "desiredCapabilities": {
+        "javascriptEnabled": true,
+        "acceptSslCerts": true,
+        "browserName": "chrome"
+      }
+    }
+  }
+}

@@ -109,8 +109,11 @@ Test unit
 * [Avoriaz](https://github.com/eddyerburgh/avoriaz)
 
 Test e2e
-* [Nightwatch](http://nightwatchjs.org/) [Browser Drivers Setup](http://nightwatchjs.org/gettingstarted#selenium-server-setup) [Xpath cheatsheet](http://ricostacruz.com/cheatsheets/xpath.html)
+* [Nightwatch](http://nightwatchjs.org/)
+    * [Browser Drivers Setup](http://nightwatchjs.org/gettingstarted#selenium-server-setup)
+    * [Xpath cheatsheet](http://ricostacruz.com/cheatsheets/xpath.html)
 * [selenium](http://docs.seleniumhq.org/download/)
+* [magellan](https://github.com/TestArmada/magellan)
 
 * Descargar Drivers automaticamente.
   * [selenium-server-standalone-jar](https://github.com/adamhooper/selenium-seirver-standalone-jar)
