@@ -61,9 +61,9 @@ npm isntall -g karma
 npm run unit
 
 # run e2e tests
-npm start & npm test
+npm start & npm run e2e
 
-# or en two terminal
+# Run test
 npm start
 npm test
 ```
@@ -119,7 +119,7 @@ Test e2e
   * [selenium-server-standalone-jar](https://github.com/adamhooper/selenium-seirver-standalone-jar)
   * [node-geckodriver](https://github.com/vladikoff/node-geckodrive)
   * [node-chromedriver](https://github.com/giggio/node-chromedriver)
-  
+
   Pero para tener una mejor idea de como trabaja, dejamos los binarios en test/e2e/bin, git no deberia seguir los binarios, otra opción es en Linux agregar los path para los binarios `profile`
 
 Otras librerías.
