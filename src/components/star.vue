@@ -1,34 +1,36 @@
 <template lang="pug">
-.ui.centered.grid
-  .center.aligned.column
-    .ui.dimmer.modals.page(:class="[{'active': valueSent},{'visible':valueSent},{'transition':valueSent}]")
-      .ui.mini.modal.active.visible(v-if="valueSent")
-        i.close.icon(v-on:click="valueSent=false")
-        .header ¡Gracias por puntuar!
-    .ui.star.rating.huge
-      i.icon(v-for="s in 10" :class="[ s <= star ? 'active' : '' ]" @click="setRating(s)" )
+div
+  .ui.centered.grid
+    .center.aligned.column
+      .ui.star.rating.huge
+        i.icon(v-for="s in 10" :class="[ s <= star ? 'active' : '' ]" @click="setRating(s)" )
+  v-modal(size="mini" v-if="valueSent" @close="valueSent=false")
+    div(slot="header") The Movie DB
+    p {{rtaTMDB}}
+    div(slot="actions")
+      .ui.button(@click="valueSent=false") OK
 </template>
 
 <script>
-import {
-  mapActions,
-  mapState
-} from 'vuex';
+import { mapActions, mapState } from 'vuex';
+import modal from './modal.vue';
 
 export default {
   name: 'star',
   props: ['star', 'id'],
   data() {
     return {
+      rtaTMDB: '',
       valueSent: false
     }
   },
-  computed: {},
+  components: { 'v-modal': modal },
   methods: {
     setRating: function (value) {
       this.$store.dispatch('setMovieRating', { movieId: this.id, value })
         .then((data) => {
           console.log("setRating", value, data);
+          this.rtaTMDB = data.status_code === 1 ? 'Thank you for rating!' : data.status_message;
           this.valueSent = true;
         });
     }
