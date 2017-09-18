@@ -13,9 +13,10 @@ export default {
       });
   },
   loadMovieDiscover: function ({ commit, state }, page) {
-    axios.get(baseURL + "/discover/movie" + parameterKey + "&sort_by=popularity.desc&page=" + page)
+    return axios.get(baseURL + "/discover/movie" + parameterKey + "&sort_by=popularity.desc&page=" + page)
       .then((response) => {
         commit('set_discover_movie', response.data);
+        return true;
       }, (err) => {
         console.error(err);
       });

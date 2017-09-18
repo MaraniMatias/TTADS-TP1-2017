@@ -29,7 +29,7 @@ export default {
     setRating: function (value) {
       this.$store.dispatch('setMovieRating', { movieId: this.id, value })
         .then((data) => {
-          console.log("setRating", value, data);
+          //console.log("setRating", value, data);
           this.rtaTMDB = data.status_code === 1 ? 'Thank you for rating!' : data.status_message;
           this.valueSent = true;
         });
