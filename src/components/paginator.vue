@@ -20,7 +20,7 @@ export default {
     }
   },
   methods: {
-    updateDiscover: function (value) {
+    updateDiscover: function (value = 1) {
       //console.log("i", this.linf, 'v', value, 's', this.lsup, 'r', this.range);
       this.$store.dispatch('loadMovieDiscover', value).then((d) => {
         this.build;
