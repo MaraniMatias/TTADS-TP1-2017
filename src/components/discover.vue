@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import { mapGetters, mapActions, mapState } from 'vuex';
+import { mapState, mapActions } from 'vuex';
 import searchBar from './searchBar.vue';
 import movieCard from './movieCard.vue';
 import paginator from './paginator.vue';
@@ -31,8 +31,18 @@ export default {
   computed: mapState([
     'discover'
   ]),
-  mounted: function () {
-    this.$store.dispatch('loadMovieDiscover', this.page)
+  methods: {
+    ...mapActions(['loadMovieDiscover', 'searchMovies']),
+    update() {
+      if (/search/.test(this.$route.name)) {
+        this.searchMovies({ query: this.query });
+      } else {
+        this.loadMovieDiscover(this.page);
+      }
+    }
+  },
+  mounted() {
+    this.update();
   }
 }
 </script>

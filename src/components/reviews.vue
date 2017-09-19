@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import { mapGetters, mapActions, mapState } from 'vuex'
+import { mapActions } from 'vuex'
 import comment from './comment.vue';
 
 export default {
@@ -17,29 +17,29 @@ export default {
   data() {
     return {
       loading: true,
-      msg:'',
+      msg: '',
       // {id, page,results: [{id, content, author, url }],total_pages, total_results}
       reviews: { id: null, page: null, results: [] }
     }
   },
   components: { comment },
-  methods: {},
-  computed: {
-    getReviews: function () {
-      this.$store.dispatch('getReviews', this.movieId)
-        .then(data => {
-          this.loading = false;
-          if (data.results.length>0) {
-            this.reviews = data;
-          } else {
-            this.msg = "this movie has no review";
-          }
-        });
+  computed: {},
+  methods: {
+    ...mapActions(['getReviews']),
+    loadReviews: function () {
+      this.getReviews(this.movieId).then(data => {
+        this.loading = false;
+        if (data.results.length > 0) {
+          this.reviews = data;
+        } else {
+          this.msg = "this movie has no review";
+        }
+      });
     }
   },
   created() {},
   mounted() {
-    this.getReviews;
+    this.loadReviews();
   }
 }
 </script>

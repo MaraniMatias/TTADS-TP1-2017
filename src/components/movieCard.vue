@@ -15,8 +15,6 @@
 </template>
 
 <script>
-import { mapGetters, mapActions, mapState } from 'vuex'
-
 export default {
   name: 'movieCard',
   // Sepuede pasar como objetos https://vuejs.org/v2/guide/components.html#Props
@@ -28,9 +26,9 @@ export default {
   computed: {},
   methods: {
     goMovie: function () {
-      this.$router.push({ name: 'movie', params: { movieId: this.movieId } });
+      this.$router.push({ name: 'movie', params: { id: this.movieId } });
     }
   },
-  mounted: function () {}
+  mounted() {}
 }
 </script>
