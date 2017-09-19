@@ -8,8 +8,12 @@
       .ui.label
         i.calendar.icon
         | {{movie.release_date}}
+      // FIXME: creo que para esto estan los css :D
+      br
       br
       h1.ui.dividing.header {{movie.title}}
+      br
+      p
       .ui.icon.message(style="width:90%")
         i.browser.icon
         .content
@@ -19,37 +23,55 @@
       .ui.icon.message(style="width:90%")
         i.thumbs.up.icon
         .content
-          .header
+          .center
             h2 Popularity
-            .ui.progress(data-value="70" data-total="100")
-              .bar
-                .progress
-          p {{movie.popularity}}
+            .header
+              .ui.horizontal.statistic
+                .value(:style="{color: getColor()}") {{movie.popularity}}
+                .label
       .ui.icon.message(style="width:90%")
         i.star.icon
         .content
-          .header
+          .center
             h2 Vote average
-            .ui.progress(data-value="70" data-total="100")
-              .bar
-                .progress
-          p {{movie.vote_average}}
+            .header
+              .ui.horizontal.statistic
+                .value(:style="{color: getColor()}") {{movie.vote_average}}
+                .label
 </template>
 
 <script>
 import { mapGetters, mapActions, mapState } from 'vuex';
 import star from './star.vue';
 
+
 export default {
   name: 'movieInfo',
   props: ['movie'],
   data() {
-    return {}
+    return {
+      //genres: ""
+    }
   },
   methods: {
     getPoster: function () {
       return this.movie.poster_path ? 'https://image.tmdb.org/t/p/w342/' + this.movie.poster_path : 'http://www.sellingpage.com/images/no_photo_icon.PNG'
-    }
+    },
+    getColor: function () {
+      return "#" + Math.floor(Math.random() * 16777215).toString(16);
+    },
+    /*getGenres: function(){
+      var genres = "";
+      console.log(this.movie.genres);
+      for(var i=0; i<this.movie.genres.length; i++ ){
+        if (i === this.movie.genres.length-1){
+          genres += this.movie.genres[i].name;
+        }else{
+          genres += this.movie.genres[i].name+", ";
+        }
+      }
+      return genres;
+    }*/
   },
   components: {
     star
@@ -58,5 +80,8 @@ export default {
 </script>
 
 <style scoped>
-
+.center {
+  text-align: center;
+  margin: 0 auto;
+}
 </style>

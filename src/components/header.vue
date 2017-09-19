@@ -1,7 +1,7 @@
 <template>
 <div class="ui inverted menu">
-  <router-link class="item teal" to="/" exact>Home</router-link>
-  <router-link class="item teal" to="/docs" exact>Docs</router-link>
+  <router-link class="item teal" :to="{ name: 'discover' }" exact>Home</router-link>
+  <router-link class="item teal" :to="{ name: 'docs' }" exact>Docs</router-link>
   <a class="item teal" href="https://github.com/MaraniMatias/tp-2017">Repo Git</a>
 </div>
 </template>

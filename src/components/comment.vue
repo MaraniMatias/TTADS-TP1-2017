@@ -13,8 +13,6 @@
 </template>
 
 <script>
-import { mapGetters, mapActions, mapState } from 'vuex'
-
 export default {
   name: 'comment',
   // Sepuede pasar como objetos https://vuejs.org/v2/guide/components.html#Props
@@ -30,6 +28,6 @@ export default {
   computed: {},
   methods: {},
   created() {},
-  mounted: function () {}
+  mounted() {}
 }
 </script>

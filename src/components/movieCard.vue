@@ -6,7 +6,7 @@
     .header {{title}}
     //XXX Si dejamos los generos tendiramos que buscar su valor
     .meta
-      a genre: {{genreIds}}
+      a genres: {{genres}}
     .description {{overview}}
   .extra.content
     span.right.floated {{releaseDate}}
@@ -15,12 +15,10 @@
 </template>
 
 <script>
-import { mapGetters, mapActions, mapState } from 'vuex'
-
 export default {
   name: 'movieCard',
   // Sepuede pasar como objetos https://vuejs.org/v2/guide/components.html#Props
-  props: ['star', 'title', 'poster', 'overview', 'release-date', 'genre-ids', 'movie-id'],
+  props: ['star', 'title', 'poster', 'overview', 'release-date', 'genres', 'movie-id'],
   data() {
     return {}
   },
@@ -28,9 +26,9 @@ export default {
   computed: {},
   methods: {
     goMovie: function () {
-      this.$router.push({ name: 'movie', params: { movieId: this.movieId } });
+      this.$router.push({ name: 'movie', params: { id: this.movieId } });
     }
   },
-  mounted: function () {}
+  mounted() {}
 }
 </script>

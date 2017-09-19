@@ -6,26 +6,27 @@
 </template>
 
 <script>
-import { mapGetters, mapActions, mapState } from 'vuex'
+import { mapActions } from 'vuex';
 
 export default {
   name: 'searchBar',
-  props: [],
   data() {
     return {
       words: ''
     }
   },
-  computed: mapState([
-    'searchResults'
-  ]),
+  computed: {},
   components: {},
   methods: {
+    ...mapActions(['loadMovieDiscover', 'searchMovies']),
     goSearchResults: function () {
+      //Me no estan mala idea llamar las actions desde saca, mientra llegan la respuesta se crea el componente :D
       if (this.words) {
-        this.$store.dispatch('searchMovies', this.words.replace(' ', '+'), 1);
+        this.$router.push({ name: 'search', params: { query: this.words } });
+        this.searchMovies({ query: this.words.replace(' ', '+') });
       } else {
-        this.$store.dispatch('loadMovieDiscover', this.page);
+        this.$router.push({ name: 'discover' });
+        this.loadMovieDiscover(this.page);
       }
     }
   }

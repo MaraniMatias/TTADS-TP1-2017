@@ -1,49 +1,60 @@
-<template>
-<div class="ui centered grid">
-  <div class="center aligned column">
-    <div class="ui pagination menu">
-      <a class="item" @click="updateDiscover(page-1)">
-        <i class="angle left icon"></i>
-      </a>
-      <a class="active item">
-        {{page}}
-      </a>
-      <a class="item" @click="updateDiscover(page+1)">
-        {{page + 1}}
-      </a>
-        <a class="item" @click="updateDiscover(page+2)">
-        {{page + 2}}
-      </a>
-      <a class="item" @click="updateDiscover(page+3)">
-        {{page + 3}}
-      </a>
-      <a class="item" @click="updateDiscover(page+4)">
-        {{page + 4}}
-      </a>
-      <a class="item" @click="updateDiscover(page+5)">
-        <i class="angle right icon"></i>
-      </a>
-    </div>
-  </div>
-</div>
+<template lang="pug">
+.center.aligned.ui.container
+  .ui.pagination.menu
+    a.item(@click="updateDiscover(page-1)" v-if="pages>0&&linf>0")
+      i.angle.left.icon
+    a.item(@click="updateDiscover(linf+p)" v-for="p in range" :class="{active : (linf+p<=pages && page==linf+p)}") {{linf+p}}
+    a.item(@click="updateDiscover(page+1)" v-if="page<pages-1")
+      i.angle.right.icon
 </template>
 
 <script>
+import { mapActions } from 'vuex';
+
 export default {
   name: 'paginator',
-  props: ['pages','page'],
-  data(){
-    return{
-      limit: 5
+  props: ['pages', 'page'],
+  data() {
+    return { linf: 1, lsup: 1, range: 0 }
+  },
+  methods: {
+    ...mapActions(['loadMovieDiscover', 'searchMovies']),
+    updateDiscover: function (page = 1) {
+      if (/search/.test(this.$route.name)) {
+        this.searchMovies({ query: this.$route.params.query, page });
+      } else {
+        this.loadMovieDiscover(page);
+      }
+    },
+    build: function () {
+      this.linf = (this.page - 5 < 0) ? 0 : this.page - 5;
+      this.lsup = (this.page + 4 > this.pages) ? this.pages : this.page + 4;
+      if (this.pages < 9) {
+        this.linf = 0;
+        this.lsup = this.pages;
+      } else {
+        if (this.linf === 0) { this.lsup = this.lsup + (9 - this.lsup); }
+        if (this.lsup === this.pages) { this.linf = this.pages - 9; }
+      }
+      this.range = this.lsup - this.linf;
     }
   },
-  methods:{
-    updateDiscover: function(pag){
-      console.log(pag);
-      if(pag != 0){
-        this.$store.dispatch('loadMovieDiscover',pag)
-      }
+  watch: {
+    page() {
+      this.build();
+    },
+    pages() {
+      this.build();
     }
+  },
+  created() {
+    this.build();
   }
 }
 </script>
+
+<style scope>
+.center.aligned.ui.container {
+  margin-bottom: 12px;
+}
+</styles>

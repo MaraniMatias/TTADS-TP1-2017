@@ -61,9 +61,9 @@ npm isntall -g karma
 npm run unit
 
 # run e2e tests
-npm start & npm test
+npm start & npm run e2e
 
-# or en two terminal
+# Run test
 npm start
 npm test
 ```
@@ -109,14 +109,17 @@ Test unit
 * [Avoriaz](https://github.com/eddyerburgh/avoriaz)
 
 Test e2e
-* [Nightwatch](http://nightwatchjs.org/) [Browser Drivers Setup](http://nightwatchjs.org/gettingstarted#selenium-server-setup) [Xpath cheatsheet](http://ricostacruz.com/cheatsheets/xpath.html)
+* [Nightwatch](http://nightwatchjs.org/)
+    * [Browser Drivers Setup](http://nightwatchjs.org/gettingstarted#selenium-server-setup)
+    * [Xpath cheatsheet](http://ricostacruz.com/cheatsheets/xpath.html)
 * [selenium](http://docs.seleniumhq.org/download/)
+* [magellan](https://github.com/TestArmada/magellan)
 
 * Descargar Drivers automaticamente.
   * [selenium-server-standalone-jar](https://github.com/adamhooper/selenium-seirver-standalone-jar)
+  * [node-geckodriver](https://github.com/vladikoff/node-geckodrive)
+  * [node-chromedriver](https://github.com/giggio/node-chromedriver)
 
-  * [node-geckodriver](https://github.com/vladikoff/node-geckodriveOA[1;5Br)
-  * [node-chromedriver](https://github.com/giggio/node-chromedriver
   Pero para tener una mejor idea de como trabaja, dejamos los binarios en test/e2e/bin, git no deberia seguir los binarios, otra opción es en Linux agregar los path para los binarios `profile`
 
 Otras librerías.
