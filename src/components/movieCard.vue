@@ -26,7 +26,7 @@ export default {
   computed: {},
   methods: {
     goMovie: function () {
-      this.$router.push({ name: 'movie', params: { movieId: this.movieId } });
+      this.$router.push({ name: 'movie', params: { id: this.movieId } });
     }
   },
   mounted() {}

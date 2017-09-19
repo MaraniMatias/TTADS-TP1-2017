@@ -28,16 +28,23 @@ const router = new VueRouter({
       path: '*',
       redirect: '/'
     }, {
+      name:'discover',
       path: '/',
       component: discoverMovie
   }, {
       name: "movie",
-      path: '/movie/:movieId',
+      path: '/movie/:id',
+ props: true,
       component: movie
     }, {
       name: "docs",
       path: '/docs',
       component: docs
+  }, {
+      name: "search",
+      path: '/search/:query',
+ props: true,
+      component: discoverMovie
     }
   ]
 });

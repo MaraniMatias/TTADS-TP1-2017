@@ -15,15 +15,18 @@ export default {
       words: ''
     }
   },
-  computed:{},
+  computed: {},
   components: {},
   methods: {
-    ...mapActions(['loadMovieDiscover','searchMovies']),
+    ...mapActions(['loadMovieDiscover', 'searchMovies']),
     goSearchResults: function () {
+      //Me no estan mala idea llamar las actions desde saca, mientra llegan la respuesta se crea el componente :D
       if (this.words) {
-        this.searchMovies(this.words.replace(' ', '+'), 1);
+        this.$router.push({ name: 'search', params: { query: this.words } });
+        this.searchMovies({ query: this.words.replace(' ', '+') });
       } else {
-        thisloadMovieDiscover(this.page);
+        this.$router.push({ name: 'discover' });
+        this.loadMovieDiscover(this.page);
       }
     }
   }

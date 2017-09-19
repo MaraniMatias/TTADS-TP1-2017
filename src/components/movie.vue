@@ -11,9 +11,9 @@ import reviews from './reviews.vue';
 
 export default {
   name: 'movie',
+  props: ['id'],
   data() {
     return {
-      id: this.$route.params.movieId,
       movie: {}
     }
   },

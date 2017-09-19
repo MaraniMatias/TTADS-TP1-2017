@@ -12,7 +12,7 @@ export default {
         console.error(err);
       });
   },
-  loadMovieDiscover: function ({ commit, state }, page) {
+  loadMovieDiscover: function ({ commit, state }, page = 1) {
     return axios.get(baseURL + "/discover/movie" + parameterKey + "&sort_by=popularity.desc&page=" + page)
       .then((response) => {
         commit('set_discover_movie', response.data);
@@ -45,10 +45,11 @@ export default {
         console.error(err);
       });
   },
-  searchMovies: function ({ commit, state }, wordsToSearch, page) {
-    axios.get(baseURL + "/search/movie" + parameterKey + "&query=" + wordsToSearch + "&page=" + page)
+  searchMovies: function ({ commit, state }, {query,page}) {
+    return axios.get(baseURL + "/search/movie" + parameterKey + "&query=" + query + "&page=" + (page||1))
       .then((response) => {
         commit('set_discover_movie', response.data);
+        return true;
       }, (err) => {
         console.error(err);
       });

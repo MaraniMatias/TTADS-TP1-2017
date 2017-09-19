@@ -32,10 +32,17 @@ export default {
     'discover'
   ]),
   methods: {
-    ...mapActions(['loadMovieDiscover'])
+    ...mapActions(['loadMovieDiscover', 'searchMovies']),
+    update() {
+      if (/search/.test(this.$route.name)) {
+        this.searchMovies({ query: this.query });
+      } else {
+        this.loadMovieDiscover(this.page);
+      }
+    }
   },
   mounted() {
-    this.loadMovieDiscover(this.page);
+    this.update();
   }
 }
 </script>

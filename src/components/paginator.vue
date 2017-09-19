@@ -18,11 +18,13 @@ export default {
     return { linf: 1, lsup: 1, range: 0 }
   },
   methods: {
-    ...mapActions(['loadMovieDiscover']),
-    updateDiscover: function (value = 1) {
-      this.loadMovieDiscover(value).then((d) => {
-        this.build();
-      });
+    ...mapActions(['loadMovieDiscover', 'searchMovies']),
+    updateDiscover: function (page = 1) {
+      if (/search/.test(this.$route.name)) {
+        this.searchMovies({ query: this.$route.params.query, page });
+      } else {
+        this.loadMovieDiscover(page);
+      }
     },
     build: function () {
       this.linf = (this.page - 5 < 0) ? 0 : this.page - 5;
@@ -35,6 +37,14 @@ export default {
         if (this.lsup === this.pages) { this.linf = this.pages - 9; }
       }
       this.range = this.lsup - this.linf;
+    }
+  },
+  watch: {
+    page() {
+      this.build();
+    },
+    pages() {
+      this.build();
     }
   },
   created() {
