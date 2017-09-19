@@ -8,6 +8,7 @@
       .ui.label
         i.calendar.icon
         | {{movie.release_date}}
+      // FIXME: creo que para esto estan los css :D
       br
       br
       h1.ui.dividing.header {{movie.title}}
@@ -56,10 +57,8 @@ export default {
     getPoster: function () {
       return this.movie.poster_path ? 'https://image.tmdb.org/t/p/w342/' + this.movie.poster_path : 'http://www.sellingpage.com/images/no_photo_icon.PNG'
     },
-    getColor: function() {
-      var randomColor = Math.floor(Math.random()*16777215).toString(16);
-      var color = "#"+randomColor;
-      return color
+    getColor: function () {
+      return "#" + Math.floor(Math.random() * 16777215).toString(16);
     },
     /*getGenres: function(){
       var genres = "";
@@ -81,9 +80,8 @@ export default {
 </script>
 
 <style scoped>
-.center{
+.center {
   text-align: center;
   margin: 0 auto;
 }
 </style>
-
