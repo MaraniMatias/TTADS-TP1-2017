@@ -6,7 +6,7 @@
     .header {{title}}
     //XXX Si dejamos los generos tendiramos que buscar su valor
     .meta
-      a genre: {{genreIds}}
+      a genres: {{genres}}
     .description {{overview}}
   .extra.content
     span.right.floated {{releaseDate}}
@@ -18,7 +18,7 @@
 export default {
   name: 'movieCard',
   // Sepuede pasar como objetos https://vuejs.org/v2/guide/components.html#Props
-  props: ['star', 'title', 'poster', 'overview', 'release-date', 'genre-ids', 'movie-id'],
+  props: ['star', 'title', 'poster', 'overview', 'release-date', 'genres', 'movie-id'],
   data() {
     return {}
   },
