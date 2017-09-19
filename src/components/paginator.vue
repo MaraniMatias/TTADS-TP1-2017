@@ -9,27 +9,22 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex';
+
 export default {
   name: 'paginator',
   props: ['pages', 'page'],
   data() {
-    return {
-      linf: 1,
-      lsup: 1,
-      range: 1
-    }
+    return { linf: 1, lsup: 1, range: 0 }
   },
   methods: {
+    ...mapActions(['loadMovieDiscover']),
     updateDiscover: function (value = 1) {
-      //console.log("i", this.linf, 'v', value, 's', this.lsup, 'r', this.range);
-      this.$store.dispatch('loadMovieDiscover', value).then((d) => {
-        this.build;
+      this.loadMovieDiscover(value).then((d) => {
+        this.build();
       });
-    }
-  },
-  computed: {
+    },
     build: function () {
-      //console.log("i", this.linf, 'v', 's', this.lsup, 'r', this.range,this.page,this.pages);
       this.linf = (this.page - 5 < 0) ? 0 : this.page - 5;
       this.lsup = (this.page + 4 > this.pages) ? this.pages : this.page + 4;
       if (this.pages < 9) {
@@ -43,7 +38,7 @@ export default {
     }
   },
   created() {
-    this.build;
+    this.build();
   }
 }
 </script>

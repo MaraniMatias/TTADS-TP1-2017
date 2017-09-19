@@ -6,26 +6,24 @@
 </template>
 
 <script>
-import { mapGetters, mapActions, mapState } from 'vuex'
+import { mapActions } from 'vuex';
 
 export default {
   name: 'searchBar',
-  props: [],
   data() {
     return {
       words: ''
     }
   },
-  computed: mapState([
-    'searchResults'
-  ]),
+  computed:{},
   components: {},
   methods: {
+    ...mapActions(['loadMovieDiscover','searchMovies']),
     goSearchResults: function () {
       if (this.words) {
-        this.$store.dispatch('searchMovies', this.words.replace(' ', '+'), 1);
+        this.searchMovies(this.words.replace(' ', '+'), 1);
       } else {
-        this.$store.dispatch('loadMovieDiscover', this.page);
+        thisloadMovieDiscover(this.page);
       }
     }
   }

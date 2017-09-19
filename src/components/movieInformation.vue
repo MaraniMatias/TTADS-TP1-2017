@@ -43,9 +43,6 @@ import star from './star.vue';
 export default {
   name: 'movieInfo',
   props: ['movie'],
-  data() {
-    return {}
-  },
   methods: {
     getPoster: function () {
       return this.movie.poster_path ? 'https://image.tmdb.org/t/p/w342/' + this.movie.poster_path : 'http://www.sellingpage.com/images/no_photo_icon.PNG'
@@ -56,7 +53,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-
-</style>
