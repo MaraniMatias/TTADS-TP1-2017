@@ -1,6 +1,6 @@
 <template lang="pug">
 div
-  .ui.centered.grid
+  .ui.grid
     .center.aligned.column
       .ui.star.rating.huge
         i.icon(v-for="s in 10" :class="[ s <= star ? 'active' : '' ]" @click="setRating(s)" )

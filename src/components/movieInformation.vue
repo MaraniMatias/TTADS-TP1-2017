@@ -1,49 +1,44 @@
 <template lang="pug">
-.ui.very.relaxed.items
-  .item
-    .image.ui.medium.rounded.image
+.ui.grid.container.stackable
+  .ui.six.wide.column.center.aligned
+    .ui.column(style="display: flex;")
       img(:src="getPoster()")
+    .ui.column
       star(:star="movie.vote_average" :id="movie.id")
-    .content
-      .ui.label
-        i.calendar.icon
-        | {{movie.release_date}}
-      // FIXME: creo que para esto estan los css :D
-      br
-      br
-      h1.ui.dividing.header {{movie.title}}
-      br
-      p
-      .ui.icon.message(style="width:90%")
-        i.browser.icon
-        .content
-          .header
-            h2 Overview
-          p {{movie.overview}}
-      .ui.icon.message(style="width:90%")
-        i.thumbs.up.icon
-        .content
-          .center
+  .ui.ten.wide.column
+    .ui.one.column.grid
+      .column
+        .ui.label
+          i.calendar.icon
+          | {{movie.release_date}}
+      .column
+        h1.ui.dividing.header {{movie.title}}
+      .column
+        .ui.icon.message
+          i.browser.icon
+          .content
+            .header
+              h2 Overview
+            p {{movie.overview}}
+      .column
+        .ui.icon.message
+          i.thumbs.up.icon
+          .content.center
             h2 Popularity
-            .header
-              .ui.horizontal.statistic
-                .value(:style="{color: getColor()}") {{movie.popularity}}
-                .label
-      .ui.icon.message(style="width:90%")
-        i.star.icon
-        .content
-          .center
+            .ui.horizontal.statistic
+              .value(:style="{color: getColor()}") {{movie.popularity}}
+      .column
+        .ui.icon.message
+          i.star.icon
+          .content.center
             h2 Vote average
-            .header
-              .ui.horizontal.statistic
-                .value(:style="{color: getColor()}") {{movie.vote_average}}
-                .label
+            .ui.horizontal.statistic
+              .value(:style="{color: getColor()}") {{movie.vote_average}}
 </template>
 
 <script>
 import { mapGetters, mapActions, mapState } from 'vuex';
 import star from './star.vue';
-
 
 export default {
   name: 'movieInfo',
@@ -83,5 +78,14 @@ export default {
 .center {
   text-align: center;
   margin: 0 auto;
+}
+
+@media only screen and (max-device-width: 480px) {
+  .ui.icon.message {
+    display: block;
+  }
+  .ui.icon.message>i.icon {
+    margin: 0px;
+  }
 }
 </style>
