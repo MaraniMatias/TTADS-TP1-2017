@@ -1,6 +1,6 @@
 <template lang="pug">
 .ui.container
-  search-bar
+  //search-bar
   h1 Movie Discover
   .ui.link.cards.four.stackable
     .ui.inline.loader(:class="{ active: !discover.total_pages}")
