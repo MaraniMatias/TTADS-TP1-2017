@@ -7,7 +7,7 @@
     <div class="right menu">
       <div class="item">
         <button class="ui active button"><i class="user icon"></i>Iniciar Sesión</button>
-    </div>
+      </div>
     </div>
   </div>
 </template>

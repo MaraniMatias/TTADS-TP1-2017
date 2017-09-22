@@ -1,6 +1,5 @@
 <template lang="pug">
 .ui.container
-  //search-bar
   h1 Movie Discover
   .ui.link.cards.four.stackable
     .ui.inline.loader(:class="{ active: !discover.total_pages}")
@@ -12,7 +11,6 @@
 
 <script>
 import { mapState, mapActions } from 'vuex';
-import searchBar from './searchBar.vue';
 import movieCard from './movieCard.vue';
 import paginator from './paginator.vue';
 
@@ -24,7 +22,6 @@ export default {
     }
   },
   components: {
-    searchBar,
     movieCard,
     paginator
   },
