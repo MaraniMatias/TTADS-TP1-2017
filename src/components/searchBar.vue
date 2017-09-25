@@ -1,9 +1,8 @@
 <template lang="pug">
-  .ui.search(style="text-align:center")
-    .ui.icon.input(style="width:80%")
-      input.prompt(placeholder="Search..." type="text" @keyup.enter="goSearchResults()" v-model="words")
-      i(@click="goSearchResults()").search.icon
-</template>
+  .ui.icon.input
+    input(placeholder="Search..." type="text" @keyup.enter="goSearchResults()" v-model="words")
+    i.search.link.icon(@click="goSearchResults()")
+  </template>
 
 <script>
 import { mapActions } from 'vuex';
@@ -34,5 +33,7 @@ export default {
 </script>
 
 <style scoped>
-
+.ui.icon.input {
+width: 100%;
+}
 </style>

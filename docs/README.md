@@ -21,7 +21,9 @@ console.log(tp.integrantes);
 
 ## Introducción.
 
-bla bla bla :D
+Decidimos usar VueJS, una framework de frontend que en los últimos años ha crecido la cantidad de desarrolladores que lo eligen para sus proyectos, por su facilidad implementar y simpleza.
+
+Otra de las razones que los integrantes del equipo no lo conocíamos y decidimos aprender a usarlo junto con las librerías que forman parte del desarrollo como ser webpack.
 
 ## Planificación.
 
@@ -35,6 +37,10 @@ Planeamos tener la aplicación andado para 27 de Septiembre 2017.
 |-----|------------------------------------------|----------|------------------------------------------|
 |09-08| leer documentación sobre las tecnologías, base del proyecto, repositorio git || unir vuex con la base| listado de las ultimas películas con css mínimos |
 |17-08|Todo los integrantes del grupo conocen la base y como trabajar en el proyecto||realizar componentes en movie para mostrar la info de la película.|
+|23-08|Todo los integrantes del equipo por telegram|framework de CSS nuevo para integrantes del equipo y el usar pug como pre-procesador de HTML también desconocido|se agregaron test unitarios con cobertura en forma de ejemplo|hacer los componentes paginador, barra de búsqueda,componente para motrar mejor la informacion de la pelicula ,ejemplos de test unitarios |
+|30-08|Suspendida para el 01|||
+|01-09|Todo los integrantes por telegram|no tener disponibilidad de tiempo paginador no terminado|componente paginador y componente para puntear las películas|
+|13-09|Todo los integrantes de equipo en el bar de la facultad||barra de búsqueda en header, mejorar estilo en el componente movieInfo, ejemplos test e2e, login de usuario|
 
 ## Documentación.
 
@@ -52,6 +58,10 @@ npm run build
 ```
 
 ### Tests
+
+A medida que le entendimiento de como usar VueJS fue creciendo nos dimos cuenta porque se nos complico para hacer algunos test, es solo echo de no usar el framework de manera mas flexible complicaba seguir la doc de vuejs para los test unitarios ,por esa razón no deben seguirse al pie del código para sus proyectos.
+
+Para los test e2e deberían acercase bastante ala realidad.
 
 ``` bash
 # global
@@ -120,7 +130,7 @@ Test e2e
   * [node-geckodriver](https://github.com/vladikoff/node-geckodrive)
   * [node-chromedriver](https://github.com/giggio/node-chromedriver)
 
-  Pero para tener una mejor idea de como trabaja, dejamos los binarios en test/e2e/bin, git no deberia seguir los binarios, otra opción es en Linux agregar los path para los binarios `profile`
+  Pero para tener una mejor idea de como trabaja, dejamos los binarios en test/e2e/bin, git no debería seguir los binarios, otra opción es en Linux agregar los path para los binarios `profile`
 
 Otras librerías.
 * [vue-resource](https://github.com/pagekit/vue-resource) _Promise base HTTP for VueJS object_

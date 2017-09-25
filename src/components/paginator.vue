@@ -13,7 +13,11 @@ import { mapActions } from 'vuex';
 
 export default {
   name: 'paginator',
-  props: ['pages', 'page'],
+  props: {
+    page: { type: Number, default: 1 },
+    pages: { type: Number, default: 1 },
+    long: { type: Number, default: 5 }
+  },
   data() {
     return { linf: 1, lsup: 1, range: 0 }
   },
@@ -27,14 +31,14 @@ export default {
       }
     },
     build: function () {
-      this.linf = (this.page - 5 < 0) ? 0 : this.page - 5;
-      this.lsup = (this.page + 4 > this.pages) ? this.pages : this.page + 4;
-      if (this.pages < 9) {
+      this.linf = (this.page - (this.long / 2 + 0.5) < 0) ? 0 : this.page - (this.long / 2 + 0.5);
+      this.lsup = (this.page + (this.long / 2) > this.pages) ? this.pages : (this.page + this.long / 2 - 0.5);
+      if (this.pages < this.long) {
         this.linf = 0;
         this.lsup = this.pages;
       } else {
-        if (this.linf === 0) { this.lsup = this.lsup + (9 - this.lsup); }
-        if (this.lsup === this.pages) { this.linf = this.pages - 9; }
+        if (this.linf === 0) { this.lsup = this.lsup + (this.long - this.lsup); }
+        if (this.lsup === this.pages) { this.linf = this.pages - this.long; }
       }
       this.range = this.lsup - this.linf;
     }

@@ -4,7 +4,9 @@
     .ui.comments
       .ui.centered.inline.loader(:class="{ active: loading}")
       comment(v-for="comment in reviews.results" :key="comment.id" :content="comment.content" :author="comment.author" :url="comment.url")
-      p(v-if="msg && !loading") {{msg}}
+      .ui.tertiary.segment(v-if="msg && !loading")
+        i.warning.icon
+        | {{msg}}
 </template>
 
 <script>
@@ -32,7 +34,7 @@ export default {
         if (data.results.length > 0) {
           this.reviews = data;
         } else {
-          this.msg = "this movie has no review";
+          this.msg = "This movie has no reviews.";
         }
       });
     }
