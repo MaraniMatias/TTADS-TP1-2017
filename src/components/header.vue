@@ -55,6 +55,7 @@ export default {
 
 <style scoped>
 .ui.menu {
+  margin-top: 0px;
   border-radius: 0px;
 }
 
