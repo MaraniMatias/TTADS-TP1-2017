@@ -4,7 +4,7 @@
     .ui.comments
       .ui.centered.inline.loader(:class="{ active: loading}")
       comment(v-for="comment in reviews.results" :key="comment.id" :content="comment.content" :author="comment.author" :url="comment.url")
-      .ui.tertiary.segment(v-if="msg && !loading")
+      .ui.tertiary.segment(v-show="msg && !loading")
         i.warning.icon
         | {{msg}}
 </template>

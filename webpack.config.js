@@ -10,10 +10,10 @@ module.exports = {
   },
   module: {
     rules: [{
-      test: /\.js$/,
+      test: /\.(js|vue)$/,
       enforce: "pre", // preload the jshint loader
       exclude: /node_modules/,
-      loader: "jshint-loader"
+      loader: "eslint-loader"
     }, {
       test: /\.pug$/,
       use: {
