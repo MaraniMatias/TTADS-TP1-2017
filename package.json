@@ -37,7 +37,6 @@
     "css-loader": "^0.28.7",
     "eslint": "^4.7.2",
     "eslint-config-airbnb-base": "^12.0.0",
-    "eslint-friendly-formatter": "^3.0.0",
     "eslint-loader": "^1.9.0",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-vue": "^3.13.0",
@@ -85,15 +84,18 @@
     "webpack-nightwatch-plugin": "^1.0.0"
   },
   "scripts": {
-    "build": "cross-env NODE_ENV=production ./node_modules/.bin/webpack --progress --hide-modules",
+    "build": "cross-env NODE_ENV=production npm run webpack --progress --hide-modules",
     "e2e": "./node_modules/.bin/nightwatch -c './conf/nightwatch.json' --reporter './conf/html-reporter.js' -e chrome",
     "nightwatch": "./node_modules/.bin/nightwatch",
-    "start": "cross-env NODE_ENV=development ./node_modules/.bin/webpack-dev-server --open --hot",
+    "start": "cross-env NODE_ENV=development npm run webpack-server --open --hot",
     "test": "npm run unit && ./node_modules/.bin/magellan --local_browsers chrome",
-    "unit": "cross-env NODE_ENV=testunit karma start ./conf/karma.conf.js --single-run"
+    "unit": "cross-env NODE_ENV=testunit karma start ./conf/karma.conf.js --single-run",
+    "webpack": "./node_modules/.bin/webpack",
+    "webpack-server": "./node_modules/.bin/webpack-dev-server"
   },
   "engines": {
     "node": ">= 6.11.3",
     "npm": ">= 5.3.0"
   }
 }
+
