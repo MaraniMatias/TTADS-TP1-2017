@@ -109,7 +109,8 @@ Librerías que usamos.
 * [vue-markdown-loader](https://github.com/QingWei-Li/vue-markdown-loader) Renderisa los archivos markdown en HMTL, como los hacer PUG o LESS en los componentes. Usa [markdown-it](https://github.com/markdown-it/markdown-it) para generar el HTML.
 
 Herramientas de Código.
-* [jshint](https://github.com/jshint/jshint)
+* ~~[jshint](https://github.com/jshint/jshint)~~
+* [eslint](https://eslint.org) [reglas](https://eslint.org/docs/rules/)
 
 Test unit
 * [Karma](https://github.com/karma-runner/karma)
