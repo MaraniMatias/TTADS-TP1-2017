@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 //import axios from 'axios';
 const baseURL = "https://api.themoviedb.org/3";
 // Dejo la key separada porque creo que se puede enviar por post para algunso caso.
@@ -45,8 +46,8 @@ export default {
         console.error(err);
       });
   },
-  searchMovies: function ({ commit, state }, {query,page}) {
-    return axios.get(baseURL + "/search/movie" + parameterKey + "&query=" + query + "&page=" + (page||1))
+  searchMovies: function ({ commit, state }, { query, page }) {
+    return axios.get(baseURL + "/search/movie" + parameterKey + "&query=" + query + "&page=" + (page || 1))
       .then((response) => {
         commit('set_discover_movie', response.data);
         return true;

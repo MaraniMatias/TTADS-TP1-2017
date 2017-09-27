@@ -13,7 +13,10 @@ module.exports = {
       test: /\.(js|vue)$/,
       enforce: "pre", // preload the jshint loader
       exclude: /node_modules/,
-      loader: "eslint-loader"
+      loader: "eslint-loader",
+      options: {
+        formatter: require("eslint-friendly-formatter"),
+      }
     }, {
       test: /\.pug$/,
       use: {
