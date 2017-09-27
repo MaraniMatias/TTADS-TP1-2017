@@ -18,6 +18,7 @@ import App from './App.vue';
 import discoverMovie from './components/discover.vue';
 import movie from './components/movie.vue';
 import docs from './components/docs.vue';
+import login from './components/login.vue';
 /*
  * Jugar con las URL desde el navegador.
  */
@@ -45,6 +46,11 @@ const router = new VueRouter({
       path: '/search/:query',
  props: true,
       component: discoverMovie
+    }, {
+      name: "login",
+      path: '/login',
+ props: true,
+      component: login
     }
   ]
 });
