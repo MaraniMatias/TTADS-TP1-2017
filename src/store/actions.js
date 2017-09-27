@@ -1,4 +1,5 @@
 /* eslint-disable no-console */
+/* eslint-disable no-unused-vars */
 //import axios from 'axios';
 const baseURL = "https://api.themoviedb.org/3";
 // Dejo la key separada porque creo que se puede enviar por post para algunso caso.

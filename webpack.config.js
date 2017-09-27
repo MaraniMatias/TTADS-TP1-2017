@@ -13,7 +13,7 @@ module.exports = {
       test: /\.(js|vue)$/,
       loader: 'eslint-loader',
       enforce: "pre",
-      include: ['./src','./test'],
+      exclude: /node_modules/,
       options: {
         formatter: require('eslint-friendly-formatter')
       }
