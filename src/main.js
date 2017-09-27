@@ -22,20 +22,20 @@ import docs from './components/docs.vue';
  * Jugar con las URL desde el navegador.
  */
 const router = new VueRouter({
-  linkActiveClass:'active',
+  linkActiveClass: 'active',
   //mode: 'history', //navega sin recargar pag y sin #, requiere config. el backend
   routes: [
     {
       path: '*',
       redirect: '/'
     }, {
-      name:'discover',
+      name: 'discover',
       path: '/',
       component: discoverMovie
   }, {
       name: "movie",
       path: '/movie/:id',
- props: true,
+      props: true,
       component: movie
     }, {
       name: "docs",
@@ -44,7 +44,7 @@ const router = new VueRouter({
   }, {
       name: "search",
       path: '/search/:query',
- props: true,
+      props: true,
       component: discoverMovie
     }
   ]

@@ -11,11 +11,11 @@ module.exports = {
   module: {
     rules: [{
       test: /\.(js|vue)$/,
-      enforce: "pre", // preload the jshint loader
-      exclude: /node_modules/,
-      loader: "eslint-loader",
+      loader: 'eslint-loader',
+      enforce: "pre",
+      include: ['./src','./test'],
       options: {
-        formatter: require("eslint-friendly-formatter"),
+        formatter: require('eslint-friendly-formatter')
       }
     }, {
       test: /\.pug$/,
