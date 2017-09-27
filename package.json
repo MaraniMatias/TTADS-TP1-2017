@@ -85,14 +85,14 @@
     "webpack-nightwatch-plugin": "^1.0.0"
   },
   "scripts": {
-    "build": "cross-env NODE_ENV=production npm run webpack",
+    "build": "cross-env NODE_ENV=production npm run webpack --progress --hide-modules",
     "e2e": "./node_modules/.bin/nightwatch -c './conf/nightwatch.json' --reporter './conf/html-reporter.js' -e chrome",
     "nightwatch": "./node_modules/.bin/nightwatch",
-    "start": "cross-env NODE_ENV=development npm run webpack-server",
+    "start": "cross-env NODE_ENV=development npm run webpack-server --hot",
     "test": "npm run unit && ./node_modules/.bin/magellan --local_browsers chrome",
     "unit": "cross-env NODE_ENV=testunit karma start ./conf/karma.conf.js --single-run",
-    "webpack": "./node_modules/.bin/webpack --progress --hide-modules",
-    "webpack-server": "./node_modules/.bin/webpack-dev-server --hot"
+    "webpack": "./node_modules/.bin/webpack",
+    "webpack-server": "./node_modules/.bin/webpack-dev-server"
   },
   "engines": {
     "node": ">= 6.11.3",
