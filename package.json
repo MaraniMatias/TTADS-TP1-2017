@@ -92,7 +92,7 @@
     "test": "npm run unit && ./node_modules/.bin/magellan --local_browsers chrome",
     "unit": "cross-env NODE_ENV=testunit karma start ./conf/karma.conf.js --single-run",
     "webpack": "./node_modules/.bin/webpack --progress --hide-modules",
-    "webpack-server": "./node_modules/.bin/webpack-dev-server --hot --open"
+    "webpack-server": "./node_modules/.bin/webpack-dev-server --hot"
   },
   "engines": {
     "node": ">= 6.11.3",

@@ -35,6 +35,7 @@ const router = new VueRouter({
   }, {
       name: "movie",
       path: '/movie/:id',
+      //props: (route) => ({ id: Number(route.params.id) }),
       props: true,
       component: movie
     }, {
