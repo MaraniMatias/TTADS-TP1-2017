@@ -12,8 +12,11 @@ module.exports = {
     phantomjs: true
   },
   globals: {
-    axios: true,
-    state: true,
-    commit: true
+    'Vue': true,
+    'VueRouter': true,
+    'Vuex': true,
+    'axios': true,
+    'state': true,
+    'commit': true
   }
 };

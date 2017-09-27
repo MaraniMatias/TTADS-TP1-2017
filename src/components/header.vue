@@ -59,10 +59,12 @@ export default {
   border-radius: 0px;
 }
 
+/*
 .ui.inverted.menu .router-link-active {
   background-color: #00b5ad;
   border-radius: 0px;
-}
+ }
+*/
 
 .item.search-bar {
   margin: auto;

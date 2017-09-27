@@ -22,6 +22,7 @@ import docs from './components/docs.vue';
  * Jugar con las URL desde el navegador.
  */
 const router = new VueRouter({
+  linkActiveClass:'active',
   //mode: 'history', //navega sin recargar pag y sin #, requiere config. el backend
   routes: [
     {

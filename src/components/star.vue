@@ -12,7 +12,7 @@ div
 </template>
 
 <script>
-import { mapActions, mapState } from 'vuex';
+import { mapActions } from 'vuex';
 import modal from './modal.vue';
 
 export default {
@@ -26,8 +26,10 @@ export default {
   },
   components: { 'v-modal': modal },
   methods: {
+    ...mapActions(['setMovieRating']),
     setRating: function (value) {
-      this.$store.dispatch('setMovieRating', { movieId: this.id, value })
+      //this.$store.dispatch('setMovieRating', { movieId: this.id, value })
+      this.setMovieRating({ movieId: this.id, value })
         .then((data) => {
           this.rtaTMDB = data.status_code === 1 ? 'Thank you for rating!' : data.status_message;
           this.valueSent = true;
