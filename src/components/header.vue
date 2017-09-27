@@ -9,7 +9,7 @@
     </div>
     <div class="right menu">
       <div class="ui item">
-        <button class="ui button"><i class="user icon"></i>Iniciar Sesión</button>
+         <router-link :to="{ name: 'login' }" exact><button class="ui button"><i class="user icon"></i>Iniciar Sesión</button></router-link>
       </div>
     </div>
   </div>

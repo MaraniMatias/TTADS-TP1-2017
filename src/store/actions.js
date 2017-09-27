@@ -5,6 +5,7 @@ const baseURL = "https://api.themoviedb.org/3";
 // Dejo la key separada porque creo que se puede enviar por post para algunso caso.
 const apiKey = "66ae687f31e3066ab23a1b7128278d17";
 const parameterKey = "?api_key=" + apiKey;
+
 export default {
   authenticationGuest: function ({ commit }) {
     return axios.get(baseURL + "/authentication/guest_session/new" + parameterKey)
@@ -54,6 +55,50 @@ export default {
         return true;
       }, (err) => {
         console.error(err);
+      });
+  },
+  createRequestToken: function ({ commit}) {
+    return axios.get(baseURL + "/authentication/token/new" + parameterKey)
+      .then((response) => {
+        console.info("--> Create Request Token: OK");
+        console.info(response.data);
+        return response.data.request_token        
+      }, (err) => {
+        console.error("--> Create Request Token: Error");
+        console.error(err);
+      });
+  },
+  createSessionWithLogin: function ({ commit}, {userName , userPass, requestToken}) {
+    return axios.get(baseURL + "//authentication/token/validate_with_login" + parameterKey +"&username=" + userName + "&password=" + userPass + "&request_token=" + requestToken)
+      .then((response) => {
+        console.info("--> Create Session Whit Login: OK");
+        console.info(response.data);  
+        return response.data.request_token;
+      }, (err) => {
+        console.error(err);
+        console.error("--> Create Session Whit Login: Error")
+      });
+  },
+  createSession: function ({ commit}, {requestToken}) {
+    return axios.get(baseURL + "/authentication/session/new" + parameterKey + "&request_token=" + requestToken)
+      .then((response) => {
+        console.info("--> Create Session: OK");
+        console.info(response.data); 
+        return response.data.session_id;
+      }, (err) => {
+        console.error(err);
+        console.error("--> Create Session: Error")
+      });
+  },
+  getDetailsOfAccount: function ({ commit}, {session_id}) {
+    return axios.get(baseURL + "/account" + parameterKey + "&session_id=" + session_id)
+      .then((response) => {
+        console.info("--> Get Details of Account: OK");
+        console.info(response.data);
+        return response.data;
+      }, (err) => {
+        console.error(err);
+        console.error("--> Get Details of Account: Error");
       });
   }
 };

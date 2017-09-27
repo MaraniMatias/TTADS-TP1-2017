@@ -1,6 +1,6 @@
 # Trabajo Practico
 
-[Trabajo Online](https://maranimatias.github.io/tp-2017)
+[Trabajo Online](https://goo.gl/Nb5M9F)
 
 Documentación en [github.io](https://maranimatias.github.io/tp-2017/#/docs)
 
