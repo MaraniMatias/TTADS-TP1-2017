@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import { mapActions } from 'vuex';
 import comment from './comment.vue';
 
 export default {
