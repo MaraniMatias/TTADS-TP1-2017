@@ -5,8 +5,12 @@
   .content
     .header {{title}}
     //XXX Si dejamos los generos tendiramos que buscar su valor
-    .meta
-      a genres: {{genres}}
+    .meta(v-if="!adult")
+      i.check.circle.icon 
+      span Apto para todo público.
+    .meta(v-else) 
+      i.minus.circle.icon 
+      span Contenido adulto.
     .description {{overview}}
   .extra.content
     span.right.floated {{releaseDate}}
@@ -18,7 +22,7 @@
 export default {
   name: 'movieCard',
   // Sepuede pasar como objetos https://vuejs.org/v2/guide/components.html#Props
-  props: ['star', 'title', 'poster', 'overview', 'release-date', 'genres', 'movie-id'],
+  props: ['star', 'title', 'poster', 'overview', 'release-date', 'genres', 'movie-id', 'adult'],
   data() {
     return {}
   },

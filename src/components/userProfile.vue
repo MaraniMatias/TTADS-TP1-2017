@@ -9,7 +9,16 @@
       <span class="date">User ID: {{usuarioLogin.user.id}}</span>
     </div>
     <div class="description">Nombre: {{usuarioLogin.user.name}} </div>
-    <div class="description">Contenido adulto: {{usuarioLogin.user.include_adult}} </div>
+  
+    <div class="description">
+      <div v-if="!usuarioLogin.user.include_adult">
+        Contenido adulto: <i class="large toggle icon off"></i>
+      </div>
+      <div v-else>
+        Contenido adulto: <i class="large toggle icon on"></i>
+      </div>
+    </div>
+
   </div>
   <div class="ui bottom attached button" @click="cerrarSesion()"><i class="sign out icon"></i> Cerrar Sesión</div>
 </div>
