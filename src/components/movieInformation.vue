@@ -20,20 +20,28 @@
             .header
               h2 Overview
             p {{movie.overview}}
+      .ui.two.column.grid
+        .row
+          .column
+            .ui.icon.message
+              i.thumbs.up.icon
+              .content.center
+                h2 Popularity
+                .ui.horizontal.statistic
+                  .value(:style="{color: getColor()}") {{movie.popularity}}
+          .column
+            .ui.icon.message
+              i.star.icon
+              .content.center
+                h2 Vote average
+                .ui.horizontal.statistic
+                  .value(:style="{color: getColor()}") {{movie.vote_average}}
       .column
         .ui.icon.message
-          i.thumbs.up.icon
+          i.tags.icon
           .content.center
-            h2 Popularity
-            .ui.horizontal.statistic
-              .value(:style="{color: getColor()}") {{movie.popularity}}
-      .column
-        .ui.icon.message
-          i.star.icon
-          .content.center
-            h2 Vote average
-            .ui.horizontal.statistic
-              .value(:style="{color: getColor()}") {{movie.vote_average}}
+            h2 Genres
+            .ui.tag.label(v-for='genres in movie.genres' :style="{color: getColor()}") {{genres.name}}
 </template>
 
 <script>

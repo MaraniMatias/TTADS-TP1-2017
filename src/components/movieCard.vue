@@ -4,7 +4,6 @@
     img(:src="poster?'https://image.tmdb.org/t/p/w342/'+poster:'http://www.sellingpage.com/images/no_photo_icon.PNG'")
   .content
     .header {{title}}
-    //XXX Si dejamos los generos tendiramos que buscar su valor
     .meta(v-if="!adult")
       i.check.circle.icon 
       span Apto para todo público.
