@@ -110,6 +110,6 @@ export default {
   },
   cerrarSesionUsuario: function ({commit, state}){
     console.info("Cerrar sesion");
-    commit('set_usuario_login', null);
+    commit('set_usuario_login', "");
   }
 };

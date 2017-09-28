@@ -12,7 +12,7 @@
       <div v-if="!usuarioLogin.user.username">
         <div class="right menu">
           <div class="ui item">
-            <router-link :to="{ name: 'login' }" exact><button class="ui button"><i class="user icon"></i>Iniciar Sesión</button></router-link>
+            <router-link :to="{ name: 'login' }" exact><button class="ui button"><i class="sign in icon"></i></i>Iniciar Sesión</button></router-link>
           </div>
         </div>
       </div>
@@ -20,10 +20,16 @@
         <div class="right menu">
           <div class="ui item">
               <div class="ui simple dropdown item"><i class="user icon"></i> 
-              <div><div v-if="usuarioLogin.user.name">{{usuarioLogin.user.name}}</div><div v-else>{{usuarioLogin.user.username}}</div></div><i class="dropdown icon"></i> 
+              <div>
+                <div v-if="usuarioLogin.user.name">{{usuarioLogin.user.name}}</div>
+                <div v-else>{{usuarioLogin.user.username}}</div>
+              </div>
+              <i class="dropdown icon"></i> 
                 <div class="menu">
-                  <div class="item">Mi Perfil</div>
-                  <div class="item">Cerrar Sesion</div>
+                  <router-link class="item teal " :to="{ name: 'userProfile' }" exact>
+                   <i class="address card outline icon"></i>Mi Perfil
+                  </router-link>
+                  <div class="item" @click='cerrarSesion()'><i class="sign out icon"></i>Cerrar Sesion</div>
                 </div>
               </div>
           </div>
@@ -77,7 +83,7 @@ export default {
   methods: {
     ...mapActions(['cerrarSesionUsuario']),
     cerrarSesion: function(){
-
+      this.cerrarSesionUsuario();
     }
   }
 }

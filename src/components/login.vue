@@ -41,7 +41,7 @@ export default {
     goCreateRequestToken: function () {
         this.createRequestToken()
         .then((response) => {
-          this.createSessionWithLogin({ userName: "arian.valles"/*this.userName*/, userPass: "arian12345" /*this.userPassword*/,  requestToken: response})
+          this.createSessionWithLogin({ userName: this.userName, userPass: this.userPassword,  requestToken: response})
           .then((response) => {
             this.createSession({requestToken: response})
             .then((response) => {

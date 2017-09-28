@@ -19,6 +19,7 @@ import discoverMovie from './components/discover.vue';
 import movie from './components/movie.vue';
 import docs from './components/docs.vue';
 import login from './components/login.vue';
+import userProfile from './components/userProfile.vue';
 /*
  * Jugar con las URL desde el navegador.
  */
@@ -51,8 +52,13 @@ const router = new VueRouter({
     }, {
       name: "login",
       path: '/login',
- props: true,
+      props: true,
       component: login
+    }, {
+      name: "userProfile",
+      path: '/profile',
+      props: true,
+      component: userProfile
     }
   ]
 });
