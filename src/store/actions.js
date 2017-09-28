@@ -66,6 +66,7 @@ export default {
       }, (err) => {
         console.error("--> Create Request Token: Error");
         console.error(err);
+        return "Error al obtener el Reques Token";
       });
   },
   createSessionWithLogin: function ({ commit}, {userName , userPass, requestToken}) {
@@ -76,7 +77,8 @@ export default {
         return response.data.request_token;
       }, (err) => {
         console.error(err);
-        console.error("--> Create Session Whit Login: Error")
+        console.error("--> Create Session Whit Login: Error");
+        throw "Usuario o contraseña incorrectos. Vuelva a intentar.";
       });
   },
   createSession: function ({ commit}, {requestToken}) {
@@ -87,7 +89,8 @@ export default {
         return response.data.session_id;
       }, (err) => {
         console.error(err);
-        console.error("--> Create Session: Error")
+        console.error("--> Create Session: Error");
+        return "Error al crear la sesión del usuario.";
       });
   },
   getDetailsOfAccount: function ({ commit}, {session_id}) {
@@ -99,6 +102,14 @@ export default {
       }, (err) => {
         console.error(err);
         console.error("--> Get Details of Account: Error");
+        return "Error al obtener los detalles del usuario.";
       });
+  },
+  setUsuarioLogin: function ({commit, state}, {response}) {
+    commit('set_usuario_login', response);
+  },
+  cerrarSesionUsuario: function ({commit, state}){
+    console.info("Cerrar sesion");
+    commit('set_usuario_login', null);
   }
 };

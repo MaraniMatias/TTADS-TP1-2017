@@ -15,6 +15,14 @@ export default {
     },
     searchResults: {
       results: []
+    },
+    usuarioLogin: {
+      /*gravatar: "",
+      id: 0,
+      includeAdult: false,
+      name : "",
+      username: ""*/
+      user: []
     }
   },
   actions,

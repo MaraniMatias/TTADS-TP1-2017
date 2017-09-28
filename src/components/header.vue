@@ -7,11 +7,30 @@
     <div class="item search-bar">
       <search-bar></search-bar>
     </div>
-    <div class="right menu">
-      <div class="ui item">
-         <router-link :to="{ name: 'login' }" exact><button class="ui button"><i class="user icon"></i>Iniciar Sesión</button></router-link>
+    
+    <div>
+      <div v-if="!usuarioLogin.user.username">
+        <div class="right menu">
+          <div class="ui item">
+            <router-link :to="{ name: 'login' }" exact><button class="ui button"><i class="user icon"></i>Iniciar Sesión</button></router-link>
+          </div>
+        </div>
       </div>
+      <div v-else>
+        <div class="right menu">
+          <div class="ui item">
+              <div class="ui simple dropdown item"><i class="user icon"></i> 
+              <div><div v-if="usuarioLogin.user.name">{{usuarioLogin.user.name}}</div><div v-else>{{usuarioLogin.user.username}}</div></div><i class="dropdown icon"></i> 
+                <div class="menu">
+                  <div class="item">Mi Perfil</div>
+                  <div class="item">Cerrar Sesion</div>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div> 
     </div>
+    
   </div>
   <div class="ui icon inverted menu movil">
     <router-link class="item teal" :to="{ name: 'discover' }" exact>
@@ -45,10 +64,21 @@
 </template>
 
 <script>
+import { mapState, mapActions } from 'vuex';
 import searchBar from './searchBar.vue';
+
 export default {
   components: {
     searchBar
+  },
+  computed: mapState([
+    'usuarioLogin'
+  ]),
+  methods: {
+    ...mapActions(['cerrarSesionUsuario']),
+    cerrarSesion: function(){
+
+    }
   }
 }
 </script>

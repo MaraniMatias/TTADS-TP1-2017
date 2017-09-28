@@ -1,59 +1,70 @@
-<template>
-<div class="ui middle aligned center aligned grid">
-  <div class="column">
-    <h2 class="ui teal image header">
-      <img src="assets/images/logo.png" class="image">
-      <div class="content">
-        Log-in to your account
-      </div>
-    </h2>
-    <form class="ui large form">
-      <div class="ui stacked segment">
-        <div class="field">
-          <div class="ui left icon input">
-            <i class="user icon"></i>
-            <input type="text" name="user_name" placeholder="User Name" v-model="userName">
-          </div>
-        </div>
-        <div class="field">
-          <div class="ui left icon input">
-            <i class="lock icon"></i>
-            <input type="password" name="password" placeholder="Password" v-model="userPassword">
-          </div>
-        </div>
-        <div class="ui fluid large teal submit button" @click="goCreateRequestToken()">Login</div>
-      </div>
-
-      <div class="ui error message"></div>
-
-    </form>
-
-    <div class="ui message">
-      New to us? <a href="https://www.themoviedb.org/account/signup">Sign Up</a>
-    </div>
-  </div>
-</div>
+<template lang="pug">
+.ui.middle.aligned.center.aligned.grid
+  .column
+    h2.ui.teal.image.header
+      i.users.icon
+      .content
+        | Log-in to your account
+    form.ui.large.form
+      .ui.stacked.segment
+        .field
+          .ui.left.icon.input
+            i.user.icon
+            input(type='text', name='user_name', placeholder='User Name', v-model='userName')
+        .field
+          .ui.left.icon.input
+            i.lock.icon
+            input(type='password', name='password', placeholder='Password', v-model='userPassword')
+        .ui.fluid.large.teal.submit.button(@click='goCreateRequestToken()') Login
+      .ui.secondary.inverted.red.segment(v-show="incorrecLogin")
+        i.warning.icon
+        | {{incorrecLogin}}
+    .ui.message
+      | New to us? 
+      a(href='https://www.themoviedb.org/account/signup') Sign Up
 </template>
 
 <script>
 import { mapActions } from 'vuex';
 
 export default { 
-    methods: {
-        ...mapActions(['createRequestToken', 'createSessionWithLogin', 'createSession', 'getDetailsOfAccount']),
-        goCreateRequestToken: function () {
-            this.createRequestToken()
-            .then((response) => {
-                this.createSessionWithLogin({ userName: this.userName, userPass: this.userPassword,  requestToken: response})
-                .then((response) => {
-                    this.createSession({requestToken: response})
-                    .then((response) => {
-                        this.getDetailsOfAccount({session_id: response});
-                    });
-                });
-            });
-        }
+  props: ['currentUser'],
+  data() {
+    return {
+      userName: '',
+      userPassword: '',
+      incorrecLogin: '',
     }
+  },
+  methods: {
+    ...mapActions(['createRequestToken', 'createSessionWithLogin', 'createSession', 'getDetailsOfAccount', 'setUsuarioLogin']),
+    goCreateRequestToken: function () {
+        this.createRequestToken()
+        .then((response) => {
+          this.createSessionWithLogin({ userName: "arian.valles"/*this.userName*/, userPass: "arian12345" /*this.userPassword*/,  requestToken: response})
+          .then((response) => {
+            this.createSession({requestToken: response})
+            .then((response) => {
+              this.getDetailsOfAccount({session_id: response})
+              .then((response)=> {
+                this.setUsuarioToStore(response);
+                this.incorrecLogin = response.username;
+                this.$router.push("/");
+              });
+            }).catch((e) => {
+               this.incorrecLogin = e;
+          });
+        }).catch((e) => {
+          this.incorrecLogin = e
+        });
+      }).catch((e) => {
+        this.incorrecLogin = e;
+      });
+    },
+    setUsuarioToStore: function(value) {
+      this.setUsuarioLogin({response: value});
+    }
+  }
 }
 </script>
 
