@@ -20,8 +20,8 @@
             .header
               h2 Overview
             p {{movie.overview}}
-      .ui.two.column.grid
-        .row
+      .column
+        .ui.two.column.grid.stackable
           .column
             .ui.icon.message
               i.thumbs.up.icon
@@ -36,7 +36,9 @@
                 h2 Vote average
                 .ui.horizontal.statistic
                   .value(:style="{color: getColor()}") {{movie.vote_average}}
-      .column
+      // Solo se muestra cuando la pagina es actualizada
+      // porque trae datos de otro sitio
+      .column(v-if="movie.genres")
         .ui.icon.message
           i.tags.icon
           .content.center

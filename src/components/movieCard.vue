@@ -4,12 +4,9 @@
     img(:src="poster?'https://image.tmdb.org/t/p/w342/'+poster:'http://www.sellingpage.com/images/no_photo_icon.PNG'")
   .content
     .header {{title}}
-    .meta(v-if="!adult")
-      i.check.circle.icon 
-      span Apto para todo público.
-    .meta(v-else) 
-      i.minus.circle.icon 
-      span Contenido adulto.
+    .meta
+      i.check.circle.icon
+      span {{!adult ? 'Apto para todo público.' : 'Contenido adulto.'}}
     .description {{overview}}
   .extra.content
     span.right.floated {{releaseDate}}
@@ -21,6 +18,7 @@
 export default {
   name: 'movieCard',
   // Sepuede pasar como objetos https://vuejs.org/v2/guide/components.html#Props
+  // Creo que es mejor pasar solo una propiedad movie
   props: ['star', 'title', 'poster', 'overview', 'release-date', 'genres', 'movie-id', 'adult'],
   data() {
     return {}
