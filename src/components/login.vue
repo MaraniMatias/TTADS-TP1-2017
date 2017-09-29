@@ -3,31 +3,31 @@
   .column
     h2.ui.teal.image.header
       i.users.icon
-      .content
-        | Log-in to your account
-    form.ui.large.form
+      .content Log-in to your account
+    form.ui.large.form(@submit="goCreateRequestToken()")
       .ui.stacked.segment
         .field
           .ui.left.icon.input
             i.user.icon
-            input(type='text', name='user_name', placeholder='User Name', v-model='userName')
+            input(required type='text' placeholder='User Name' v-model='userName')
         .field
           .ui.left.icon.input
             i.lock.icon
-            input(type='password', name='password', placeholder='Password', v-model='userPassword')
-        .ui.fluid.large.teal.submit.button(@click='goCreateRequestToken()') Login
+            input(required type='password' placeholder='Password' v-model='userPassword')
+        .fluid.large
+          button.ui.teal.button(type="submit") Login
       .ui.secondary.inverted.red.segment(v-show="incorrecLogin")
         i.warning.icon
         | {{incorrecLogin}}
     .ui.message
-      | New to us? 
+      | New to us?
       a(href='https://www.themoviedb.org/account/signup') Sign Up
 </template>
 
 <script>
 import { mapActions } from 'vuex';
 
-export default { 
+export default {
   props: ['currentUser'],
   data() {
     return {
@@ -39,46 +39,49 @@ export default {
   methods: {
     ...mapActions(['createRequestToken', 'createSessionWithLogin', 'createSession', 'getDetailsOfAccount', 'setUsuarioLogin']),
     goCreateRequestToken: function () {
-        this.createRequestToken()
+      this.createRequestToken()
         .then((response) => {
-          this.createSessionWithLogin({ userName: "arian.valles"/*this.userName*/, userPass: "arian12345" /*this.userPassword*/,  requestToken: response})
-          .then((response) => {
-            this.createSession({requestToken: response})
+          this.createSessionWithLogin({ userName: this.userName, userPass: this.userPassword, requestToken: response })
             .then((response) => {
-              this.getDetailsOfAccount({session_id: response})
-              .then((response)=> {
-                this.setUsuarioToStore(response);
-                this.incorrecLogin = response.username;
-                this.$router.push("/");
-              });
+              this.createSession({ requestToken: response })
+                .then((response) => {
+                  this.getDetailsOfAccount({ session_id: response })
+                    .then((response) => {
+                      this.setUsuarioToStore(response);
+                      this.incorrecLogin = response.username;
+                      this.$router.go(-1);
+                    });
+                }).catch((e) => {
+                  this.incorrecLogin = e;
+                });
             }).catch((e) => {
-               this.incorrecLogin = e;
-          });
+              this.incorrecLogin = e
+            });
         }).catch((e) => {
-          this.incorrecLogin = e
+          this.incorrecLogin = e;
         });
-      }).catch((e) => {
-        this.incorrecLogin = e;
-      });
     },
-    setUsuarioToStore: function(value) {
-      this.setUsuarioLogin({response: value});
+    setUsuarioToStore: function (value) {
+      this.setUsuarioLogin({ response: value });
     }
   }
 }
 </script>
 
 <style scoped>
- body{
-    background-color: #DADADA;
+body {
+  background-color: #DADADA;
 }
-body > .grid {
+
+body>.grid {
   height: 100%;
 }
+
 .image {
   margin-top: -100px;
 }
+
 .column {
-max-width: 450px;
+  max-width: 450px;
 }
 </style>
