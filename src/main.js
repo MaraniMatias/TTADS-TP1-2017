@@ -63,9 +63,9 @@ const router = new VueRouter({
   ]
 });
 router.beforeEach((to, from, next) => {
-  if( /discover/.test(to.name) && /search/.test(from.name) ){
+  if (/discover/.test(to.name) && /search/.test(from.name)) {
     // realizamos de nuevo la busqeuda inicial
-    vm.$store.dispatch.loadMovieDiscover();
+    vm.$store.dispatch('loadMovieDiscover');
   }
   next();
 });
