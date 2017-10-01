@@ -48,28 +48,35 @@ const router = new VueRouter({
   }, {
       name: "search",
       path: '/search/:query',
-      props: true,
+      props: (route) => ({ query: String(route.params.query) }),
+      //props: true,
       component: discoverMovie
     }, {
       name: "login",
       path: '/login',
-      props: true,
       component: login
     }, {
       name: "userProfile",
       path: '/profile',
-      props: true,
       component: userProfile
     }
   ]
 });
+router.beforeEach((to, from, next) => {
+  if( /discover/.test(to.name) && /search/.test(from.name) ){
+    // realizamos de nuevo la busqeuda inicial
+    vm.$store.dispatch.loadMovieDiscover();
+  }
+  next();
+});
 /*
  * Construye la app apartir del elemento con id root.
  */
-export default new Vue({
+var vm = new Vue({
   el: '#root',
   router,
   strict: true, // In strict mode any mutations to Vuex state outside of mutation handlers will throw an Error.
   store: new Vuex.Store(store),
   render: h => h(App)
 });
+export default vm;
