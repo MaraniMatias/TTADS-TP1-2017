@@ -71,7 +71,14 @@ export default {
       });
   },
   createSessionWithLogin: function ({ commit }, { userName, userPass, requestToken }) {
-    return axios.get(baseURL + "//authentication/token/validate_with_login" + parameterKey + "&username=" + userName + "&password=" + userPass + "&request_token=" + requestToken)
+    return axios.get(baseURL + "//authentication/token/validate_with_login", {
+        params: {
+          api_key: apiKey,
+          username: userName,
+          password: userPass,
+          request_token: requestToken
+        }
+      })
       .then((response) => {
         console.info("--> Create Session Whit Login: OK");
         console.info(response.data);

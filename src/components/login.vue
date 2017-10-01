@@ -9,11 +9,11 @@
         .field
           .ui.left.icon.input
             i.user.icon
-            input(required type='text' placeholder='User Name' v-model='userName')
+            input(required type='text' placeholder='User Name' v-model.string='userName')
         .field
           .ui.left.icon.input
             i.lock.icon
-            input(required type='password' placeholder='Password' v-model='userPassword')
+            input(required type='password' placeholder='Password' v-model.string='userPassword')
         .fluid.large
           button.ui.teal.button(type="submit") Login
       .ui.secondary.inverted.red.segment(v-show="incorrecLogin")

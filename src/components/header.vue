@@ -1,71 +1,48 @@
-<template>
-<div>
-  <div class="ui inverted menu descktop">
-    <router-link class="item teal" :to="{ name: 'discover' }" exact>Home</router-link>
-    <router-link class="item teal" :to="{ name: 'docs' }" exact>Docs</router-link>
-    <a class="item teal" href="https://github.com/MaraniMatias/tp-2017">Repo Git</a>
-    <div class="item search-bar">
-      <search-bar></search-bar>
-    </div>
-    <div>
-      <div v-if="!usuarioLogin.user.username">
-        <div class="right menu">
-          <div class="ui item">
-            <router-link :to="{ name: 'login' }" exact><button class="ui button"><i class="sign in icon"></i></i>Iniciar Sesión</button></router-link>
-          </div>
-        </div>
-      </div>
-      <div v-else>
-        <div class="right menu">
-          <div class="ui item">
-            <div class="ui simple dropdown item"><i class="user icon"></i>
-              <div>
-                <div v-if="usuarioLogin.user.name">{{usuarioLogin.user.name}}</div>
-                <div v-else>{{usuarioLogin.user.username}}</div>
-              </div>
-              <i class="dropdown icon"></i>
-              <div class="menu">
-                <router-link class="item teal " :to="{ name: 'userProfile' }" exact>
-                  <i class="address card outline icon"></i>Mi Perfil
-                </router-link>
-                <div class="item" @click='cerrarSesion()'><i class="sign out icon"></i>Cerrar Sesion</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-  <div class="ui icon inverted menu movil">
-    <router-link class="item teal" :to="{ name: 'discover' }" exact>
-      <i class="home icon"></i>
-    </router-link>
-    <router-link class="item teal" :to="{ name: 'docs' }" exact>
-      <i class="book icon"></i>
-    </router-link>
-    <a class="item teal" href="https://github.com/MaraniMatias/tp-2017">
-    <i class="github icon"></i>
-  </a>
-    <!--
-    <vid class="item teal link">
-      <i class="search icon"></i>
-    </vid>
-    -->
-    <div class="right menu">
-      <div class="ui item link">
-        <i class="user icon"></i>
-      </div>
-    </div>
-  </div>
-  <div class="ui container">
-    <div class="ui grid">
-      <div class="wide column">
-        <search-bar></search-bar>
-      </div>
-    </div>
-  </div>
-</div>
+<template lang="pug">
+div
+  .ui.inverted.menu.descktop
+    router-link.item.teal(:to="{ name: 'discover' }", exact='') Home
+    router-link.item.teal(:to="{ name: 'docs' }", exact='') Docs
+    a.item.teal(href='https://github.com/MaraniMatias/tp-2017') Repo Git
+    .item.search-bar
+      search-bar
+    template(v-if='!usuarioLogin.user.username')
+      .right.menu
+        .ui.item
+          router-link(:to="{ name: 'login' }", exact='')
+            button.ui.button
+              i.sign.in.icon
+              | Iniciar Sesión
+    template(v-else)
+      .right.menu
+        .ui.item
+          .ui.simple.dropdown.item
+            i.user.icon
+            div
+              div(v-if='usuarioLogin.user.name') {{usuarioLogin.user.name}}
+              div(v-else='') {{usuarioLogin.user.username}}
+            i.dropdown.icon
+            .menu
+              router-link.item.teal(:to="{ name: 'userProfile' }", exact='')
+                i.address.card.outline.icon
+                | Mi Perfil
+              .item(@click='cerrarSesion()')
+                i.sign.out.icon
+                | Cerrar Sesion
+  .ui.icon.inverted.menu.movil
+    router-link.item.teal(:to="{ name: 'discover' }", exact='')
+      i.home.icon
+    router-link.item.teal(:to="{ name: 'docs' }", exact='')
+      i.book.icon
+    a.item.teal(href='https://github.com/MaraniMatias/tp-2017')
+      i.github.icon
+    .right.menu
+      .ui.item.link
+        i.user.icon
+  .ui.container
+    .ui.grid
+      .wide.column
+        search-bar
 </template>
 
 <script>
