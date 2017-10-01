@@ -29,7 +29,8 @@ Otra de las razones que los integrantes del equipo no lo conocíamos y decidimos
 
 Acordamos dedicar un mínimo de 5 hs semanales.
 
-Planeamos tener la aplicación andado para 27 de Septiembre 2017.
+Planeamos tener la aplicación andado para el ~~27 de Septiembre 2017~~.
+Re-programamos la fecha de entrega para el 4 de octubre del 2017.
 
 ### Reuniones de avance
 
@@ -41,6 +42,7 @@ Planeamos tener la aplicación andado para 27 de Septiembre 2017.
 |30-08|Suspendida para el 01|||
 |01-09|Todo los integrantes por telegram|no tener disponibilidad de tiempo paginador no terminado|componente paginador y componente para puntear las películas|
 |13-09|Todo los integrantes de equipo en el bar de la facultad||barra de búsqueda en header, mejorar estilo en el componente movieInfo, ejemplos test e2e, login de usuario|
+|29-09|Todo los integrantes por telegram||recargar discovery estando de search y hacer click en home y entregar el proyecto|
 
 ## Documentación.
 
