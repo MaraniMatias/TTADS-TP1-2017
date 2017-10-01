@@ -6,33 +6,29 @@ div
     a.item.teal(href='https://github.com/MaraniMatias/tp-2017') Repo Git
     .item.search-bar
       search-bar
-    template(v-if='!usuarioLogin.user.username')
-      .right.menu
-        .ui.item
-          router-link(:to="{ name: 'login' }", exact='')
-            button.ui.button
-              i.sign.in.icon
-              | Iniciar Sesión
-    template(v-else)
-      .right.menu
-        .ui.item
-          .ui.simple.dropdown.item
-            i.user.icon
-            div
-              div(v-if='usuarioLogin.user.name') {{usuarioLogin.user.name}}
-              div(v-else='') {{usuarioLogin.user.username}}
-            i.dropdown.icon
-            .menu
-              router-link.item.teal(:to="{ name: 'userProfile' }", exact='')
-                i.address.card.outline.icon
-                | Mi Perfil
-              .item(@click='cerrarSesion()')
-                i.sign.out.icon
-                | Cerrar Sesion
+    .right.menu
+      template(v-if='!usuarioLogin.user.username')
+        router-link.item(:to="{ name: 'login' }" exact='')
+          button.ui.button
+            i.sign.in.icon
+            | Iniciar Sesión
+      template(v-else)
+        .ui.simple.dropdown.item
+          i.user.icon
+          template(v-if='usuarioLogin.user.name') {{usuarioLogin.user.name}}
+          template(v-else='') {{usuarioLogin.user.username}}
+          i.dropdown.icon
+          .menu
+            router-link.item.teal(:to="{ name: 'userProfile' }" exact='')
+              i.address.card.outline.icon
+              | Mi Perfil
+            .item(@click='cerrarSesion()')
+              i.sign.out.icon
+              | Cerrar Sesion
   .ui.icon.inverted.menu.movil
-    router-link.item.teal(:to="{ name: 'discover' }", exact='')
+    router-link.item.teal(:to="{ name: 'discover' }" exact='')
       i.home.icon
-    router-link.item.teal(:to="{ name: 'docs' }", exact='')
+    router-link.item.teal(:to="{ name: 'docs' }" exact='')
       i.book.icon
     a.item.teal(href='https://github.com/MaraniMatias/tp-2017')
       i.github.icon
