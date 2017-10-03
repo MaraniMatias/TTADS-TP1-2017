@@ -5,7 +5,7 @@
   </template>
 
 <script>
-  import { mapActions } from 'vuex';
+import { mapActions } from 'vuex';
 
 export default {
   name: 'searchBar',
@@ -23,6 +23,7 @@ export default {
       if (this.words) {
         this.$router.push({ name: 'search', params: { query: this.words } });
         this.searchMovies({ query: this.words.replace(' ', '+') });
+        this.words = "";
       } else {
         this.$router.push({ name: 'discover' });
         this.loadMovieDiscover(this.page);
@@ -34,6 +35,6 @@ export default {
 
 <style scoped>
 .ui.icon.input {
-width: 100%;
+  width: 100%;
 }
 </style>

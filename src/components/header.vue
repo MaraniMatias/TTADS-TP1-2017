@@ -32,7 +32,7 @@ div
     a.item.teal(href='https://github.com/MaraniMatias/tp-2017')
       i.github.icon
     .right.menu
-      router-link.item.teal(:to="{ name: usuarioLogin.user.name?'login':'userProfile' }" exact='')
+      router-link.item.teal(:to="{ name: usuarioLogin.user.username?'userProfile':'login' }" exact='')
         i.user.icon
   .ui.container
     .ui.grid
