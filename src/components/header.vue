@@ -15,8 +15,7 @@ div
       template(v-else)
         .ui.simple.dropdown.item
           i.user.icon
-          template(v-if='usuarioLogin.user.name') {{usuarioLogin.user.name}}
-          template(v-else='') {{usuarioLogin.user.username}}
+          | {{usuarioLogin.user.name || usuarioLogin.user.username}}
           i.dropdown.icon
           .menu
             router-link.item.teal(:to="{ name: 'userProfile' }" exact='')
@@ -33,7 +32,7 @@ div
     a.item.teal(href='https://github.com/MaraniMatias/tp-2017')
       i.github.icon
     .right.menu
-      router-link.item.teal(:to="{ name: 'login' }" exact='')
+      router-link.item.teal(:to="{ name: usuarioLogin.user.name?'login':'userProfile' }" exact='')
         i.user.icon
   .ui.container
     .ui.grid
