@@ -4,14 +4,14 @@
     <img src="https://api.adorable.io/avatars/285/">
   </div>
   <div class="content">
-    <a class="header">{{usuarioLogin.user.username}}</a>
+    <a class="header">{{usuario.username}}</a>
     <div class="meta">
-      <span class="date">User ID: {{usuarioLogin.user.id}}</span>
+      <span class="date">User ID: {{usuario.id}}</span>
     </div>
-    <div class="description">Nombre: {{usuarioLogin.user.name}} </div>
+    <div class="description">Nombre: {{usuario.name}} </div>
   
     <div class="description">
-      <div v-if="!usuarioLogin.user.include_adult">
+      <div v-if="!usuario.include_adult">
         Contenido adulto: <i class="large toggle icon off"></i>
       </div>
       <div v-else>
@@ -29,7 +29,7 @@ import { mapState,  mapActions } from 'vuex';
 
 export default {
     computed: mapState([
-    'usuarioLogin'
+    'usuario'
   ]),
   methods: {
     ...mapActions(['cerrarSesionUsuario']),

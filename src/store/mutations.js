@@ -11,6 +11,12 @@ export default {
     state.usuarioLogin.includeAdult = usuarioLogin.include_adult;
     state.usuarioLogin.name = usuarioLogin.name,
     state.usuarioLogin.username = usuarioLogin.username;*/
-    state.usuarioLogin.user = userLogin;
+    state.usuario.gravatar = "";
+    state.usuario.id = userLogin.id;
+    state.usuario.includeAdult = userLogin.include_adult;
+    state.usuario.name = userLogin.name,
+    state.usuario.username = userLogin.username;
+
+    //state.usuarioLogin.user = userLogin;
   }
 };

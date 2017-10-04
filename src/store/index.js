@@ -5,6 +5,14 @@ import getters from './getters.js';
 export default {
   state: {
     usuario: {
+      //Usuario logueado
+      gravatar: "",
+      id: 0,
+      includeAdult: false,
+      name : "",
+      username: "",
+      
+      //Usuario invitado
       guest_session: { guest_session_id: "", expires_at: "" },
       // /authentication/token/new?api_key= ...
       // /authentication/token/validate_with_login?api_key= ...
