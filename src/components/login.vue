@@ -4,7 +4,7 @@
     h2.ui.teal.image.header
       i.users.icon
       .content Log-in to your account
-    form.ui.large.form(@submit="goCreateRequestToken()")
+    form.ui.large.form(@submit.prevent="goCreateRequestToken()")
       .ui.stacked.segment
         .field
           .ui.left.icon.input
