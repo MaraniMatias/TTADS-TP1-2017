@@ -7,7 +7,7 @@ div
     .item.search-bar
       search-bar
     .right.menu
-      template(v-if='!usuarioLogin.user.username')
+      template(v-if='!usuario.username')
         router-link.item(:to="{ name: 'login' }" exact='')
           button.ui.button
             i.sign.in.icon
@@ -15,7 +15,7 @@ div
       template(v-else)
         .ui.simple.dropdown.item
           i.user.icon
-          | {{usuarioLogin.user.name || usuarioLogin.user.username}}
+          | {{usuario.name || usuario.username}}
           i.dropdown.icon
           .menu
             router-link.item.teal(:to="{ name: 'userProfile' }" exact='')
@@ -32,7 +32,7 @@ div
     a.item.teal(href='https://github.com/MaraniMatias/tp-2017')
       i.github.icon
     .right.menu
-      router-link.item.teal(:to="{ name: usuarioLogin.user.username?'userProfile':'login' }" exact='')
+      router-link.item.teal(:to="{ name: usuario.username?'userProfile':'login' }" exact='')
         i.user.icon
   .ui.container
     .ui.grid
@@ -49,7 +49,8 @@ export default {
     searchBar
   },
   computed: mapState([
-    'usuarioLogin'
+    //'usuarioLogin'
+    'usuario'
   ]),
   methods: {
     ...mapActions(['cerrarSesionUsuario']),

@@ -49,7 +49,8 @@ export default {
                     .then((response) => {
                       this.setUsuarioToStore(response);
                       this.incorrecLogin = response.username;
-                      this.$router.go(-1);
+                      //this.$router.go(-1);
+                      this.$router.push({name: 'discover'});
                     });
                 }).catch((e) => {
                   this.incorrecLogin = e;
