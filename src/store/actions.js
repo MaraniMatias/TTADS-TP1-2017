@@ -7,7 +7,7 @@ const baseURL = "https://api.themoviedb.org/3";
 const apiKey = "66ae687f31e3066ab23a1b7128278d17";
 const parameterKey = "?api_key=" + apiKey;
 
-export default {
+var actions =  {
   authenticationGuest: function ({ commit }) {
     return axios.get(baseURL + "/authentication/guest_session/new" + parameterKey)
       .then((response) => {
@@ -64,30 +64,40 @@ export default {
         console.error(err);
       });
   },
-  createRequestToken: function () {
+  createRequestToken: function ({username,password}) {
     return axios.get(baseURL + "/authentication/token/new" + parameterKey)
       .then((response) => {
         console.info("--> Create Request Token: OK");
-        console.info(response.data);
-        return response.data.request_token;
+          return actions.createSessionWithLogin({ username,  password, requestToken: response.data.request_token })
+          .then((request_token)=>{
+              return actions.createSession({ request_token})
+                .then((session_id) => {
+                return  actions.getDetailsOfAccount({ session_id })
+        .then((response) => {
+          this.setUsuarioToStore(response)
+          .then((response)=>{
+
+          });
+            });
+            });
+        //return response.data.request_token;
       }, (err) => {
         console.error("--> Create Request Token: Error");
         console.error(err);
         return "Error al obtener el Reques Token";
       });
   },
-  createSessionWithLogin: function ({ commit }, { userName, userPass, requestToken }) {
+  createSessionWithLogin: function ({ commit }, { username, password, request_token }) {
     return axios.get(baseURL + "//authentication/token/validate_with_login", {
         params: {
           api_key: apiKey,
-          username: userName,
-          password: userPass,
-          request_token: requestToken
+          username,
+          password,
+          request_token
         }
       })
       .then((response) => {
         console.info("--> Create Session Whit Login: OK");
-        console.info(response.data);
         return response.data.request_token;
       }, (err) => {
         console.error(err);
@@ -127,3 +137,4 @@ export default {
     commit('set_usuario_login', "");
   }
 };
+export default actions;
