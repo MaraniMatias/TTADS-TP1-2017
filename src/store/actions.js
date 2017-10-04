@@ -50,7 +50,13 @@ export default {
       });
   },
   searchMovies: function ({ commit, state }, { query, page }) {
-    return axios.get(baseURL + "/search/movie" + parameterKey + "&query=" + query + "&page=" + (page || 1))
+    return axios.get(baseURL + "/search/movie", {
+        params: {
+          api_key: apiKey,
+          query,
+          page: page || 1
+        }
+      })
       .then((response) => {
         commit('set_discover_movie', response.data);
         return true;

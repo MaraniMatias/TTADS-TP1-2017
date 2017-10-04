@@ -19,10 +19,9 @@ export default {
   methods: {
     ...mapActions(['loadMovieDiscover', 'searchMovies']),
     goSearchResults: function () {
-      //Me no estan mala idea llamar las actions desde saca, mientra llegan la respuesta se crea el componente :D
       if (this.words) {
         this.$router.push({ name: 'search', params: { query: this.words } });
-        this.searchMovies({ query: this.words.replace(' ', '+') });
+        this.searchMovies({ query: this.words });
         this.words = "";
       } else {
         this.$router.push({ name: 'discover' });
