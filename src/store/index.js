@@ -1,3 +1,4 @@
+"use strict";
 import actions from './actions.js';
 import mutations from './mutations.js';
 import getters from './getters.js';
@@ -6,12 +7,13 @@ export default {
   state: {
     usuario: {
       //Usuario logueado
-      gravatar: "",
       id: 0,
       includeAdult: false,
-      name : "",
+      name: "",
       username: "",
-      
+      getAvatar(size = 256) {
+        return "https://api.adorable.io/avatars/" + size + "/" + this.username;
+      },
       //Usuario invitado
       guest_session: { guest_session_id: "", expires_at: "" },
       // /authentication/token/new?api_key= ...
@@ -24,14 +26,6 @@ export default {
     searchResults: {
       results: []
     },
-    usuarioLogin: {
-      /*gravatar: "",
-      id: 0,
-      includeAdult: false,
-      name : "",
-      username: ""*/
-      user: []
-    }
   },
   actions,
   mutations,

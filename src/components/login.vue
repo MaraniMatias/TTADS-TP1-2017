@@ -39,6 +39,7 @@ export default {
   methods: {
     ...mapActions(['createRequestToken', 'createSessionWithLogin', 'createSession', 'getDetailsOfAccount', 'setUsuarioLogin']),
     goCreateRequestToken: function () {
+      // Estas promesas anidadas, deverian hacerce desde acttions, usar un get paraoptener el usuario guardado en el storage, y estas promesas usar las mismas que en cada consulta
       this.createRequestToken()
         .then((response) => {
           this.createSessionWithLogin({ userName: this.userName, userPass: this.userPassword, requestToken: response })
@@ -50,7 +51,7 @@ export default {
                       this.setUsuarioToStore(response);
                       this.incorrecLogin = response.username;
                       //this.$router.go(-1);
-                      this.$router.push({name: 'discover'});
+                      this.$router.push({ name: 'discover' });
                     });
                 }).catch((e) => {
                   this.incorrecLogin = e;
