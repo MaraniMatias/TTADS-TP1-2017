@@ -1,8 +1,8 @@
 # Trabajo Practico
 
-[Trabajo Online](https://goo.gl/Nb5M9F)
+[Trabajo Online](https://goo.gl/56DvWA)
 
-Documentación en [github.io](https://maranimatias.github.io/tp-2017/#/docs)
+Documentación en [github.io](https://maranimatias.github.io/TTADS-TP1-2017/#/docs)
 
 ## 1 - Enunciado
 ### 1.1 - Desarrollo
